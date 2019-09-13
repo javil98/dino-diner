@@ -1,11 +1,11 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Entrees
 {
     public class PterodactylWings
     {
-        private double Price { get; set; }
-        private uint Calories { get; set; }
+        public double Price { get; set; }
+        public uint Calories { get; set; }
 
         public PterodactylWings()
         {
@@ -19,7 +19,7 @@ namespace DinoDiner.Menu.Entrees
             {
                 List<string> ingredients = new List<string> { "Chicken" };
                 ingredients.Add("Wing Sauce");
-                return Ingredients;
+                return ingredients;
             }
         }
     }
