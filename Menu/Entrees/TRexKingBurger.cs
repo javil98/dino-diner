@@ -30,14 +30,16 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                List<string> ingredients = new List<string> { "Three Steakburger Patties" };
-                if (bun) ingredients.Add("Bun");
+                List<string> ingredients = new List<string> { "Steakburger Pattie", "Steakburger Pattie", "Steakburger Pattie"  };
+                if (bun) ingredients.Add("Whole Wheat Bun");
+
                 if (lettuce) ingredients.Add("Lettuce");
                 if (tomato) ingredients.Add("Tomato");
                 if (onion) ingredients.Add("Onion");
                 if (pickle) ingredients.Add("Pickle");
                 if (mustard) ingredients.Add("Mustard");
                 if (mayo) ingredients.Add("Mayo");
+                if (ketchup) ingredients.Add("Ketchup");
                 return ingredients;
             }
         }
@@ -71,6 +73,12 @@ namespace DinoDiner.Menu.Entrees
         {
             this.mustard = false;
         }
+
+        public void HoldOnion()
+        {
+            this.onion = false;
+        }
+
 
         public void HoldMayo()
         {

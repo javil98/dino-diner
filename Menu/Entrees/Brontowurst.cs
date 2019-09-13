@@ -44,7 +44,7 @@ namespace DinoDiner.Menu.Entrees
 
         public void HoldOnion()
         {
-            this.bun = false;
+            this.onions = false;
         }
 
 
