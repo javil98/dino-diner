@@ -2,6 +2,9 @@
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class PrehistoricPBJ
     {
         private bool peanutButter = true;

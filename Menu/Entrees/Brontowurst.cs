@@ -3,6 +3,9 @@
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Brontowurst
     {
         private bool bun = true;
@@ -12,7 +15,9 @@ namespace DinoDiner.Menu.Entrees
         public double Price { get; set; }
         public uint Calories { get; set; }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public Brontowurst()
         {
             this.Price = 5.36;
