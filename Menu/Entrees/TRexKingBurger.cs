@@ -15,17 +15,25 @@ namespace DinoDiner.Menu.Entrees
         private bool ketchup = true;
         private bool mustard = true;
         private bool mayo = true;
-
+        /// <summary>
+        /// Gets and sets the value of Price of a TRexKingBurger object.
+        /// </summary>
         public double Price { get; set; }
-
+        /// <summary>
+        /// Gets and sets the value of calories of a TRexKingBurger object.
+        /// </summary>
         public uint Calories { get; set; }
-
+        /// <summary>
+        /// Contructs an instance of TRexKingBurger.
+        /// </summary>
         public TRexKingBurger()
         {
             this.Price = 8.45;
             this.Calories = 728;
         }
-
+        /// <summary>
+        /// Gets a list of ingredients of an instance of TRexKingBurger.
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -43,43 +51,59 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// Sets the value of bun to false of a Steakosaurus burger.
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
         }
-
+        /// <summary>
+        /// Sets the value of lettuce to false of a Steakosaurus burger.
+        /// </summary>
         public void HoldLettuce()
         {
             this.lettuce = false;
         }
-
+        /// <summary>
+        /// Sets the value of tomatoe to false of a Steakosaurus burger.
+        /// </summary>
         public void HoldTomato()
         {
             this.tomato = false;
         }
-
+        /// <summary>
+        /// Sets the value of pickle to false of a Steakosaurus burger.
+        /// </summary>
         public void HoldPickle()
         {
             this.pickle = false;
         }
-
+        /// <summary>
+        /// Sets the value of ketchup to false of a Steakosaurus burger.
+        /// </summary>
         public void HoldKetchup()
         {
             this.ketchup = false;
         }
-
+        /// <summary>
+        /// Sets the value of mustard to false of a Steakosaurus burger.
+        /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;
         }
-
+        /// <summary>
+        /// Sets the value of onion to false of a Steakosaurus burger.
+        /// </summary>
         public void HoldOnion()
         {
             this.onion = false;
         }
 
-
+        /// <summary>
+        /// Sets the value of Mayo to false of a Steakosaurus burger.
+        /// </summary>
         public void HoldMayo()
         {
             this.mayo = false;

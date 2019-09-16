@@ -9,17 +9,25 @@ namespace DinoDiner.Menu.Entrees
         private bool dressing = true;
         private bool lettuce = true;
         private bool cheese = true;
-
+        /// <summary>
+        /// Gets and sets the value of Price of a VelociWrap object.
+        /// </summary>
         public double Price { get; set; }
-
+        /// <summary>
+        /// Gets and sets the value of Calories of a VelociWrap object.
+        /// </summary>
         public uint Calories { get; set; }
-
+        /// <summary>
+        /// Constructs an instance of VelociWrap.
+        /// </summary>
         public VelociWrap()
         {
             this.Price = 6.86;
             this.Calories = 356;
         }
-
+        /// <summary>
+        /// Gets a list of ingredients for an instance of VelociWrap.
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -32,17 +40,23 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// Sets the value of dressing to false of a Steakosaurus burger.
+        /// </summary>
         public void HoldDressing()
         {
             this.dressing = false;
         }
-
+        /// <summary>
+        /// Sets the value of lettuce to false of a Steakosaurus burger.
+        /// </summary>
         public void HoldLettuce()
         {
             this.lettuce = false;
         }
-
+        /// <summary>
+        /// Sets the value of cheese to false of a Steakosaurus burger.
+        /// </summary>
         public void HoldCheese()
         {
             this.cheese = false;
