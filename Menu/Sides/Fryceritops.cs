@@ -2,9 +2,43 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu.Sides
+namespace DinoDiner.Menu.Sides
 {
-    class Fryceritops
+    public class Fryceritops : Side
     {
+        protected Size size;
+        public override Size Size
+        {
+            set
+            {
+                size = value;
+                switch (size)
+                {
+                    case Size.Large:
+                        this.Price = 1.95;
+                        this.Calories = 480;
+                        break;
+                    case Size.Medium:
+                        Price = 1.45;
+                        Calories = 365;
+                        break;
+                    case Size.Small:
+                        Price = 0.99;
+                        Calories = 222;
+                        break;
+                }
+            }
+            get
+            {
+                return Size;
+            }
+        }
+        public Fryceritops()
+        {
+            this.Price = 0.99;
+            this.Calories = 222;
+            this.Ingredients = new List<string> { "Potato", "Salt", "Vegatable Oil" };
+        }
+
     }
 }
