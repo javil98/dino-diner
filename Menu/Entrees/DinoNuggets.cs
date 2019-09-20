@@ -5,21 +5,13 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A class representing the DinoNuggets entree.
     /// </summary>
-    public class DinoNuggets
+    public class DinoNuggets:Entrees
     {
         /// <summary>
         /// Keeps track of the number of nuggets for a DinoNugget object.
         /// </summary>
         public int nuggetCount = 6;
     
-        /// <summary>
-        /// Gets and sets the price of a DinoNuggets object.
-        /// </summary>
-        public double Price { get; set; }
-        /// <summary>
-        /// Gets and sets the calories of a DinoNuggets object.
-        /// </summary>
-        public uint Calories { get; set; }
         /// <summary>
         /// Constructs an instance of DinoNuggets.
         /// </summary>
@@ -31,7 +23,7 @@ namespace DinoDiner.Menu.Entrees
         /// <summary>
         /// Gets the list of ingredients of a DinoNuggets object.
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

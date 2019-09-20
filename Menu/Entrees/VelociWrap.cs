@@ -4,19 +4,11 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class VelociWrap
+    public class VelociWrap:Entrees
     {
         private bool dressing = true;
         private bool lettuce = true;
         private bool cheese = true;
-        /// <summary>
-        /// Gets and sets the value of Price of a VelociWrap object.
-        /// </summary>
-        public double Price { get; set; }
-        /// <summary>
-        /// Gets and sets the value of Calories of a VelociWrap object.
-        /// </summary>
-        public uint Calories { get; set; }
         /// <summary>
         /// Constructs an instance of VelociWrap.
         /// </summary>
@@ -28,7 +20,7 @@ namespace DinoDiner.Menu.Entrees
         /// <summary>
         /// Gets a list of ingredients for an instance of VelociWrap.
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

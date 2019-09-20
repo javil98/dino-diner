@@ -2,21 +2,14 @@
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class SteakosaurusBurger
+    public class SteakosaurusBurger:Entrees
     {
         private bool bun = true;
         private bool ketchup = true;
         private bool pickle = true;
         private bool mustard = true;
 
-        /// <summary>
-        /// Gets and sets the price of a SteakosaurusBurger.
-        /// </summary>
-        public double Price { get; set; }
-        /// <summary>
-        /// Gets and sets the calories of a SteakosaurusBurger.
-        /// </summary>
-        public uint Calories { get; set; }
+       
         /// <summary>
         /// Constructs an instance of SteakosaurusBurger
         /// </summary>
@@ -29,7 +22,7 @@ namespace DinoDiner.Menu.Entrees
         /// <summary>
         /// Ges a list of ingredients for a Steakosaurus object.
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

@@ -6,14 +6,12 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// 
     /// </summary>
-    public class Brontowurst
+    public class Brontowurst:Entrees
     {
         private bool bun = true;
         private bool peppers = true;
         private bool onions = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
 
         /// <summary>
         /// 

@@ -5,16 +5,9 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A class representing PterodactylWings.
     /// </summary>
-    public class PterodactylWings
+    public class PterodactylWings: Entrees
     {
-        /// <summary>
-        /// Gets and sets the price of PterodactylWings.
-        /// </summary>
-        public double Price { get; set; }
-        /// <summary>
-        /// Gets and sets the calories of PterodactylWings.
-        /// </summary>
-        public uint Calories { get; set; }
+       
         /// <summary>
         /// Constructs an instance of PterodactlyWings.
         /// </summary>
@@ -26,7 +19,7 @@ namespace DinoDiner.Menu.Entrees
         /// <summary>
         /// Gets a list of ingedients of a Pterodactyl object.
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
