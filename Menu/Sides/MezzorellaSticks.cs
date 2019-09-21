@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*MezzorellaSticks.cs
+ * Author: Jose C. Avila
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

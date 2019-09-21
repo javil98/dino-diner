@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿/*DinoNuggets.cs
+ * Author: Jose C. Avila
+ */
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Entrees
 {
@@ -10,7 +13,7 @@ namespace DinoDiner.Menu.Entrees
         /// <summary>
         /// Keeps track of the number of nuggets for a DinoNugget object.
         /// </summary>
-        public int nuggetCount = 6;
+        public int NuggetCount = 6;
     
         /// <summary>
         /// Constructs an instance of DinoNuggets.
@@ -28,7 +31,7 @@ namespace DinoDiner.Menu.Entrees
             get
             {
                 List<string> ingredients = new List<string> ();
-                for(int i = 0; i < nuggetCount; i++)
+                for(int i = 0; i < NuggetCount; i++)
                 {
                     ingredients.Add("Chicken Nugget");
                 }
@@ -43,7 +46,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price += 0.25;
             this.Calories += 59;
-            nuggetCount++;
+            NuggetCount++;
         }
     }
 }

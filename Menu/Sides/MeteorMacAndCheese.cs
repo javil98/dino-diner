@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*/*MeteorMacAndCheese.cs
+ * Author: Jose C. Avila
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

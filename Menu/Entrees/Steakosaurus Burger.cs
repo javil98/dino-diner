@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿/*Steakosaurus.cs
+ * Author: Jose C. Avila
+ */
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Entrees
 {

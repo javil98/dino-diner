@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿/*Brontowurst.cs
+ * Author: Jose C. Avila
+ */
+
+using System.Collections.Generic;
 
 
 namespace DinoDiner.Menu.Entrees
