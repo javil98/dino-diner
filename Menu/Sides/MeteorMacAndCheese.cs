@@ -9,7 +9,7 @@ using System.Text;
 namespace DinoDiner.Menu.Sides
 {
     /// <summary>
-    /// A class that represents a MeteorMacAndCheese that inherits from the Side class.
+    /// A class that represent a MeteorMacAndCheese that inherits from the Side class.
     /// </summary>
     public class MeteorMacAndCheese : Side
     {
