@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// Describes a class that represents a VelociWrap.
+    /// </summary>
     public class VelociWrap:Entrees
     {
         private bool dressing = true;

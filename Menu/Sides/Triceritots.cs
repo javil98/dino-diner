@@ -12,7 +12,7 @@ namespace DinoDiner.Menu.Sides
         {
             set
             {
-                Size = value;
+                size = value;
                 switch (size)
                 {
                     case Size.Large:
@@ -22,10 +22,6 @@ namespace DinoDiner.Menu.Sides
                     case Size.Medium:
                         this.Price = 1.45;
                         this.Calories = 410;
-                        break;
-                    case Size.Small:
-                        Price = 0.99;
-                        this.Calories = 352;
                         break;
                 }
             }
@@ -37,8 +33,8 @@ namespace DinoDiner.Menu.Sides
         public Triceritots()
         {
             this.Price = 0.99;
-            this.Calories = 420;
-            this.Ingredients = new List<string> { "Potatoes", "Salt", "Vegatable Oil" };
+            this.Calories = 352;
+            this.Ingredients = new List<string> { "Potato", "Salt", "Vegetable Oil" };
         }
     }
 }

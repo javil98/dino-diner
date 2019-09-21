@@ -23,10 +23,7 @@ namespace DinoDiner.Menu.Sides
                         this.Price = 1.45;
                         this.Calories = 490;
                         break;
-                    case Size.Small:
-                        Price = 0.99;
-                        this.Calories = 420;
-                        break;
+                   
                 }
             }
             get

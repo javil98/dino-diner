@@ -4,7 +4,7 @@
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
-    /// 
+    /// A class that represents a Brontowurst.
     /// </summary>
     public class Brontowurst:Entrees
     {
@@ -14,15 +14,17 @@ namespace DinoDiner.Menu.Entrees
 
 
         /// <summary>
-        /// 
+        /// A constructor that creates an instance of a Brontowurst.
         /// </summary>
         public Brontowurst()
         {
             this.Price = 5.36;
             this.Calories = 498;
         }
-
-        public List<string> Ingredients
+        /// <summary>
+        /// Gets a list of ingredients for a Brontowurst.
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -34,17 +36,23 @@ namespace DinoDiner.Menu.Entrees
 
             }
         }
-
+        /// <summary>
+        /// Sets the value of bun  to false.
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
         }
-
+        /// <summary>
+        /// Sets the value of Peppers to false.
+        /// </summary>
         public void HoldPeppers()
         {
             this.peppers = false;
         }
-
+        /// <summary>
+        /// Sets the value of onion to false.
+        /// </summary>
         public void HoldOnion()
         {
             this.onions = false;

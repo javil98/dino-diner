@@ -22,22 +22,18 @@ namespace DinoDiner.Menu.Sides
                         Price = 1.45;
                         Calories = 365;
                         break;
-                    case Size.Small:
-                        Price = 0.99;
-                        Calories = 222;
-                        break;
                 }
             }
             get
             {
-                return Size;
+                return size;
             }
         }
         public Fryceritops()
         {
             this.Price = 0.99;
             this.Calories = 222;
-            this.Ingredients = new List<string> { "Potato", "Salt", "Vegatable Oil" };
+            this.Ingredients = new List<string> { "Potato", "Salt", "Vegetable Oil" };
         }
 
     }

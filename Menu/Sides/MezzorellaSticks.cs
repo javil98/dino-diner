@@ -12,7 +12,7 @@ namespace DinoDiner.Menu.Sides
         {
             set
             {
-                Size = value;
+                size = value;
                 switch (size)
                 {
                     case Size.Large:
@@ -23,10 +23,7 @@ namespace DinoDiner.Menu.Sides
                         this.Price = 1.45;
                         this.Calories = 610;
                         break;
-                    case Size.Small:
-                        Price = 0.99;
-                        this.Calories = 540;
-                        break;
+        
                 }
             }
             get
@@ -40,7 +37,7 @@ namespace DinoDiner.Menu.Sides
         {
             this.Price = 0.99;
             this.Calories = 540;
-            this.Ingredients = new List<string> { "Cheese Product", "Breading", "Vegatable Oil" };
+            this.Ingredients = new List<string> { "Cheese Product", "Breading", "Vegetable Oil" };
         }
     }
 }
