@@ -10,7 +10,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// Describes a class that represents a VelociWrap.
     /// </summary>
-    public class VelociWrap:Entrees
+    public class VelociWrap:Entree
     {
         private bool dressing = true;
         private bool lettuce = true;

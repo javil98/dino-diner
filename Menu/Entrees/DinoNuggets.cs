@@ -8,7 +8,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A class representing the DinoNuggets entree.
     /// </summary>
-    public class DinoNuggets:Entrees
+    public class DinoNuggets:Entree
     {
         /// <summary>
         /// Keeps track of the number of nuggets for a DinoNugget object.
