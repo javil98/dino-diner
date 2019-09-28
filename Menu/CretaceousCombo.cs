@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using DinoDiner.Menu.Drinks;
 using DinoDiner.Menu.Entrees;
-using DinoDiner.Menu.Drinks;
 using DinoDiner.Menu.Sides;
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu
 {

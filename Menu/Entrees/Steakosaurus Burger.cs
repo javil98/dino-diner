@@ -8,21 +8,21 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A class that represents a SteakosaurusBurger.
     /// </summary>
-    public class SteakosaurusBurger:Entree
+    public class SteakosaurusBurger : Entree
     {
         private bool bun = true;
         private bool ketchup = true;
         private bool pickle = true;
         private bool mustard = true;
 
-       
+
         /// <summary>
         /// Constructs an instance of SteakosaurusBurger
         /// </summary>
         public SteakosaurusBurger()
         {
             this.Price = 5.15;
-            this.Calories = 621; 
+            this.Calories = 621;
 
         }
         /// <summary>

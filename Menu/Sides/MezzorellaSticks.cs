@@ -1,16 +1,14 @@
 ﻿/*MezzorellaSticks.cs
  * Author: Jose C. Avila
  */
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
     /// <summary>
     /// A class that represents a MezzorellaSticks that inherits from the Side class.
     /// </summary>
-    public class MezzorellaSticks: Side
+    public class MezzorellaSticks : Side
     {
         protected Size size;
 
@@ -32,7 +30,7 @@ namespace DinoDiner.Menu.Sides
                         this.Price = 1.45;
                         this.Calories = 610;
                         break;
-        
+
                 }
             }
             get
@@ -40,7 +38,7 @@ namespace DinoDiner.Menu.Sides
                 return size;
             }
 
-       
+
         }
         /// <summary>
         /// Constructs an instance of a MezzorellaSticks

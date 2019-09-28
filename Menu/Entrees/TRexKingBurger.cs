@@ -1,16 +1,14 @@
 ﻿/*TRexKingBurger.cs
  * Author: Jose C. Avila
  */
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
     /// Describes a class that represents a TRexKingBurger.
     /// </summary>
-    public class TRexKingBurger: Entree
+    public class TRexKingBurger : Entree
     {
         private bool bun = true;
         private bool lettuce = true;
@@ -20,7 +18,7 @@ namespace DinoDiner.Menu.Entrees
         private bool ketchup = true;
         private bool mustard = true;
         private bool mayo = true;
- 
+
         /// <summary>
         /// Contructs an instance of TRexKingBurger.
         /// </summary>
@@ -36,7 +34,7 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                List<string> ingredients = new List<string> { "Steakburger Pattie", "Steakburger Pattie", "Steakburger Pattie"  };
+                List<string> ingredients = new List<string> { "Steakburger Pattie", "Steakburger Pattie", "Steakburger Pattie" };
                 if (bun) ingredients.Add("Whole Wheat Bun");
 
                 if (lettuce) ingredients.Add("Lettuce");

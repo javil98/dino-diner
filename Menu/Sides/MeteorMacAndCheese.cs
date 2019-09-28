@@ -2,9 +2,7 @@
  * Author: Jose C. Avila
  */
 
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
@@ -35,7 +33,7 @@ namespace DinoDiner.Menu.Sides
                         this.Price = 1.45;
                         this.Calories = 490;
                         break;
-                   
+
                 }
             }
             get

@@ -10,7 +10,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A class that represents a Brontowurst.
     /// </summary>
-    public class Brontowurst:Entree
+    public class Brontowurst : Entree
     {
         private bool bun = true;
         private bool peppers = true;

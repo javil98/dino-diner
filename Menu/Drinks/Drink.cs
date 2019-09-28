@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Drinks
 {
-    
+
 
     public abstract class Drink
     {
-  
+
         public virtual Size Size { get; set; }
 
         public bool Ice { get; protected set; } = true;

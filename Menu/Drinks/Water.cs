@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Drinks
 {
-    class Water : Drink
+    public class Water : Drink
     {
         public bool Lemon { get; set; } = false;
 
         public override List<string> Ingredients
         {
-                get => new List<string> { "Water" };
+            get => new List<string> { "Water" };
         }
 
         public Water()

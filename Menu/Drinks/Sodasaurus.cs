@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Drinks
 {
@@ -15,7 +13,7 @@ namespace DinoDiner.Menu.Drinks
         Lime
     }
 
-    public class Sodasaurus: Drink
+    public class Sodasaurus : Drink
     {
         private SodasaurusFlavor flavor = SodasaurusFlavor.Cola;
         public SodasaurusFlavor Flavor
@@ -39,34 +37,41 @@ namespace DinoDiner.Menu.Drinks
             set
             {
                 size = value;
-                if(size == Size.Small)
-                {
-                    this.Calories = 112;
-                    this.Price = 1.50;
-                }
-                if(size == Size.Medium)
-                {
-                    this.Calories = 156;
-                    this.Price = 2.00;
-                }
-                if(size == Size.Large)
-                {
-                    this.Calories = 208;
-                    this.Price = 2.50;
-                }
-            }
 
+                switch (size)
+                {
+                    case Size.Large:
+                        this.Price = 2.50;
+                        this.Calories = 208;
+                        break;
+                    case Size.Medium:
+                        Price = 2.00;
+                        Calories = 156;
+                        break;
+
+                    case Size.Small:
+                        Price = 1.50;
+                        Calories = 112;
+                        break;
+                }
+
+            }
         }
         public override List<string> Ingredients
         {
-            get => new List<string> { "Water", "Natural Flavors", "Cane Sugar" };
+            get
+            {
+                return new List<string> { "Water", "Natural Flavors", "Cane Sugar" };
+            }
         }
 
         public Sodasaurus()
         {
+            this.size = Size.Small;
             this.Price = 1.50;
             this.Calories = 112;
 
         }
+
     }
 }

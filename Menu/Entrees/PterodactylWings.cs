@@ -8,9 +8,9 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A class representing PterodactylWings.
     /// </summary>
-    public class PterodactylWings: Entree
+    public class PterodactylWings : Entree
     {
-       
+
         /// <summary>
         /// Constructs an instance of PterodactlyWings.
         /// </summary>

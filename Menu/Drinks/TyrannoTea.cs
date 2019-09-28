@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public class TyrannoTea: Drink
+    public class TyrannoTea : Drink
     {
         public bool Sweet { get; set; } = false;
 
@@ -20,20 +18,22 @@ namespace DinoDiner.Menu.Drinks
             set
             {
                 size = value;
-                if (size == Size.Small)
+
+                switch (size)
                 {
-                    this.Calories = 8;
-                    this.Price = 0.99;
-                }
-                if (size == Size.Medium)
-                {
-                    this.Calories = 16;
-                    this.Price = 1.49;
-                }
-                if (size == Size.Large)
-                {
-                    this.Calories = 32;
-                    this.Price = 1.99;
+                    case Size.Large:
+                        this.Price = 1.49;
+                        this.Calories = 2;
+                        break;
+                    case Size.Medium:
+                        Price = 1.45;
+                        Calories = 8;
+                        break;
+
+                    case Size.Small:
+                        Price = 0.99;
+                        Calories = 32;
+                        break;
                 }
             }
 
@@ -46,11 +46,11 @@ namespace DinoDiner.Menu.Drinks
                 if (this.Lemon && this.Sweet)
                 {
                     this.Calories *= 2;
-                    return new List<string> { "Water", "Tea",  "Lemon", "Cane Sugar" };
+                    return new List<string> { "Water", "Tea", "Lemon", "Cane Sugar" };
                 }
                 else if (this.Lemon)
                 {
-                    return new List<string> { "Water", "Tea",  "Lemon" };
+                    return new List<string> { "Water", "Tea", "Lemon" };
                 }
                 else if (this.Sweet)
                 {
@@ -59,7 +59,7 @@ namespace DinoDiner.Menu.Drinks
                 }
                 else
                 {
-                    return new List<string> { "Water" , "Tea" };
+                    return new List<string> { "Water", "Tea" };
                 }
             }
         }
@@ -67,7 +67,7 @@ namespace DinoDiner.Menu.Drinks
         public TyrannoTea()
         {
             this.Price = 0.99;
-            this.Calories = 8; 
+            this.Calories = 8;
         }
 
         public void AddLemon()

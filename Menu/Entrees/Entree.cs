@@ -1,9 +1,7 @@
 ﻿/*Entree.cs
  * Author: Jose C. Avila
  */
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {

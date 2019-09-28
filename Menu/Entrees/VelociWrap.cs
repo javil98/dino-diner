@@ -1,16 +1,14 @@
 ﻿/*VelociWrap.cs
  * Author: Jose C. Avila
  */
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
     /// Describes a class that represents a VelociWrap.
     /// </summary>
-    public class VelociWrap:Entree
+    public class VelociWrap : Entree
     {
         private bool dressing = true;
         private bool lettuce = true;
