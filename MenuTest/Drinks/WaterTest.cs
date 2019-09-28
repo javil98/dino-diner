@@ -42,7 +42,7 @@ namespace MenuTest.Drinks
             Water water = new Water();
             water.Size = Size.Medium;
             water.Size = Size.Small;
-            Assert.Equal<double>(0.99, water.Price);
+            Assert.Equal<double>(0.10, water.Price);
         }
         [Fact]
         public void ShouldHaveCorrectCaloriesForSmall()
@@ -56,9 +56,9 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectPriceForMedium()
         {
-            TyrannoTea tea = new TyrannoTea();
-            tea.Size = Size.Medium;
-            Assert.Equal<double>(0.10, tea.Price);
+            Water water = new Water();
+            water.Size = Size.Medium;
+            Assert.Equal<double>(0.10, water.Price);
         }
 
         [Fact]
@@ -105,10 +105,19 @@ namespace MenuTest.Drinks
 
         //Have correct Ingredients
         [Fact]
-        public void ShouldHaveCorrectIngedients()
+        public void ShouldHaveCorrectIngedientsWhenLemonIsFalse()
         {
             Water water = new Water();
+            Assert.Single(water.Ingredients);
+        }
+
+        [Fact]
+        public void ShouldHaveCorrectIngedientsWhenLemonIsTrue()
+        {
+            Water water = new Water();
+            water.AddLemon();
             Assert.Contains<string>("Water", water.Ingredients);
+            Assert.Contains<string>("Lemon", water.Ingredients);
             Assert.Equal<int>(2, water.Ingredients.Count);
         }
     }

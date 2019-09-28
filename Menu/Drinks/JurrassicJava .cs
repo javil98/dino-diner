@@ -1,15 +1,32 @@
-﻿using System.Collections.Generic;
+﻿/*
+ * JurassicJava.cs
+ * Author: Jose C. Avila
+ */
+
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// A class that represents a JurrasicJava which inherits from the Drink base class.
+    /// </summary>
     public class JurrassicJava : Drink
     {
+        /// <summary>
+        /// Gets and sets Decaf
+        /// </summary>
         public bool Decaf { get; set; } = false;
 
+        /// <summary>
+        /// Gets and sets RoomForCream
+        /// </summary>
         public bool RoomForCream { get; set; } = false;
 
-
+       
         private Size size;
+        /// <summary>
+        /// Gets and sets the Size
+        /// </summary>
         public override Size Size
         {
             get
@@ -31,7 +48,7 @@ namespace DinoDiner.Menu.Drinks
                         break;
 
                     case Size.Small:
-                        Price = .49;
+                        Price = .59;
                         Calories = 2;
                         break;
 
@@ -41,6 +58,9 @@ namespace DinoDiner.Menu.Drinks
 
         }
 
+        /// <summary>
+        /// Gets and sets the Ingredients
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -49,19 +69,23 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
-
-
-
+        //
+        /// <summary>
+        /// Constructs an instance of JurssicJava
+        /// </summary>
         public JurrassicJava()
         {
-            this.Price = 0.59;
-            this.Calories = 2;
-            this.Ice = false;
+            Price = 0.59;
+            Calories = 2;
+            Ice = false;
         }
 
+        /// <summary>
+        /// Sets RoomForCream to true;
+        /// </summary>
         public void LeaveRoomForCream()
         {
-            this.RoomForCream = true;
+            RoomForCream = true;
         }
 
 

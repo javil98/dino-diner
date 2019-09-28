@@ -1,7 +1,14 @@
-﻿using System.Collections.Generic;
+﻿/*
+ * Sodasaurus.cs
+ * Author: Jose C. Avila
+ */
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// An enum that is used to represent the available flavors for Sodasaurus.
+    /// </summary>
     public enum SodasaurusFlavor
     {
         Cola,
@@ -12,22 +19,20 @@ namespace DinoDiner.Menu.Drinks
         Cherry,
         Lime
     }
-
+    /// <summary>
+    /// A class that represents a Sodasaurus that inherits from the base class of Drink.
+    /// </summary>
     public class Sodasaurus : Drink
     {
-        private SodasaurusFlavor flavor = SodasaurusFlavor.Cola;
-        public SodasaurusFlavor Flavor
-        {
-            get
-            {
-                return flavor;
-            }
-            set
-            {
-                flavor = value;
-            }
-        }
+        /// <summary>
+        /// A property that gets and set the flavor of a Soda.
+        /// </summary>
+        public SodasaurusFlavor Flavor { get; set; } = SodasaurusFlavor.Cola;
+
         private Size size;
+        /// <summary>
+        /// Gets the size, and sets the size, and the price and calories depending on the size of the item.
+        /// </summary>
         public override Size Size
         {
             get
@@ -57,6 +62,9 @@ namespace DinoDiner.Menu.Drinks
 
             }
         }
+        /// <summary>
+        /// Gets and sets the ingredients.
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -64,7 +72,9 @@ namespace DinoDiner.Menu.Drinks
                 return new List<string> { "Water", "Natural Flavors", "Cane Sugar" };
             }
         }
-
+        /// <summary>
+        /// Creates an instance of a SodaSaurus.
+        /// </summary>
         public Sodasaurus()
         {
             this.size = Size.Small;

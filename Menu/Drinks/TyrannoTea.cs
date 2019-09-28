@@ -1,14 +1,31 @@
-﻿using System.Collections.Generic;
+﻿/*
+ *TyrannoTea.cs 
+ * Author: Jose C. Avila
+ */
+
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// A class that represents a TyrannoTea which inherits from the Drink base class.
+    /// </summary>
     public class TyrannoTea : Drink
     {
+        /// <summary>
+        /// Gets and sets Sweet
+        /// </summary>
         public bool Sweet { get; set; } = false;
 
+        /// <summary>
+        /// Gets and sets Lemon
+        /// </summary>
         public bool Lemon { get; set; } = false;
 
         private Size size;
+        /// <summary>
+        /// Gets the siz, and sets the calories and Price depening on the set size.
+        /// </summary>
         public override Size Size
         {
             get
@@ -22,40 +39,43 @@ namespace DinoDiner.Menu.Drinks
                 switch (size)
                 {
                     case Size.Large:
-                        this.Price = 1.49;
-                        this.Calories = 2;
+                        Price = 1.99;
+                        if (Sweet == true) { Calories = 32 *2; }
+                        else if(Sweet == false) { Calories = 32; }
                         break;
                     case Size.Medium:
-                        Price = 1.45;
-                        Calories = 8;
+                        Price = 1.49;
+                        if (Sweet == false) { Calories = 16; }
+                        else { Calories *= 2; }
                         break;
 
                     case Size.Small:
                         Price = 0.99;
-                        Calories = 32;
+                        if (Sweet == false) { Calories = 8; }
+                        else { Calories *= 2; }
                         break;
                 }
             }
 
         }
-
+        /// <summary>
+        /// Gets and sets the Ingredients.
+        /// </summary>
         public override List<string> Ingredients
         {
             get
             {
-                if (this.Lemon && this.Sweet)
-                {
-                    this.Calories *= 2;
+                if (Lemon && Sweet)
+                { 
                     return new List<string> { "Water", "Tea", "Lemon", "Cane Sugar" };
                 }
-                else if (this.Lemon)
+                else if (Lemon)
                 {
                     return new List<string> { "Water", "Tea", "Lemon" };
                 }
-                else if (this.Sweet)
+                else if (Sweet)
                 {
-                    this.Calories *= 2;
-                    return new List<string> { "Water", "Tea", "Sugar" };
+                    return new List<string> { "Water", "Tea", "Cane Sugar" };
                 }
                 else
                 {
@@ -64,15 +84,21 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// Creates an instance of a TyrannoTea.
+        /// </summary>
         public TyrannoTea()
         {
-            this.Price = 0.99;
-            this.Calories = 8;
+            Price = 0.99;
+            Size = Size.Small;
+            Calories = 8;
         }
-
+        /// <summary>
+        /// Sets Lemon to true.
+        /// </summary>
         public void AddLemon()
         {
-            this.Lemon = false;
+            Lemon = true;
         }
 
     }

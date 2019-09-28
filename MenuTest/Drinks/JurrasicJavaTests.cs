@@ -36,7 +36,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveDefaultIce()
         {
             JurrassicJava java = new JurrassicJava();
-            Assert.True(java.Ice);
+            Assert.False(java.Ice);
         }
 
         //Correct price and size when changing the size.
