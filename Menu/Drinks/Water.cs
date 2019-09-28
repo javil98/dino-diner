@@ -19,7 +19,8 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public override List<string> Ingredients
         {
-            get {
+            get
+            {
                 if (Lemon == false) { return new List<string> { "Water" }; }
                 else { return new List<string> { "Water", "Lemon" }; }
             }

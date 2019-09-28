@@ -114,7 +114,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectCaloriesWhenSweetIsTrueForSmall()
         {
             TyrannoTea tea = new TyrannoTea();
-            tea.Sweet = true;
+            tea.AddSweet();
             Assert.Equal<uint>(2*8, tea.Calories);
         }
 
@@ -131,9 +131,10 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectCaloriesWhenSweetIsTrueForMedium()
         {
             TyrannoTea tea = new TyrannoTea();
-            tea.Sweet = true;
             tea.Size = Size.Medium;
-            Assert.Equal<uint>(2 * 16, tea.Calories);
+            tea.AddSweet();
+            
+            Assert.Equal<uint>(32 , tea.Calories);
         }
 
         [Fact]
@@ -151,7 +152,7 @@ namespace MenuTest.Drinks
         {
             TyrannoTea tea = new TyrannoTea();
             tea.Size = Size.Large;
-            tea.Sweet = true;
+            tea.AddSweet();
             
             Assert.Equal<uint>(2 * 32, tea.Calories);
         }
@@ -209,14 +210,6 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Lemon", tea.Ingredients);
             Assert.Equal<int>(3, tea.Ingredients.Count);
         }
-
-
-
-
-
-
-
-
 
     }
 }

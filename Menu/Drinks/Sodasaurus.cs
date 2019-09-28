@@ -77,9 +77,9 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public Sodasaurus()
         {
-            this.size = Size.Small;
-            this.Price = 1.50;
-            this.Calories = 112;
+            Size = Size.Small;
+            Price = 1.50;
+            Calories = 112;
 
         }
 
