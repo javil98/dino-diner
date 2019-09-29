@@ -40,7 +40,7 @@ namespace DinoDiner.Menu.Drinks
                 {
                     case Size.Large:
                         Price = 1.99;
-                        if(Sweet == false) { Calories = 32; }
+                        if (Sweet == false) { Calories = 32; }
                         break;
                     case Size.Medium:
                         Price = 1.49;
@@ -63,7 +63,7 @@ namespace DinoDiner.Menu.Drinks
             get
             {
                 if (Lemon && Sweet)
-                { 
+                {
                     return new List<string> { "Water", "Tea", "Lemon", "Cane Sugar" };
                 }
                 else if (Lemon)
