@@ -3,7 +3,7 @@
  */
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class that represents a Fryceritops which inherits from the Side class.

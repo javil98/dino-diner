@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class that represents a JurrasicJava which inherits from the Drink base class.

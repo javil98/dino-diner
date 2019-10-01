@@ -1,4 +1,4 @@
-﻿using DinoDiner.Menu.Sides;
+﻿
 using DinoDiner.Menu;
 using Xunit;
 

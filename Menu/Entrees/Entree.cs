@@ -3,7 +3,7 @@
  */
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class that represents a Entree class that is used as a base class for the sides.

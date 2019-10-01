@@ -4,7 +4,7 @@
  */
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     // A class that represents Water which inherits from the Drink base class.
     public class Water : Drink

@@ -3,7 +3,7 @@
  */
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Describes a class that represents a VelociWrap.
