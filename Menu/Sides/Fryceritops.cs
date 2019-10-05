@@ -49,5 +49,10 @@ namespace DinoDiner.Menu
             this.Ingredients = new List<string> { "Potato", "Salt", "Vegetable Oil" };
         }
 
+        public override string ToString()
+        {
+            return (Size + " Friceritops");
+        }
+
     }
 }

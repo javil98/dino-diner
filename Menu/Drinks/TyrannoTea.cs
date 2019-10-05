@@ -4,6 +4,7 @@
  */
 
 using System.Collections.Generic;
+using System.Text;
 
 namespace DinoDiner.Menu
 {
@@ -104,5 +105,13 @@ namespace DinoDiner.Menu
             Calories = Calories * 2;
         }
 
+        public override string ToString()
+        {
+            if (Sweet)
+            {
+                return Size + " Sweet Tyrannotea";
+            }
+            return Size + " Tyrannotea";
+        }
     }
 }

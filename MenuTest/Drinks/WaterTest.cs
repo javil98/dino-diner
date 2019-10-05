@@ -89,7 +89,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectWhenCallingHoldIce()
         {
             Water water = new Water();
-            water.holdIce();
+            water.HoldIce();
             Assert.False(water.Ice);
         }
 

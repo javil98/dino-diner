@@ -94,7 +94,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectWhenCallingHoldIce()
         {
             TyrannoTea tea = new TyrannoTea();
-            tea.holdIce();
+            tea.HoldIce();
             Assert.False(tea.Ice);
         }
 

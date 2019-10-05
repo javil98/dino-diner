@@ -42,5 +42,10 @@ namespace DinoDiner.Menu
         {
             Lemon = true;
         }
+
+        public override string ToString()
+        {
+            return Size + " Water";
+        }
     }
 }

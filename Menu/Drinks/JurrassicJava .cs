@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// A class that represents a JurrasicJava which inherits from the Drink base class.
     /// </summary>
-    public class JurrassicJava : Drink
+    public class JurassicJava : Drink
     {
         /// <summary>
         /// Gets and sets Decaf
@@ -73,7 +73,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Constructs an instance of JurssicJava
         /// </summary>
-        public JurrassicJava()
+        public JurassicJava()
         {
             Price = 0.59;
             Calories = 2;
@@ -82,8 +82,8 @@ namespace DinoDiner.Menu
 
         public override string ToString()
         {
-            if (Decaf) return (Size + "Decaf Jurassic Java");
-            else return (Size + "Jurassic Java");
+            if (Decaf) return (Size + " Decaf Jurassic Java");
+            else return (Size + " Jurassic Java");
   
         }
 

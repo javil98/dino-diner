@@ -3,6 +3,7 @@
  * Author: Jose C. Avila
  */
 using System.Collections.Generic;
+using System.Text;
 
 namespace DinoDiner.Menu
 {
@@ -85,7 +86,11 @@ namespace DinoDiner.Menu
 
         public override string ToString()
         {
-            return this.Size+ this.Flavor + "Sodasaurus"
+            StringBuilder sb = new StringBuilder();
+            sb.Append(Size + " ");
+            sb.Append(Flavor + " ");
+            sb.Append("Sodasaurus");
+            return sb.ToString();
         }
 
     }
