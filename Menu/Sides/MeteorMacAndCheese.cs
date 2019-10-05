@@ -41,6 +41,13 @@ namespace DinoDiner.Menu
                 return size;
             }
         }
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return new List<string> { "Macaroni Noodles", "Cheese Product", "Pork Sausage" };
+            }
+        }
         /// <summary>
         /// Constructs an instance of a MeteorMacAndCheese.
         /// </summary>
@@ -48,7 +55,7 @@ namespace DinoDiner.Menu
         {
             this.Price = 0.99;
             this.Calories = 420;
-            this.Ingredients = new List<string> { "Macaroni Noodles", "Cheese Product", "Pork Sausage" };
+            
         }
 
         public override string ToString()

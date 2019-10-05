@@ -39,6 +39,15 @@ namespace DinoDiner.Menu
                 return size;
             }
         }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return new List<string> { "Potato", "Salt", "Vegetable Oil" };
+            }
+        }
+
         /// <summary>
         /// Constructs an instance of a Triceritots.
         /// </summary>
@@ -46,7 +55,6 @@ namespace DinoDiner.Menu
         {
             this.Price = 0.99;
             this.Calories = 352;
-            this.Ingredients = new List<string> { "Potato", "Salt", "Vegetable Oil" };
         }
 
         public override string ToString()

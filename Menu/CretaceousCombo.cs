@@ -48,7 +48,9 @@ namespace DinoDiner.Menu
                 ingredients.AddRange(this.Drink.Ingredients);
                 ingredients.AddRange(this.Side.Ingredients);
                 ingredients.AddRange(this.Entree.Ingredients);
-                return ingredients;
+               string[] ingredient = ingredients.ToArray();
+                List<string> ingredients2 = new List<string>(ingredient);
+                return ingredients2;
             }
         }
         private CretaceousCombo() { }
@@ -58,6 +60,13 @@ namespace DinoDiner.Menu
             Entree = entree;
             Side = new Fryceritops();
             Drink = new Sodasaurus();
+        }
+
+        public override string ToString()
+        {
+
+            return (Entree + " Combo");
+            
         }
     }
 }

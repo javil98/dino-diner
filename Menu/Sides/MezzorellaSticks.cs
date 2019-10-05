@@ -38,8 +38,16 @@ namespace DinoDiner.Menu
                 return size;
             }
 
-
         }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return new List<string> { "Cheese Product", "Breading", "Vegetable Oil" };
+            }
+        }
+
         /// <summary>
         /// Constructs an instance of a MezzorellaSticks
         /// /// </summary>
@@ -47,7 +55,7 @@ namespace DinoDiner.Menu
         {
             this.Price = 0.99;
             this.Calories = 540;
-            this.Ingredients = new List<string> { "Cheese Product", "Breading", "Vegetable Oil" };
+            
         }
 
         public override string ToString()
