@@ -31,5 +31,9 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
+        public override string ToString()
+        {
+            return "Pterodactyl Wings";
+        }
     }
 }

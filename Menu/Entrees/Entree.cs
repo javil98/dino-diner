@@ -8,7 +8,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// A class that represents a Entree class that is used as a base class for the sides.
     /// </summary>
-    public abstract class Entree
+    public abstract class Entree : IMenuItem
     {
         /// <summary>
         /// A property that represents the Price of an entree.

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo
+    public class CretaceousCombo :IMenuItem
     {
         public Entree Entree { get; set; }
         public Drink Drink { get; set; }

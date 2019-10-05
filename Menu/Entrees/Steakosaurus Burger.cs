@@ -70,5 +70,10 @@ namespace DinoDiner.Menu
             this.ketchup = false;
         }
 
+        public override string ToString()
+        {
+            return "Steakosaurus Burger";
+        }
+
     }
 }

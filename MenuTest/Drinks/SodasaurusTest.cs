@@ -150,7 +150,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectWhenCallingIce()
         {
             Sodasaurus soda = new Sodasaurus();
-            soda.holdIce();
+            soda.HoldIce();
             Assert.False(soda.Ice);
         }
 

@@ -80,6 +80,13 @@ namespace DinoDiner.Menu
             Ice = false;
         }
 
+        public override string ToString()
+        {
+            if (Decaf) return (Size + "Decaf Jurassic Java");
+            else return (Size + "Jurassic Java");
+  
+        }
+
         /// <summary>
         /// Sets RoomForCream to true;
         /// </summary>
