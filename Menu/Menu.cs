@@ -1,15 +1,23 @@
-﻿using System;
+﻿/*
+ * Menu.cs
+ * 
+ * Author: Jose C. Avila
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
 
 namespace DinoDiner.Menu
 {
-    
+    /// <summary>
+    /// A class that represents a Menu for the Dino Diner.
+    /// </summary>
     public class Menu
     {
         /// <summary>
-        /// Make the list of type object
+        /// Gets a list of available menu items.
         /// </summary>
         public List<Object> AvailableMenuItems
         {
@@ -25,6 +33,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Gets a list of available entrees.
+        /// </summary>
         public List<Entree> AvailableEntrees 
         {
             get
@@ -35,6 +46,9 @@ namespace DinoDiner.Menu
 
         }
 
+        /// <summary>
+        /// Gets a list of available Drinks.
+        /// </summary>
         public List<Drink> AvailableDrinks
         {
             get
@@ -44,7 +58,9 @@ namespace DinoDiner.Menu
             }
 
         }
-
+        /// <summary>
+        /// Gets a list of available siides.
+        /// </summary>
         public List<Side> AvailableSides
         {
             get
@@ -54,6 +70,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Gets a list of available combos.
+        /// </summary>
         public List<Side> AvailableCombos
         {
             get
@@ -63,6 +82,10 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Returns a string that contains all of the menus available in the menu.
+        /// </summary>
+        /// <returns> A string that contains all of the menu items.</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

@@ -41,6 +41,11 @@ namespace DinoDiner.Menu
                 return size;
             }
         }
+
+        /// <summary>
+        /// Returns a string that contains the name of a the item.
+        /// </summary>
+        /// <returns> A string that contains the name of an item.</returns>
         public override List<string> Ingredients
         {
             get

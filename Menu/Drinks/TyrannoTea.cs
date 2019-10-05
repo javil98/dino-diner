@@ -104,7 +104,10 @@ namespace DinoDiner.Menu
             Sweet = true;
             Calories = Calories * 2;
         }
-
+        /// <summary>
+        /// Returns a string that contains the name of a the item.
+        /// </summary>
+        /// <returns> A string that contains the name of an item.</returns>
         public override string ToString()
         {
             if (Sweet)
