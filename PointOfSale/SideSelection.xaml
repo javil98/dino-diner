@@ -20,12 +20,12 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Content="Fryceritops" Grid.Column="0" Grid.Row="0"></Button>
-        <Button Content="Meteor Mac &amp; Cheese" Grid.Column="0" Grid.Row="1"></Button>
-        <Button Content="Mezzorella Sticks" Grid.Column="0" Grid.Row="2"></Button>
-        <Button Content="Triceritots" Grid.Column="0" Grid.Row="3"></Button>
-        <Button Content="Small" Grid.Column="1" Grid.Row="0"></Button>
-        <Button Content="Medium" Grid.Column="1" Grid.Row="1"></Button>
-        <Button Content="Large" Grid.Column="1" Grid.Row="2"></Button>
+        <Button Content="Fryceritops" Grid.Column="0" Grid.Row="0" Margin="10,51,0.2,94.8" Grid.RowSpan="2"></Button>
+        <Button Content="Meteor Mac &amp; Cheese" Grid.Column="0" Grid.Row="1" Margin="10,56,0.2,91.6" Grid.RowSpan="2"></Button>
+        <Button Content="Mezzorella Sticks" Grid.Column="0" Grid.Row="2" Margin="10,46.2,0.2,105.6" Grid.RowSpan="2"></Button>
+        <Button Content="Triceritots" Grid.Column="0" Grid.Row="3" Margin="10,26.4,0.2,9.6"></Button>
+        <Button Content="Small" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Margin="81.8,51,185,61.8" Grid.RowSpan="2"></Button>
+        <Button Content="Medium" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="81.8,73,185,39.6" Grid.RowSpan="2"></Button>
+        <Button Content="Large" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="81.8,88.2,184,23.6" Grid.RowSpan="2"></Button>
     </Grid>
 </Page>
