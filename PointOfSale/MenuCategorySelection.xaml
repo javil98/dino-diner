@@ -17,11 +17,12 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <Button Click="SelectCombo" Grid.Row="0" Grid.Column="0" Margin="123,47,32,9.8" Content="Combos"></Button>
-        <Button Grid.Row="0" Grid.Column=" 1" Margin="31,47,119,9.8" Content="Entrees"></Button>
-        <Button Grid.Row="1" Grid.Column="0" Margin="123,10.2,32,32.6">Drinks</Button>
-        <Button Grid.Row="1" Grid.Column="1" Margin="31,10.2,119,32.6">Sides</Button>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row=" 0" Grid.Column=" 0" Grid.ColumnSpan="2" Margin="361,10,367,188.8" Text="Add To Order"></TextBlock>
+        <Button Click ="SelectEntree" Grid.Row="0" Grid.Column=" 1" Margin="31,47,119,9.8" Content="Entrees"></Button>
+        <Button Click ="SelectDrink" Grid.Row="1" Grid.Column="0" Margin="123,10.2,32,32.6" Content="Drink"></Button>
+        <Button Click ="SelectSide" Grid.Row="1" Grid.Column="1" Margin="31,10.2,119,32.6" Content="Side"></Button>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row=" 0" Margin="368,10,290,0" Text="Add To Order" Height="109" Width="142" RenderTransformOrigin="0.444,0.515" Grid.ColumnSpan="2"/>
     </Grid>
+    
 </Page>

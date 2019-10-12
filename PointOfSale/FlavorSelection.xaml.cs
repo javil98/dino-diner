@@ -18,9 +18,9 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for Flavor.xaml
     /// </summary>
-    public partial class Flavor : Page
+    public partial class FlavorSelection : Page
     {
-        public Flavor()
+        public FlavorSelection()
         {
             InitializeComponent();
         }
