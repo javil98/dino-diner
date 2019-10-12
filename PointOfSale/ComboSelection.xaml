@@ -65,13 +65,13 @@
             </Button>
             <Button>
                 <Button.Background>
-                    <ImageBrush ImageSource="Assests/DinoDiner-07.png"></ImageBrush>
+                    <ImageBrush ImageSource="Assests/DinoDiner-07.png"/>
                 </Button.Background>
                 <DockPanel Height=" 170">
-                    <TextBlock DockPanel.Dock="Top">Veloci-Wrap Combo</TextBlock>
+                    <TextBlock DockPanel.Dock="Top"><Run Text="Veloci-Wrap Combo"/></TextBlock>
                 </DockPanel>
             </Button>
-        
+
         </WrapPanel>
         </Grid>    
    </Page>

@@ -20,17 +20,53 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Content="Sodasaurus" Grid.Column="0" Grid.Row="0"></Button>
-        <Button Content="TyrannoTea" Grid.Column="0" Grid.Row="1"></Button>
-        <Button Content="Jurrassic Java" Grid.Column="0" Grid.Row="2"></Button>
-        <Button Content="Water" Grid.Column="0" Grid.Row="3"></Button>
-        <Button Content="Small" Grid.Column="1" Grid.Row="0"></Button>
-        <Button Content="Medium" Grid.Column="1" Grid.Row="1"></Button>
-        <Button Content="Large" Grid.Column="1" Grid.Row="2"></Button>
-        <Button Content="Sweet/Decaf/ Flavor" Grid.Column="2" Grid.Row="0"></Button>
-        <Button Content="Add Lemon" Grid.Column="2" Grid.Row="1"></Button>
-        <Button Content="Hold Ice" Grid.Column="2" Grid.Row="2"></Button>
-        
-        
+        <Button Grid.Column="0" Grid.Row="0" Margin="0,23,90.2,83.8" Grid.RowSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="Assests/DinoDiner-14.png"></ImageBrush>
+            </Button.Background>
+
+            <DockPanel Height="210">
+                <TextBlock DockPanel.Dock="Top" RenderTransformOrigin="0.44,0.499">Sodasarus</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button Grid.Column="0" Grid.Row="1" Margin="0,34,90.2,83.6" Grid.RowSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="Assests/DinoDiner-12.png"></ImageBrush>
+            </Button.Background>
+
+            <DockPanel Height="210">
+                <TextBlock DockPanel.Dock="Top">Tyrannotea</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button Grid.Column="0" Grid.Row="2" Margin="0,29.2,90.2,94.6" Grid.RowSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource ="Assests/DinoDiner-13.png"></ImageBrush>
+            </Button.Background>
+
+            <DockPanel Height=" 200">
+                <TextBlock DockPanel.Dock ="Top">Jurrasic Java</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button Grid.Column="0" Grid.Row="3" Margin="0,22.4,90.2,2.6">
+            <Button.Background >
+                <ImageBrush  ImageSource ="Assests/DinoDiner-15.png"></ImageBrush>
+            </Button.Background>
+
+            <DockPanel Height=" 200">
+                <TextBlock DockPanel.Dock ="Top">Water</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button Content="Small" Grid.Row="0" Grid.ColumnSpan="2" Margin="267,51,75.6,61.8" Grid.RowSpan="2"/>
+        <Button Content="Medium" Grid.Row="1" Grid.ColumnSpan="2" Margin="267,66,75.6,46.6" Grid.RowSpan="2"/>
+        <Button Content="Large" Grid.Row="2" Grid.ColumnSpan="2" Margin="267,88.2,75.6,23.6" Grid.RowSpan="2"/>
+        <Button Content="Sweet/Decaf/ Flavor" Grid.Column="2" Grid.Row="0" Margin="0.4,51,82,61.8" Grid.RowSpan="2"></Button>
+        <Button Content="Add Lemon" Grid.Column="2" Grid.Row="1" Margin="0.4,66,82,46.6" Grid.RowSpan="2"></Button>
+        <Button Content="Hold Ice" Grid.Column="2" Grid.Row="2" Margin="0.4,88.2,82,23.6" Grid.RowSpan="2"></Button>
+        <TextBlock Text="Add To Order" Grid.Column="1" Margin="78.8,0,105.6,95"/>
+        <TextBlock Text=" Size" Grid.Column="1" Margin="78.8,38,154.6,58" RenderTransformOrigin="0.845,0.512"/>
+        <TextBlock Text="Drinks" Margin="67,0,161.2,87"></TextBlock>
+        <TextBlock Text=" Special" Grid.Column="2" Margin="67.4,35,146,61"/>
+
+
     </Grid>
 </Page>

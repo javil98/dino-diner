@@ -22,14 +22,15 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button  Grid.Column=" 0" Grid.Row= "0" Margin="20,20,20.2,20.4">Cherry</Button>
+        <Button  Grid.Column=" 0" Grid.Row= "0" Margin="20,70,20.2,120" Grid.RowSpan="2">Cherry</Button>
         <TextBlock Grid.Row="0" Margin="97.8,0,53.362,39.4" HorizontalAlignment="Center" Grid.Column="1">Add to Order</TextBlock>
-        <Button Grid.Column=" 1" Grid.Row=" 0" Margin="19.8,20,19.6,20.4" Grid.ColumnSpan="2">Chocolate</Button>
-        <Button Grid.Column="3" Grid.Row=" 0" Margin="20.4,20,20,20.4">Cola</Button>
-        <Button Grid.Column=" 0" Grid.Row=" 1" Margin="20,19.6,20.2,20">Lime</Button>
-        <Button Grid.Column=" 1" Grid.Row=" 1" Margin="19.8,19.6,19.6,20" Grid.ColumnSpan="2">Orange</Button>
-        <Button Grid.Column="3" Grid.Row=" 1" Margin="20.4,19.6,20,20">Root Beer</Button>
+        <Button Grid.Column=" 1" Grid.Row=" 0" Margin="19.8,70,19.6,120" Grid.ColumnSpan="2" Grid.RowSpan="2">Chocolate</Button>
+        <Button Grid.Column="3" Grid.Row=" 0" Margin="20.4,70,20,120" Grid.RowSpan="2">Cola</Button>
+        <Button Grid.Column=" 0" Grid.Row=" 1" Margin="20,39.6,20.2,0">Lime</Button>
+        <Button Grid.Column=" 1" Grid.Row=" 1" Margin="19.8,39.6,19.6,0" Grid.ColumnSpan="2">Orange</Button>
+        <Button Grid.Column="3" Grid.Row=" 1" Margin="20.4,39.6,20,0">Root Beer</Button>
         <Button Grid.Column=" 0" Grid.Row=" 2" Margin="20,20,20.2,19.6">Vanilla</Button>
+        <TextBlock Text=" Flavor" Margin="109.8,46,70.6,80.4" Grid.Column="1"/>
 
     </Grid>
 </Page>

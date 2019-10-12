@@ -10,9 +10,10 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="252*"/>
+            <ColumnDefinition Width="266*"/>
+            <ColumnDefinition Width="266*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -20,12 +21,47 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Content="Fryceritops" Grid.Column="0" Grid.Row="0" Margin="10,51,0.2,94.8" Grid.RowSpan="2"></Button>
-        <Button Content="Meteor Mac &amp; Cheese" Grid.Column="0" Grid.Row="1" Margin="10,56,0.2,91.6" Grid.RowSpan="2"></Button>
-        <Button Content="Mezzorella Sticks" Grid.Column="0" Grid.Row="2" Margin="10,46.2,0.2,105.6" Grid.RowSpan="2"></Button>
-        <Button Content="Triceritots" Grid.Column="0" Grid.Row="3" Margin="10,26.4,0.2,9.6"></Button>
-        <Button Content="Small" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Margin="81.8,51,185,61.8" Grid.RowSpan="2"></Button>
-        <Button Content="Medium" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="81.8,73,185,39.6" Grid.RowSpan="2"></Button>
-        <Button Content="Large" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="81.8,88.2,184,23.6" Grid.RowSpan="2"></Button>
+        <Button Grid.Column="1" Grid.Row="0" Margin="78.271,36,10.2,75.8" Grid.RowSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="Assests/DinoDiner-08.png"></ImageBrush>
+            </Button.Background>
+
+            <DockPanel Height="210">
+                <TextBlock DockPanel.Dock="Top" RenderTransformOrigin="0.44,0.499">Fryceritops</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="1" Margin="78.271,42,10.2,66.6" Grid.RowSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="Assests/DinoDiner-09.png"></ImageBrush>
+            </Button.Background>
+
+            <DockPanel Height="210">
+                <TextBlock DockPanel.Dock="Top" RenderTransformOrigin="0.44,0.499">Meteor Mac &amp; Cheese</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button  Grid.Column="1" Grid.Row="2" Margin="78.271,51.2,10.2,85.6" Grid.RowSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="Assests/DinoDiner-10.png"></ImageBrush>
+            </Button.Background>
+
+            <DockPanel Height="210">
+                <TextBlock DockPanel.Dock="Top" RenderTransformOrigin="0.44,0.499">Mezzorella Sticks</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="3" Margin="78.271,31.4,10.2,-0.4">
+            <Button.Background>
+                <ImageBrush ImageSource="Assests/DinoDiner-11.png"></ImageBrush>
+            </Button.Background>
+
+            <DockPanel Height="210">
+                <TextBlock DockPanel.Dock="Top" RenderTransformOrigin="0.44,0.499">Triceritots</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button Content="Small" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" Margin="193.8,76,116,36.8" Grid.RowSpan="2"></Button>
+        <Button Content="Medium" Grid.Column="2" Grid.ColumnSpan="2" Margin="193.8,92,116,20.6" Grid.RowSpan="2" Grid.Row="1"></Button>
+        <Button Content="Large" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="193.8,102.2,116,9.6" Grid.RowSpan="2"></Button>
+        <TextBlock Text=" Side" Margin="139.8,10,72.2,102.8" Grid.Column="1" Grid.RowSpan="2"/>
+        <TextBlock Text=" Add to Order" Grid.ColumnSpan="2" Grid.Column="2" Margin="82.8,0,182,0"></TextBlock>
+        <TextBlock Text=" Size" Grid.Column="3" Margin="26.4,53,202,59.8" Grid.RowSpan="2"></TextBlock>
     </Grid>
 </Page>
