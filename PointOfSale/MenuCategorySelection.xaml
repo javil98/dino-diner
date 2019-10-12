@@ -17,9 +17,11 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Click="SelectCombo" Grid.Row=" 0" Grid.Column="0">Combos</Button>
-        <Button Grid.Row="0" Grid.Column=" 1">Entrees</Button>
-        <Button Grid.Row="1" Grid.Column="0">Drinks</Button>
-        <Button Grid.Row="1" Grid.Column="1">Sides</Button>
+        
+        <Button Click="SelectCombo" Grid.Row="0" Grid.Column="0" Margin="123,47,32,9.8" Content="Combos"></Button>
+        <Button Grid.Row="0" Grid.Column=" 1" Margin="31,47,119,9.8" Content="Entrees"></Button>
+        <Button Grid.Row="1" Grid.Column="0" Margin="123,10.2,32,32.6">Drinks</Button>
+        <Button Grid.Row="1" Grid.Column="1" Margin="31,10.2,119,32.6">Sides</Button>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row=" 0" Grid.Column=" 0" Grid.ColumnSpan="2" Margin="361,10,367,188.8" Text="Add To Order"></TextBlock>
     </Grid>
 </Page>
