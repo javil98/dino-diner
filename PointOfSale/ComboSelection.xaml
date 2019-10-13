@@ -39,7 +39,6 @@
                     <TextBlock DockPanel.Dock="Top"><Run Text="Steakosaurus Burger Combo"/></TextBlock>
                 </DockPanel>
             </Button>
-            <TextBlock Text=" Add To Order" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Button Click=" SelectCombo" Margin="10">
                 <Button.Background>
                     <ImageBrush ImageSource=" Assests/DinoDiner-06.png"></ImageBrush>

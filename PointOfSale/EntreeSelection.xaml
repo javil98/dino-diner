@@ -16,12 +16,12 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="168*"/>
+            <RowDefinition Height="158*"/>
+            <RowDefinition Height="123*"/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Column="0" Grid.Row="0" Margin="37,39,11.2,120" Grid.RowSpan="2">
+        <Button Grid.Column="0" Grid.Row="0" Margin="38,33,23.2,10">
             <Button.Background>
                 <ImageBrush ImageSource ="Assests/DinoDiner-01.png"></ImageBrush>
             </Button.Background>
@@ -29,54 +29,54 @@
                 <TextBlock DockPanel.Dock="Top"> Brontowurst</TextBlock>
             </DockPanel>
         </Button>
-        <Button Grid.Column="1" Grid.Row="0" Margin="9.8,39,41.6,120" Grid.RowSpan="2">
+        <Button Grid.Column="1" Grid.Row="0" Margin="21.8,34,32.6,0">
             <Button.Background>
                 <ImageBrush ImageSource="Assests/DinoDiner-02.png"></ImageBrush>
             </Button.Background>
             <DockPanel Height="160">
-                <TextBlock DockPanel.Dock="Top">Dino-Nuggets Combo</TextBlock>
+                <TextBlock DockPanel.Dock="Top">Dino-Nuggets</TextBlock>
             </DockPanel>
         </Button>
-        <Button Grid.Column="0" Margin="36,35.4,12.2,131" Grid.Row="1" Grid.RowSpan="2">
+        <Button Grid.Column="0" Margin="38,10,23.2,9.4" Grid.Row="1">
             <Button.Background>
                 <ImageBrush ImageSource="Assests/DinoDiner-04.png"></ImageBrush>
             </Button.Background>
             <DockPanel Height=" 200">
-                <TextBlock DockPanel.Dock="Top">Pterdactyl Wings Combo</TextBlock>
+                <TextBlock DockPanel.Dock="Top">Pterodactyl Wings</TextBlock>
             </DockPanel>
         </Button>
-        <Button Grid.Column="1" Grid.Row="0" Margin="244.8,39,73,120" Grid.RowSpan="2" Grid.ColumnSpan="2">
+        <Button Grid.Column="2" Grid.Row="0" Margin="29.4,33,33,3">
             <Button.Background>
                 <ImageBrush ImageSource="Assests/DinoDiner-03.png"></ImageBrush>
             </Button.Background>
             <DockPanel Height="223">
-                <TextBlock DockPanel.Dock="Top">Prehistoric PB&amp;J Combo</TextBlock>
+                <TextBlock DockPanel.Dock="Top">Prehistoric PB&amp;J</TextBlock>
             </DockPanel>
         </Button>
-        <Button Margin="9.8,35.4,41.6,131" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+        <Button Margin="21.8,10,32.6,6.4" Grid.Column="1" Grid.Row="1">
             <Button.Background>
                 <ImageBrush ImageSource=" Assests/DinoDiner-05.png"></ImageBrush>
             </Button.Background>
             <DockPanel Height=" 150">
-                <TextBlock DockPanel.Dock="Top">Steakosaurus Burger Combo</TextBlock>
+                <TextBlock VerticalAlignment="Bottom" Margin="0,0,0,134.4">Steakosaurus Burger</TextBlock>
             </DockPanel>
         </Button>
-        <Button Grid.Column="1" Margin="244.8,35.4,76,131" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2">
+        <Button Grid.Column="2" Margin="29.4,10,33,6.4" Grid.Row="1">
             <Button.Background>
                 <ImageBrush ImageSource=" Assests/DinoDiner-06.png"></ImageBrush>
             </Button.Background>
             <DockPanel Height=" 160">
-                <TextBlock DockPanel.Dock="Top">T-Rex Burger Combo</TextBlock>
+                <TextBlock DockPanel.Dock="Top">T-Rex Burger</TextBlock>
             </DockPanel>
         </Button>
-        <Button Grid.Column="0" Grid.Row="2" Margin="36,24,11.2,0">
+        <Button Grid.Column="0" Grid.Row="2" Margin="38,10.6,23.2,9.6">
             <Button.Background>
                 <ImageBrush ImageSource="Assests/DinoDiner-07.png"/>
             </Button.Background>
             <DockPanel Height=" 170">
-                <TextBlock DockPanel.Dock="Top"><Run Text="Veloci-Wrap Combo"/></TextBlock>
+                <TextBlock DockPanel.Dock="Top"><Run Text="Veloci-Wrap"/></TextBlock>
             </DockPanel>
         </Button>
-        <TextBlock Text=" Add To Order" Margin="87.8,13,92.6,116.4" Grid.Column="1"/>
+        <TextBlock Text=" Add To Order" Margin="93.8,8,98.6,119" Grid.Column="1" HorizontalAlignment="Center" Width="74"/>
     </Grid>
 </Page>

@@ -8,29 +8,29 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Flavor">
 
-    <Grid Height="450" Margin="0,0,0,-0.4" VerticalAlignment="Bottom">
+    <Grid RenderTransformOrigin="0.508,0.525" Margin="0,0,-14,-0.4">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="267*"/>
-            <ColumnDefinition Width="222*"/>
-            <ColumnDefinition Width="44*"/>
-            <ColumnDefinition Width="266*"/>
+
+            <ColumnDefinition />
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="47*"/>
         </Grid.RowDefinitions>
 
-        <Button  Grid.Column=" 0" Grid.Row= "0" Margin="20,70,20.2,120" Grid.RowSpan="2">Cherry</Button>
-        <TextBlock Grid.Row="0" Margin="97.8,0,53.362,39.4" HorizontalAlignment="Center" Grid.Column="1">Add to Order</TextBlock>
-        <Button Grid.Column=" 1" Grid.Row=" 0" Margin="19.8,70,19.6,120" Grid.ColumnSpan="2" Grid.RowSpan="2">Chocolate</Button>
-        <Button Grid.Column="3" Grid.Row=" 0" Margin="20.4,70,20,120" Grid.RowSpan="2">Cola</Button>
-        <Button Grid.Column=" 0" Grid.Row=" 1" Margin="20,39.6,20.2,0">Lime</Button>
-        <Button Grid.Column=" 1" Grid.Row=" 1" Margin="19.8,39.6,19.6,0" Grid.ColumnSpan="2">Orange</Button>
-        <Button Grid.Column="3" Grid.Row=" 1" Margin="20.4,39.6,20,0">Root Beer</Button>
-        <Button Grid.Column=" 0" Grid.Row=" 2" Margin="20,20,20.2,19.6">Vanilla</Button>
-        <TextBlock Text=" Flavor" Margin="109.8,46,70.6,80.4" Grid.Column="1"/>
+        <Button  Grid.Column=" 0" Grid.Row= "0" Margin="47,51,50.2,10.2">Cherry</Button>
+        <TextBlock Grid.Row="0" Margin="108.8,0,93.2,38.2" HorizontalAlignment="Center" Grid.Column="1" >Add to Order</TextBlock>
+        <Button Grid.Column=" 1" Grid.Row=" 0" Margin="59.8,49,44.6,10.2">Chocolate</Button>
+        <Button Grid.Column="2" Grid.Row=" 0" Margin="41.4,49,71,10.2">Cola</Button>
+        <Button Grid.Column=" 0" Grid.Row=" 1" Margin="47,9.8,50.2,10.8">Lime</Button>
+        <Button Grid.Column=" 1" Grid.Row=" 1" Margin="59.8,9.8,44.2,10.8" >Orange</Button>
+        <Button Grid.Column="2" Grid.Row=" 1" Margin="41.4,9.8,71,10.8">Root Beer</Button>
+        <Button Grid.Column=" 0" Grid.Row=" 2" Margin="47,9.2,50.2,24.6">Vanilla</Button>
+        <TextBlock Text=" Flavor" Margin="123.8,26,112.2,99.2" Grid.Column="1" HorizontalAlignment="Center"/>
 
     </Grid>
 </Page>

@@ -17,8 +17,10 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        
 
-        <Button Click="SelectCombo" Grid.Row="0" Grid.Column="0" Margin="123,47,32,9.8" Content="Combos"></Button>
+ 
+            <Button Click="SelectCombo" Grid.Row="0" Grid.Column="0" Margin="123,47,32,9.8" Content="Combos"></Button>
         <Button Click ="SelectEntree" Grid.Row="0" Grid.Column=" 1" Margin="31,47,119,9.8" Content="Entrees"></Button>
         <Button Click ="SelectDrink" Grid.Row="1" Grid.Column="0" Margin="123,10.2,32,32.6" Content="Drink"></Button>
         <Button Click ="SelectSide" Grid.Row="1" Grid.Column="1" Margin="31,10.2,119,32.6" Content="Side"></Button>
