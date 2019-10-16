@@ -16,6 +16,26 @@ namespace DinoDiner.Menu
         public int NuggetCount = 6;
 
         /// <summary>
+        /// Gets and sets the description
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (NuggetCount > 6) special.Add($"{NuggetCount} - 6 extra nuggets");
+                return special.ToArray();
+                
+
+            }
+        }
+
+        /// <summary>
         /// Constructs an instance of DinoNuggets.
         /// </summary>
         public DinoNuggets()

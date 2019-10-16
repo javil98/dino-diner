@@ -20,6 +20,34 @@ namespace DinoDiner.Menu
         private bool mayo = true;
 
         /// <summary>
+        /// Gets and sets the description
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Gets and sets the special
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Bun");
+                if (!lettuce) special.Add("Hold Lettuce");
+                if (!tomato) special.Add("Hold Tomato");
+                if (!onion) special.Add("Hold Onion");
+                if (!pickle) special.Add("Hold Pickle");
+                if (!ketchup) special.Add("Hold Ketchup");
+                if (!mustard) special.Add("Hold Mustard");
+                if (!mayo) special.Add("Hold Mayo");
+                return special.ToArray();
+
+            }
+        }
+        /// <summary>
         /// Contructs an instance of TRexKingBurger.
         /// </summary>
         public TRexKingBurger()

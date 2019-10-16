@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// A class that represents a Drink, which is a used as a base class for the rest of the drinks in the project.
     /// </summary>
-    public abstract class Drink :IMenuItem
+    public abstract class Drink :IMenuItem, IOrderItem
     {
         /// <summary>
         /// Gets and sets the Size
@@ -45,6 +45,23 @@ namespace DinoDiner.Menu
         {
             Ice = false;
         }
+
+        /// <summary>
+        /// Gets the description of Drink.
+        /// </summary>
+        public virtual string Description { get; }
+
+        /// <summary>
+        /// Gets a list of the Specials.
+        /// </summary>
+        public virtual string[] Special { get; }
+
+     
+
+
+        
+
+
 
     }
 }

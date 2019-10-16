@@ -13,6 +13,31 @@ namespace DinoDiner.Menu
         private bool dressing = true;
         private bool lettuce = true;
         private bool cheese = true;
+
+        /// <summary>
+        /// Gets and sets the description
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Gets and sets the special
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!dressing) special.Add("Hold Bun");
+                if (!lettuce) special.Add("Hold Lettuce");
+                if (!cheese) special.Add("Hold Cheese");
+                
+                return special.ToArray();
+
+            }
+        }
         /// <summary>
         /// Constructs an instance of VelociWrap.
         /// </summary>

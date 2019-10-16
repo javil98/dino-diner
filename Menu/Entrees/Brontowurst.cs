@@ -16,6 +16,26 @@ namespace DinoDiner.Menu
         private bool peppers = true;
         private bool onions = true;
 
+        /// <summary>
+        /// Gets and sets the description
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Bun");
+                if (!peppers) special.Add("Hold Peppers");
+                if (!onions) special.Add("Hold Onion");
+                return special.ToArray();
+
+            }
+        }
 
         /// <summary>
         /// A constructor that creates an instance of a Brontowurst.

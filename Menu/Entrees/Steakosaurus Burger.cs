@@ -15,7 +15,27 @@ namespace DinoDiner.Menu
         private bool pickle = true;
         private bool mustard = true;
 
+        /// <summary>
+        /// Gets and sets the description
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
 
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Bun");
+                if (!ketchup) special.Add("Hold Ketchup");
+                if (!pickle) special.Add("Hold Pickle");
+                if (!mustard) special.Add("Hold Mustard");
+                return special.ToArray();
+
+            }
+        }
         /// <summary>
         /// Constructs an instance of SteakosaurusBurger
         /// </summary>
