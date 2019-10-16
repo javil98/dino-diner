@@ -96,5 +96,20 @@ namespace DinoDiner.Menu
             return sb.ToString();
         }
 
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
+        }
+
     }
 }
