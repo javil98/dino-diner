@@ -44,6 +44,8 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             Ice = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>

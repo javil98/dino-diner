@@ -34,12 +34,12 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the description of Drink.
         /// </summary>
-        public string Description { get; }
+        public virtual string Description { get; }
 
         /// <summary>
         /// Gets a list of the Specials.
         /// </summary>
-        public string[] Special { get; }
+        public virtual string[] Special { get; }
 
     }
 }

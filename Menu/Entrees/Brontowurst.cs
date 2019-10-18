@@ -3,6 +3,7 @@
  */
 
 using System.Collections.Generic;
+using System.ComponentModel;
 
 
 namespace DinoDiner.Menu
@@ -10,11 +11,23 @@ namespace DinoDiner.Menu
     /// <summary>
     /// A class that represents a Brontowurst.
     /// </summary>
-    public class Brontowurst : Entree
+    public class Brontowurst : Entree, INotifyPropertyChanged
     {
         private bool bun = true;
         private bool peppers = true;
         private bool onions = true;
+
+        /// <summary>
+        /// The PropertyChanged event handler; notifies
+        /// of changes to the Price, Description, and 
+        /// Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// Gets and sets the description
@@ -60,12 +73,16 @@ namespace DinoDiner.Menu
 
             }
         }
+
+
         /// <summary>
         /// Sets the value of bun  to false.
         /// </summary>
         public void HoldBun()
         {
             this.bun = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Sets the value of Peppers to false.
@@ -73,6 +90,8 @@ namespace DinoDiner.Menu
         public void HoldPeppers()
         {
             this.peppers = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Sets the value of onion to false.
@@ -80,6 +99,8 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.onions = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>

@@ -2,18 +2,31 @@
  * Author: Jose C. Avila
  */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class representing the DinoNuggets entree.
     /// </summary>
-    public class DinoNuggets : Entree
+    public class DinoNuggets : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// Keeps track of the number of nuggets for a DinoNugget object.
         /// </summary>
         public int NuggetCount = 6;
+
+        /// <summary>
+        /// The PropertyChanged event handler; notifies
+        /// of changes to the Price, Description, and 
+        /// Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// Gets and sets the description
@@ -59,6 +72,8 @@ namespace DinoDiner.Menu
             }
 
         }
+
+
         /// <summary>
         /// Modiefies the price, calories and the count of a DinoNugget object.
         /// </summary>
@@ -67,6 +82,8 @@ namespace DinoDiner.Menu
             this.Price += 0.25;
             this.Calories += 59;
             NuggetCount++;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>

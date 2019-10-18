@@ -2,18 +2,42 @@
  * Author: Jose C. Avila
  */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class that represents a Fryceritops which inherits from the Side class.
     /// </summary>
-    public class Fryceritops : Side
+    public class Fryceritops : Side, INotifyPropertyChanged
     {
         /// <summary>
         /// A variable that stores the size of the Side.
         /// </summary>
         protected Size size;
+        
+
+       
+        /// <summary>
+        /// The PropertyChanged event handler; notifies
+        /// of changes to the Price, Description, and 
+        /// Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Gets and sets the description
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+        
         /// <summary>
         /// A property that sets the size of the side and the price and calories based on the size of the instance. It gets the Size of the side.
         /// </summary>

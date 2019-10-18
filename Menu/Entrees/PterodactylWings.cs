@@ -2,14 +2,27 @@
  * Author: Jose C. Avila
  */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class representing PterodactylWings.
     /// </summary>
-    public class PterodactylWings : Entree
+    public class PterodactylWings : Entree, INotifyPropertyChanged
     {
+
+        /// <summary>
+        /// The PropertyChanged event handler; notifies
+        /// of changes to the Price, Description, and 
+        /// Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// Constructs an instance of PterodactlyWings.

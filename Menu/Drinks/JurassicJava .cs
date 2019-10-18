@@ -4,13 +4,14 @@
  */
 
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class that represents a JurrasicJava which inherits from the Drink base class.
     /// </summary>
-    public class JurassicJava : Drink
+    public class JurassicJava : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// Gets and sets Decaf
@@ -22,7 +23,26 @@ namespace DinoDiner.Menu
         /// </summary>
         public bool RoomForCream { get; set; } = false;
 
-       
+        /// <summary>
+        /// The PropertyChanged event handler; notifies
+        /// of changes to the Price, Description, and 
+        /// Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Gets and sets the description 
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
         private Size size;
         /// <summary>
         /// Gets and sets the Size
@@ -97,6 +117,8 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
+
+
         }
 
 

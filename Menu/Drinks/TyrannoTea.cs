@@ -5,13 +5,14 @@
 
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class that represents a TyrannoTea which inherits from the Drink base class.
     /// </summary>
-    public class TyrannoTea : Drink
+    public class TyrannoTea : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// Gets and sets Sweet
@@ -22,6 +23,28 @@ namespace DinoDiner.Menu
         /// Gets and sets Lemon
         /// </summary>
         public bool Lemon { get; set; } = false;
+
+        /// <summary>
+        /// The PropertyChanged event handler; notifies
+        /// of changes to the Price, Description, and 
+        /// Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Gets and set the description.
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        
 
         private Size size;
         /// <summary>
@@ -97,12 +120,15 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             Lemon = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         public void AddSweet()
         {
             Sweet = true;
             Calories = Calories * 2;
+           
         }
         /// <summary>
         /// Returns a string that contains the name of a the item.

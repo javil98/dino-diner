@@ -125,7 +125,7 @@ namespace DinoDiner.Menu
                 ingredients.Add(Side.ToString());
                 ingredients.AddRange(Side.Special);
                 ingredients.Add(Drink.ToString());
-                ingredients.Add(Drink.Special);
+                ingredients.AddRange(Drink.Special);
                 return ingredients.ToArray();
                 
             }

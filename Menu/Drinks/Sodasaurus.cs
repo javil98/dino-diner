@@ -4,6 +4,7 @@
  */
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -23,12 +24,46 @@ namespace DinoDiner.Menu
     /// <summary>
     /// A class that represents a Sodasaurus that inherits from the base class of Drink.
     /// </summary>
-    public class Sodasaurus : Drink
+    public class Sodasaurus : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// A property that gets and set the flavor of a Soda.
         /// </summary>
         public SodasaurusFlavor Flavor { get; set; } = SodasaurusFlavor.Cola;
+
+        /// <summary>
+        /// The PropertyChanged event handler; notifies
+        /// of changes to the Price, Description, and 
+        /// Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Gets and set the description.
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Gets and sets the special
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+
+            }
+        }
 
         private Size size;
         /// <summary>
@@ -94,21 +129,6 @@ namespace DinoDiner.Menu
             sb.Append(Flavor + " ");
             sb.Append("Sodasaurus");
             return sb.ToString();
-        }
-
-        public override string Description
-        {
-            get { return this.ToString(); }
-        }
-
-        public override string[] Special
-        {
-            get
-            {
-                List<string> special = new List<string>();
-                if (!Ice) special.Add("Hold Ice");
-                return special.ToArray();
-            }
         }
 
     }
