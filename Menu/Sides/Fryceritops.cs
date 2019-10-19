@@ -15,20 +15,6 @@ namespace DinoDiner.Menu
         /// A variable that stores the size of the Side.
         /// </summary>
         protected Size size;
-        
-
-       
-        /// <summary>
-        /// The PropertyChanged event handler; notifies
-        /// of changes to the Price, Description, and 
-        /// Special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         /// <summary>
         /// Gets and sets the description
@@ -51,12 +37,16 @@ namespace DinoDiner.Menu
                     case Size.Large:
                         this.Price = 1.95;
                         this.Calories = 480;
+
                         break;
                     case Size.Medium:
                         Price = 1.45;
                         Calories = 365;
                         break;
                 }
+                NotifyOfPropertyChange("Calories");
+                NotifyOfPropertyChange("Price");
+
             }
             get
             {
@@ -86,7 +76,7 @@ namespace DinoDiner.Menu
 
         public override string ToString()
         {
-            return (Size + " Friceritops");
+            return (Size + " Fryceritops");
         }
 
     }

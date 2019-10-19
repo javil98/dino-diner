@@ -18,18 +18,6 @@ namespace DinoDiner.Menu
         private bool onions = true;
 
         /// <summary>
-        /// The PropertyChanged event handler; notifies
-        /// of changes to the Price, Description, and 
-        /// Special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        /// <summary>
         /// Gets and sets the description
         /// </summary>
         public override string Description

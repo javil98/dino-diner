@@ -25,18 +25,6 @@ namespace DinoDiner.Menu
         public bool Lemon { get; set; } = false;
 
         /// <summary>
-        /// The PropertyChanged event handler; notifies
-        /// of changes to the Price, Description, and 
-        /// Special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        /// <summary>
         /// Gets and set the description.
         /// </summary>
         public override string Description
@@ -76,6 +64,8 @@ namespace DinoDiner.Menu
                         if (Sweet == false) { Calories = 8; }
                         break;
                 }
+                NotifyOfPropertyChange("Calories");
+                NotifyOfPropertyChange("Price");
             }
 
         }
@@ -128,6 +118,7 @@ namespace DinoDiner.Menu
         {
             Sweet = true;
             Calories = Calories * 2;
+            NotifyOfPropertyChange("Calories");
            
         }
         /// <summary>

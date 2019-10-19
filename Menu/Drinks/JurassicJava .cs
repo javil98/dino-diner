@@ -23,17 +23,6 @@ namespace DinoDiner.Menu
         /// </summary>
         public bool RoomForCream { get; set; } = false;
 
-        /// <summary>
-        /// The PropertyChanged event handler; notifies
-        /// of changes to the Price, Description, and 
-        /// Special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         /// <summary>
         /// Gets and sets the description 
@@ -71,9 +60,11 @@ namespace DinoDiner.Menu
                         Price = .59;
                         Calories = 2;
                         break;
-
-
                 }
+
+                NotifyOfPropertyChange("Calories");
+                NotifyOfPropertyChange("Price");
+
             }
 
         }

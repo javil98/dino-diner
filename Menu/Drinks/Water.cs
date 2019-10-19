@@ -16,18 +16,6 @@ namespace DinoDiner.Menu
         public bool Lemon { get; set; } = false;
 
         /// <summary>
-        /// The PropertyChanged event handler; notifies
-        /// of changes to the Price, Description, and 
-        /// Special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        /// <summary>
         /// Gets and set the description.
         /// </summary>
         public override string Description

@@ -4,14 +4,28 @@
  * Author: Jose C. Avila
  */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class that represents a CretaceousCombo that uses the IMenuItem interface.
     /// </summary>
-    public class CretaceousCombo :IMenuItem
+    public class CretaceousCombo :IMenuItem, INotifyPropertyChanged
     {
+
+        /// <summary>
+        /// The PropertyChanged event handler; notifies
+        /// of changes to the Price, Description, and 
+        /// Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         /// <summary>
         /// Get and sets the  entree that the combo has.
         /// </summary>

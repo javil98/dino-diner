@@ -18,20 +18,7 @@ namespace DinoDiner.Menu
         /// 
         protected Size size;
 
-       
-
-        /// <summary>
-        /// The PropertyChanged event handler; notifies
-        /// of changes to the Price, Description, and 
-        /// Special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
+      
         /// <summary>
         /// Gets and sets the description
         /// </summary>
@@ -61,6 +48,8 @@ namespace DinoDiner.Menu
                         break;
 
                 }
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Calories");
             }
             get
             {

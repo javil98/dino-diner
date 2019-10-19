@@ -108,6 +108,7 @@ namespace MenuTest.Entrees
         {
             PrehistoricPBJ pbj = new PrehistoricPBJ();
             pbj.HoldJelly();
+            pbj.HoldPeanutButter();
             Assert.Collection<string>(pbj.Special,
                 item =>
                 {
@@ -115,7 +116,7 @@ namespace MenuTest.Entrees
                 },
                 item =>
                 {
-                     Assert.Equal("Hold Hold Jelly", item);
+                     Assert.Equal("Hold Jelly", item);
                 }
             ) ;
         }

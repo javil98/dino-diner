@@ -4,6 +4,7 @@
  * Modified by: Jose C. Avila
  */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -11,8 +12,20 @@ namespace DinoDiner.Menu
     /// <summary>
     /// A class that represents a Drink, which is a used as a base class for the rest of the drinks in the project.
     /// </summary>
-    public abstract class Drink :IMenuItem, IOrderItem
+    public abstract class Drink :IMenuItem, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// The PropertyChanged event handler; notifies
+        /// of changes to the Price, Description, and 
+        /// Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         /// <summary>
         /// Gets and sets the Size
         /// </summary>

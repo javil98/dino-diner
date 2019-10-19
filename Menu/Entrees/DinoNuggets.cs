@@ -17,18 +17,6 @@ namespace DinoDiner.Menu
         public int NuggetCount = 6;
 
         /// <summary>
-        /// The PropertyChanged event handler; notifies
-        /// of changes to the Price, Description, and 
-        /// Special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        /// <summary>
         /// Gets and sets the description
         /// </summary>
         public override string Description
@@ -41,7 +29,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (NuggetCount > 6) special.Add($"{NuggetCount} - 6 extra nuggets");
+                if (NuggetCount > 6) special.Add($"{NuggetCount} - 6 extra nugget(s)");
                 return special.ToArray();
                 
 
@@ -55,6 +43,8 @@ namespace DinoDiner.Menu
         {
             this.Price = 4.25;
             this.Calories = 6 * 59;
+            NotifyOfPropertyChange("Calories");
+            NotifyOfPropertyChange("Price");
         }
         /// <summary>
         /// Gets the list of ingredients of a DinoNuggets object.
