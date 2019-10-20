@@ -25,6 +25,21 @@ namespace DinoDiner.Menu
         public bool Lemon { get; set; } = false;
 
         /// <summary>
+        /// Gets the special
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                if (Lemon) special.Add("Add Lemon");
+                return special.ToArray();
+
+            }
+        }
+
+        /// <summary>
         /// Gets and set the description.
         /// </summary>
         public override string Description

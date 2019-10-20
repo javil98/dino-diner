@@ -32,6 +32,20 @@ namespace DinoDiner.Menu
             get { return this.ToString(); }
         }
 
+        /// <summary>
+        /// Gets and sets the specials
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (Ice) special.Add("Add Ice");
+                return special.ToArray();
+
+            }
+        }
+
         private Size size;
         /// <summary>
         /// Gets and sets the Size
@@ -108,7 +122,6 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
-
 
         }
 

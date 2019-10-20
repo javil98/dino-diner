@@ -164,11 +164,67 @@ namespace MenuTest.Drinks
             Assert.Equal<int>(3, soda.Ingredients.Count);
         }
 
-        
+        [Fact]
+        public void SizeToSmallNotifyOfSpecialPropertyChanged()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.PropertyChanged(soda, "Price", () =>
+            {
+                soda.Size = Size.Medium;
+                soda.Size = Size.Small;
+            });
 
 
+            Assert.PropertyChanged(soda, "Calories", () =>
+            {
+                soda.Size = Size.Medium;
+                soda.Size = Size.Small;
+            });
+        }
 
+        [Fact]
+        public void SizeToMediumNotifyOfSpecialPropertyChanged()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.PropertyChanged(soda, "Price", () =>
+            {
+                soda.Size = Size.Medium;
+            });
 
+            Assert.PropertyChanged(soda, "Calories", () =>
+            {
+                soda.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void SizeToLargeNotifyOfSpecialPropertyChanged()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.PropertyChanged(soda, "Price", () =>
+            {
+                soda.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(soda, "Calories", () =>
+            {
+                soda.Size = Size.Large;
+            });
+        }
+
+        [Fact]
+        public void SpecialShouldHoldIce()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.HoldIce();
+            Assert.Collection<string>(soda.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Ice", item);
+                }
+
+            );
+        }
     }
 }
 

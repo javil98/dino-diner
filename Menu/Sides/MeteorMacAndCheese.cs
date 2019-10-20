@@ -27,6 +27,18 @@ namespace DinoDiner.Menu
             get { return this.ToString(); }
         }
 
+        /// <summary>
+        /// Gets and sets the special
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
+        }
+
 
         /// <summary>
         /// A property that sets the size of the side and the price and calories based on the size of the instance. It gets the Size of the side.

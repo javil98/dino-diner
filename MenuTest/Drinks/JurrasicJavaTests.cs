@@ -114,7 +114,67 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Coffee", java.Ingredients);
             Assert.Equal<int>(2, java.Ingredients.Count);
         }
+        [Fact]
+        public void SizeToSmallNotifyOfSpecialPropertyChanged()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Price", () =>
+            {
+                java.Size = Size.Medium;
+                java.Size = Size.Small;
+            });
 
+            
+            Assert.PropertyChanged(java, "Calories", () =>
+            {
+                java.Size = Size.Medium;
+                java.Size = Size.Small;
+            });
+        }
 
+        [Fact]
+        public void SizeToMediumNotifyOfSpecialPropertyChanged()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Price", () =>
+            {
+                java.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(java, "Calories", () =>
+            {
+                java.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void SizeToLargeNotifyOfSpecialPropertyChanged()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Price", () =>
+            {
+                java.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(java, "Calories", () =>
+            {
+                java.Size = Size.Large;
+            });
+        }
+
+        [Fact]
+        public void SpecialShouldHoldIce()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.Collection<string>(java.Special,
+                item =>
+                {
+                    Assert.Equal("Add Ice", item);
+                }
+
+            );
+        }
     }
+
+
 }
