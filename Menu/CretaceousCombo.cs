@@ -57,6 +57,7 @@ namespace DinoDiner.Menu
                 this.size = value;
                 this.Drink.Size = value;
                 this.Side.Size = value;
+                NotifyOfPropertyChange("Size");
             }
         }
         

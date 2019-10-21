@@ -8,7 +8,8 @@ namespace MenuTest
 {
     public class MenuItemNamesTest
     {
-        #region Entrees
+        
+#region Entrees
 
         [Fact]
         public void BrontowurstToStringShouldGiveName()
@@ -63,7 +64,6 @@ namespace MenuTest
         }
 
         #endregion
-
         #region Sides
 
         [Theory]

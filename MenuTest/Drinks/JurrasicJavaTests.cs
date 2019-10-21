@@ -38,6 +38,13 @@ namespace MenuTest.Drinks
             Assert.False(java.Ice);
         }
 
+        [Fact]
+        public void ShouldHaveDefaultCream()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.False(java.RoomForCream);
+        }
+
         //Correct price and size when changing the size.
         [Fact]
        
@@ -130,6 +137,14 @@ namespace MenuTest.Drinks
                 java.Size = Size.Medium;
                 java.Size = Size.Small;
             });
+
+            Assert.PropertyChanged(java, "Size", () =>
+            {
+                java.Size = Size.Medium;
+                java.Size = Size.Small;
+            });
+
+          
         }
 
         [Fact]
@@ -145,6 +160,13 @@ namespace MenuTest.Drinks
             {
                 java.Size = Size.Medium;
             });
+
+            Assert.PropertyChanged(java, "Size", () =>
+            {
+                java.Size = Size.Medium;
+            });
+
+        
         }
 
         [Fact]
@@ -160,12 +182,19 @@ namespace MenuTest.Drinks
             {
                 java.Size = Size.Large;
             });
+
+            Assert.PropertyChanged(java, "Size", () =>
+            {
+                java.Size = Size.Large;
+            });
+
         }
 
         [Fact]
-        public void SpecialShouldHoldIce()
+        public void SpecialShouldAddIce()
         {
             JurassicJava java = new JurassicJava();
+            java.AddIce();
             Assert.Collection<string>(java.Special,
                 item =>
                 {

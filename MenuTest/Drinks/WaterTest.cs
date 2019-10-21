@@ -33,6 +33,13 @@ namespace MenuTest.Drinks
             Assert.True(water.Ice);
         }
 
+        [Fact]
+        public void ShouldHaveDefaultLemon()
+        {
+            Water water = new Water();
+            Assert.False(water.Lemon);
+        }
+
         //Correct price and size when changing the size.
         [Fact]
 
@@ -124,45 +131,33 @@ namespace MenuTest.Drinks
         public void SizeToSmallNotifyOfSpecialPropertyChanged()
         {
             Water water = new Water();
-            Assert.PropertyChanged(water, "Price", () =>
+            Assert.PropertyChanged(water, "Size", () =>
             {
                 water.Size = Size.Medium;
                 water.Size = Size.Small;
             });
 
+          
 
-            Assert.PropertyChanged(water, "Calories", () =>
-            {
-                water.Size = Size.Medium;
-                water.Size = Size.Small;
-            });
         }
 
         [Fact]
         public void SizeToMediumNotifyOfSpecialPropertyChanged()
         {
             Water water = new Water();
-            Assert.PropertyChanged(water, "Price", () =>
+            Assert.PropertyChanged(water, "Size", () =>
             {
                 water.Size = Size.Medium;
             });
 
-            Assert.PropertyChanged(water, "Calories", () =>
-            {
-                water.Size = Size.Medium;
-            });
+          
         }
 
         [Fact]
         public void SizeToLargeNotifyOfSpecialPropertyChanged()
         {
             Water water = new Water();
-            Assert.PropertyChanged(water, "Price", () =>
-            {
-                water.Size = Size.Large;
-            });
-
-            Assert.PropertyChanged(water, "Calories", () =>
+            Assert.PropertyChanged(water, "Size", () =>
             {
                 water.Size = Size.Large;
             });

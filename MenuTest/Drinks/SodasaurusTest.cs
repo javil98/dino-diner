@@ -180,6 +180,15 @@ namespace MenuTest.Drinks
                 soda.Size = Size.Medium;
                 soda.Size = Size.Small;
             });
+
+            Assert.PropertyChanged(soda, "Calories", () =>
+            {
+                soda.Size = Size.Medium;
+                soda.Size = Size.Small;
+            });
+
+          
+
         }
 
         [Fact]
@@ -195,6 +204,13 @@ namespace MenuTest.Drinks
             {
                 soda.Size = Size.Medium;
             });
+
+            Assert.PropertyChanged(soda, "Size", () =>
+            {
+                soda.Size = Size.Medium;
+            });
+
+            
         }
 
         [Fact]
@@ -210,6 +226,13 @@ namespace MenuTest.Drinks
             {
                 soda.Size = Size.Large;
             });
+
+            Assert.PropertyChanged(soda, "Size", () =>
+            {
+                soda.Size = Size.Large;
+            });
+
+            
         }
 
         [Fact]

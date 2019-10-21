@@ -38,6 +38,22 @@ namespace MenuTest.Drinks
             Assert.True(tea.Ice);
         }
 
+        [Fact]
+        public void ShouldHaveDefaultLemon()
+        {
+            TyrannoTea tea = new TyrannoTea();
+            Assert.False(tea.Lemon);
+        }
+
+        [Fact]
+        public void ShouldHaveDefaultSweet()
+        {
+            TyrannoTea tea = new TyrannoTea();
+            Assert.False(tea.Sweet);
+        }
+
+
+
         //Correct price and size when changing the size.
         [Fact]
        
@@ -211,6 +227,16 @@ namespace MenuTest.Drinks
         }
 
         [Fact]
+        public void AddSweetNotifyOfSpecialPropertyChanged()
+        {
+            TyrannoTea tea = new TyrannoTea();
+            Assert.PropertyChanged(tea, "Calories", () =>
+            {
+                tea.AddSweet();
+            });
+        }
+
+        [Fact]
         public void SizeToSmallNotifyOfSpecialPropertyChanged()
         {
             TyrannoTea tea = new TyrannoTea();
@@ -226,7 +252,15 @@ namespace MenuTest.Drinks
                 tea.Size = Size.Medium;
                 tea.Size = Size.Small;
             });
+
+            Assert.PropertyChanged(tea, "Size", () =>
+            {
+                tea.Size = Size.Medium;
+                tea.Size = Size.Small;
+            });
         }
+
+       
 
         [Fact]
         public void SizeToMediumNotifyOfSpecialPropertyChanged()
@@ -241,6 +275,13 @@ namespace MenuTest.Drinks
             {
                 tea.Size = Size.Medium;
             });
+
+            Assert.PropertyChanged(tea, "Size", () =>
+            {
+                tea.Size = Size.Medium;
+            });
+
+           
         }
 
         [Fact]
@@ -256,6 +297,13 @@ namespace MenuTest.Drinks
             {
                 tea.Size = Size.Large;
             });
+
+            Assert.PropertyChanged(tea, "Size", () =>
+            {
+                tea.Size = Size.Large;
+            });
+
+            
         }
 
         [Fact]

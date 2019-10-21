@@ -15,6 +15,24 @@ namespace DinoDiner.Menu
         /// </summary>
         public bool Lemon { get; set; } = false;
 
+        private Size size;
+        /// <summary>
+        /// Gets the siz, and sets the calories and Price depening on the set size.
+        /// </summary>
+        public override Size Size
+        {
+            get
+            {
+                return size;
+            }
+
+            set
+            {
+                size = value;
+                NotifyOfPropertyChange("Size");
+            }
+        }
+
         /// <summary>
         /// Gets and set the description.
         /// </summary>

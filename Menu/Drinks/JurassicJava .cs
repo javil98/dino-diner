@@ -78,6 +78,7 @@ namespace DinoDiner.Menu
 
                 NotifyOfPropertyChange("Calories");
                 NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Size");
 
             }
 
@@ -122,7 +123,11 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
+        }
 
+        public void AddIce()
+        {
+            Ice = true;
         }
 
 
