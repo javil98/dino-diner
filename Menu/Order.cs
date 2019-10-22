@@ -9,11 +9,11 @@ namespace DinoDiner.Menu
     {
         private ObservableCollection<IOrderItem> items;
 
-        public ObservableCollection<IOrderItem> Items
+        /*public ObservableCollection<IOrderItem> Items
         {
             get
             {
-                return items;
+               // return items;
             }
 
             set
@@ -21,7 +21,11 @@ namespace DinoDiner.Menu
                 items = new ObservableCollection<IOrderItem>();
                 items = value;
             }
-        }
+        }*/
+
+        public ObservableCollection<IOrderItem> Items { get; set; } = new ObservableCollection<IOrderItem>();
+
+
 
         private double subTotalCost;
         public double SubTotalCost

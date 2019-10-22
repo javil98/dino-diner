@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -27,7 +28,7 @@ namespace PointOfSale
 
         public void SelectCombo(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new ComboSelection());
+           
         }
 
         public void SelectEntree(object sender, RoutedEventArgs args)
