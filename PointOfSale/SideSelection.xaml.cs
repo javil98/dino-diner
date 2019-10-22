@@ -52,7 +52,7 @@ namespace PointOfSale
             BtnAddLarge.IsEnabled = false;
         }
 
-        public void AddFryceritops(object sender, RoutedEventArgs args)
+        /*public void AddFryceritops(object sender, RoutedEventArgs args)
         {
             Order order = (Order)DataContext;
             order.Items.Add(new Fryceritops());
@@ -63,6 +63,6 @@ namespace PointOfSale
             BtnAddSmall.IsEnabled = false;
             BtnAddMedium.IsEnabled = false;
             BtnAddLarge.IsEnabled = false;
-        }
+        }*/
     }
 }
