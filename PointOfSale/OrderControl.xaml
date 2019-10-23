@@ -14,7 +14,7 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <TextBox Text="Order" Grid.Row=" 0"/>
-        <ListBox Grid.Row="1">
+        <ListBox Name ="OrderItems" Grid.Row="1" SelectionChanged="OnSelectionChanged">
             ItemsSource="{Binding Path = Items}"
             <ListBox.ItemTemplate>
                 <DataTemplate>

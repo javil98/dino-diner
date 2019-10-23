@@ -21,48 +21,81 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
+        public Side Side { get; set; } = null;
         public SideSelection()
         {
             InitializeComponent();
         }
 
-        public void AddFryceritops(object sender, RoutedEventArgs args)
+        public SideSelection(Side side)
         {
-            Order order = (Order)DataContext;
-            order.Items.Add(new Fryceritops());
-            BtnAddFryceritops.IsEnabled = false;
+            InitializeComponent();
+            Side = side;
+        }
+
+        private void SelectSide(Side side)
+        {
+            if (DataContext is Order order)
+            {
+                order.Items.Add(new Fryceritops());
+                this.Side = side;
+            }
+            tnAddFryceritops.IsEnabled = false;
             BtnAddMetorMacAndCheese.IsEnabled = false;
             BtnAddMezzorellaSticks.IsEnabled = false;
             BtnAddTriceritots.IsEnabled = false;
             BtnAddSmall.IsEnabled = false;
             BtnAddMedium.IsEnabled = false;
             BtnAddLarge.IsEnabled = false;
+        }
+
+        public void AddFryceritops(object sender, RoutedEventArgs args)
+        {
+            SelectSide(new Fryceritops());
+
         }
 
         public void AddMezzorellaSticks(object sender, RoutedEventArgs args)
         {
-            Order order = (Order)DataContext;
-            order.Items.Add(new Fryceritops());
-            BtnAddFryceritops.IsEnabled = false;
-            BtnAddMetorMacAndCheese.IsEnabled = false;
-            BtnAddMezzorellaSticks.IsEnabled = false;
-            BtnAddTriceritots.IsEnabled = false;
-            BtnAddSmall.IsEnabled = false;
-            BtnAddMedium.IsEnabled = false;
-            BtnAddLarge.IsEnabled = false;
+
+            SelectSide(new MezzorellaSticks());
+
         }
 
-        /*public void AddFryceritops(object sender, RoutedEventArgs args)
+        public void AddMeteorMacAnCheese(object sender, RoutedEventArgs args)
         {
-            Order order = (Order)DataContext;
-            order.Items.Add(new Fryceritops());
-            BtnAddFryceritops.IsEnabled = false;
-            BtnAddMetorMacAndCheese.IsEnabled = false;
-            BtnAddMezzorellaSticks.IsEnabled = false;
-            BtnAddTriceritots.IsEnabled = false;
-            BtnAddSmall.IsEnabled = false;
-            BtnAddMedium.IsEnabled = false;
-            BtnAddLarge.IsEnabled = false;
-        }*/
+            SelectSide(new MeteorMacAndCheese());
+
+        }
+
+        public void AddTriceritots(object sender, RoutedEventArgs args)
+        {
+            SelectSide(new Triceritots());
+
+        }
+
+        public void SelectSize(DinoDiner.Menu.Size size)
+        {
+            if(Side!=null)
+            this.Side.Size = size;
+        }
+
+        protected void OnMakeSmall(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Small);
+        }
+        protected void OnMakeMedium(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Medium);
+        }
+
+        protected void OnMakeLarge(object sender, RoutedEventArgs args)
+        { 
+            SelectSize(DinoDiner.Menu.Size.Large);
+        }
+
+
+
+
     }
 }
