@@ -10,29 +10,38 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="55"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <TextBox Text="Order" Grid.Row=" 0"/>
-        <ListBox Name ="OrderItems" Grid.Row="1" SelectionChanged="OnSelectionChanged">
-            ItemsSource="{Binding Path = Items}"
+        <ListBox Name ="OrderItems" Grid.Row="1" SelectionChanged="OnSelectionChanged" ItemsSource="{Binding Path = Items, UpdateSourceTrigger =PropertyChanged}" IsSynchronizedWithCurrentItem="True">
+            
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
+                    <StackPanel Width="190">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="15"/>
+                            </Grid.ColumnDefinitions>
+                        
                         <TextBlock Text="{Binding Path = Description}"/>
-                        <ListBox ItemsSource="{Binding Path = Ingredients}"/>
+                        <Button Click="OnRemoveItem" Background ="Red" Foreground="White" Grid.Column="1" >X</Button>
+                        </Grid>
+                        <ListBox ItemsSource="{Binding Path = Special}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
             
         <Border Grid.Row="2">
-            <StackPanel Orientation="Horizontal">
-                <TextBox Text ="Price:"/>
-                <TextBox Text="$______"/>
+            <StackPanel Orientation="Vertical">
+                <TextBox Text ="Subtotal: $ "/>
+                <TextBox Text="Sales Tax Cost: $"/>
+                <TextBox Text="Total Cost: $"/>
             </StackPanel>
         </Border>
-        <TextBox Text="Buttons Go Here" Grid.Row="3"/>
+        <TextBox Text="Buttons Go Here" Grid.Row="3" TextChanged="TextBox_TextChanged"/>
 
     </Grid>
 </UserControl>

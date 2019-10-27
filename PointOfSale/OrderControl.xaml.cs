@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu;
+using System.ComponentModel;
 
 namespace PointOfSale
 {
@@ -36,6 +37,30 @@ namespace PointOfSale
             }
         }
 
+        private void MountItemListener()
+        {
+            if(DataContext is Order order)
+            {
+                //OrderItems.CollectionChanged += OnCollectionChnaged;
+            }
+        }
+
+        private void OnRemoveItem(object sender, RoutedEventArgs args)
+        {
+            if(DataContext is Order order)
+            {
+                if(sender is FrameworkElement element)
+                if (element.DataContext is IOrderItem item)
+                    order.Items.Remove(item);
+            }
+        }
+
+       
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 
 }

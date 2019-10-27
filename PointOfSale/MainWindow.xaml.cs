@@ -24,7 +24,7 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            OrderUI.NavigationService = 
+            OrderControl.NavigationService = OrderUI.NavigationService; 
         }
 
         public void OnLoadCompleted(object sender, NavigationEventArgs args)
@@ -42,14 +42,6 @@ namespace PointOfSale
             FrameworkElement content = OrderUI.Content as FrameworkElement;
             if (content == null) return;
             content.DataContext = OrderUI.DataContext;
-        }
-
-        private void BindDataContextToPage()
-        {
-           if( OrderUI.DataContext is FrameworkElement element)
-            {
-                element.DataContext = OrderUI.DataContext;
-            }
         }
 
     }

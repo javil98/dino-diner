@@ -50,19 +50,33 @@ namespace DinoDiner.Menu
                 size = value;
                 switch (size)
                 {
+                    case Size.Small:
+                        this.Price = 0.99;
+                        this.Calories = 420;
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Description");
+                        break;
                     case Size.Large:
                         this.Price = 1.95;
                         this.Calories = 520;
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Medium:
                         this.Price = 1.45;
                         this.Calories = 490;
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Description");
                         break;
 
                 }
-                NotifyOfPropertyChange("Price");
-                NotifyOfPropertyChange("Calories");
-                NotifyOfPropertyChange("Size");
+                
             }
             get
             {

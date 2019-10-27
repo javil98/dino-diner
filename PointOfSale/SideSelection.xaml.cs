@@ -21,7 +21,7 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
-        public Side Side { get; set; } = null;
+        public Side Side { get; set; }
         public SideSelection()
         {
             InitializeComponent();
@@ -37,16 +37,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Items.Add(new Fryceritops());
+                order.Items.Add(side);
                 this.Side = side;
             }
-            tnAddFryceritops.IsEnabled = false;
-            BtnAddMetorMacAndCheese.IsEnabled = false;
-            BtnAddMezzorellaSticks.IsEnabled = false;
-            BtnAddTriceritots.IsEnabled = false;
-            BtnAddSmall.IsEnabled = false;
-            BtnAddMedium.IsEnabled = false;
-            BtnAddLarge.IsEnabled = false;
         }
 
         public void AddFryceritops(object sender, RoutedEventArgs args)

@@ -49,17 +49,29 @@ namespace DinoDiner.Menu
                     case Size.Large:
                         this.Price = 1.95;
                         this.Calories = 480;
-
+                        NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Medium:
                         Price = 1.45;
                         Calories = 365;
+                        NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Description");
+                        break;
+                    case Size.Small:
+                        Price = 0.99;
+                        Calories = 222;
+                        NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Description");
                         break;
                 }
-                NotifyOfPropertyChange("Calories");
-                NotifyOfPropertyChange("Price");
-                NotifyOfPropertyChange("Size");
-
+                
             }
             get
             {

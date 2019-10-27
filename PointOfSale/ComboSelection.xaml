@@ -20,7 +20,7 @@
                     <ImageBrush ImageSource ="Assests/DinoDiner-01.png"></ImageBrush>
                 </Button.Background>
                 <DockPanel Height=" 150">
-                    <TextBlock DockPanel.Dock="Top"> Brontowurst Combo</TextBlock>
+                    <TextBlock  Margin="0,-12,0,-1.6" Width="176" TextAlignment="Center">Brontowurst Combo</TextBlock>
                 </DockPanel>
             </Button>
             <Button Click=" SelectCombo" Margin="10">
@@ -28,7 +28,7 @@
                     <ImageBrush ImageSource="Assests/DinoDiner-02.png"></ImageBrush>
                 </Button.Background>
                 <DockPanel Height="160">
-                    <TextBlock DockPanel.Dock="Top">Dino-Nuggets Combo</TextBlock>
+                    <TextBlock  Width="184" Margin="0,-13,0,-8" TextAlignment="Center" Text="Dino-Nuggets Combo"/>
                 </DockPanel>
             </Button>
             <Button Click="SelectCombo" Margin="10">
@@ -36,7 +36,7 @@
                     <ImageBrush ImageSource=" Assests/DinoDiner-05.png"/>
                 </Button.Background>
                 <DockPanel Height=" 150">
-                    <TextBlock DockPanel.Dock="Top"><Run Text="Steakosaurus Burger Combo"/></TextBlock>
+                    <TextBlock  Width="193" Margin="0,-15,0,-15.6" TextAlignment="Center" Text="Steakosaurus Burger Combo"/>
                 </DockPanel>
             </Button>
             <Button Click=" SelectCombo" Margin="10">
@@ -44,7 +44,7 @@
                     <ImageBrush ImageSource=" Assests/DinoDiner-06.png"></ImageBrush>
                 </Button.Background>
                 <DockPanel Height=" 160">
-                    <TextBlock DockPanel.Dock="Top">T-Rex Burger Combo</TextBlock>
+                    <TextBlock DockPanel.Dock="Top" Width="170" Height="168">T-Rex Burger Combo</TextBlock>
                 </DockPanel>
             </Button>
             <Button Click="SelectCombo" Margin="10">
