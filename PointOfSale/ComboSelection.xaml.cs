@@ -25,6 +25,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// When any of the combo buttons are clicked, it will send the user to the CustomizeCombo page.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void SelectCombo(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new CustomizeCombo());

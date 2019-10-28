@@ -24,9 +24,9 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="15"/>
                             </Grid.ColumnDefinitions>
-                        
-                        <TextBlock Text="{Binding Path = Description}"/>
-                        <Button Click="OnRemoveItem" Background ="Red" Foreground="White" Grid.Column="1" >X</Button>
+
+                            <TextBlock Text="{Binding Path = Description}"/>
+                            <Button Click="OnRemoveItem" Background ="Red" Foreground="White" Grid.Column="1" >X</Button>
                         </Grid>
                         <ListBox ItemsSource="{Binding Path = Special}"/>
                     </StackPanel>
@@ -37,6 +37,7 @@
         <Border Grid.Row="2">
             <StackPanel Orientation="Vertical">
                 <TextBox Text ="Subtotal: $ "/>
+               
                 <TextBox Text="Sales Tax Cost: $"/>
                 <TextBox Text="Total Cost: $"/>
             </StackPanel>

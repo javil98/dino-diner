@@ -22,15 +22,15 @@
             <RowDefinition Height="47*"/>
         </Grid.RowDefinitions>
 
-        <Button  Grid.Column=" 0" Grid.Row= "0" Margin="47,51,50.2,10.2">Cherry</Button>
-        <TextBlock Grid.Row="0" Margin="108.8,0,93.2,38.2" HorizontalAlignment="Center" Grid.Column="1" >Add to Order</TextBlock>
-        <Button Grid.Column=" 1" Grid.Row=" 0" Margin="59.8,49,44.6,10.2">Chocolate</Button>
-        <Button Grid.Column="2" Grid.Row=" 0" Margin="41.4,49,71,10.2">Cola</Button>
-        <Button Grid.Column=" 0" Grid.Row=" 1" Margin="47,9.8,50.2,10.8">Lime</Button>
-        <Button Grid.Column=" 1" Grid.Row=" 1" Margin="59.8,9.8,44.2,10.8" >Orange</Button>
-        <Button Grid.Column="2" Grid.Row=" 1" Margin="41.4,9.8,71,10.8">Root Beer</Button>
-        <Button Grid.Column=" 0" Grid.Row=" 2" Margin="47,9.2,50.2,24.6">Vanilla</Button>
-        <TextBlock Text=" Flavor" Margin="123.8,26,112.2,99.2" Grid.Column="1" HorizontalAlignment="Center"/>
+        <Button  Grid.Column=" 0" Grid.Row= "0" Margin="47,51,50.2,10.2" Name="BtnAddCherry" Click="OnMakeCherry">Cherry</Button>
+        <TextBlock Grid.Row="0" Margin="19.8,0,0.2,38.2" HorizontalAlignment="Center" Grid.Column="1" Width="252" TextAlignment="Center" >Add to Order</TextBlock>
+        <Button Grid.Column=" 1" Grid.Row=" 0" Margin="59.8,49,44.6,10.2" Name="BtnAddChocolate" Click="OnMakeChocolate">Chocolate</Button>
+        <Button Grid.Column="2" Grid.Row=" 0" Margin="41.4,49,71,10.2" Name="BtnAddCola" Click="OnMakeCola">Cola</Button>
+        <Button Grid.Column=" 0" Grid.Row=" 1" Margin="47,9.8,50.2,10.8" Name="BtnAddLime" Click="OnMakeLime">Lime</Button>
+        <Button Grid.Column=" 1" Grid.Row=" 1" Margin="59.8,9.8,44.2,10.8" Name="BtnAddOrange" Click="OnMakeOrange" >Orange</Button>
+        <Button Grid.Column="2" Grid.Row=" 1" Margin="41.4,9.8,71,10.8" Name="BtnAddRootBeer" Click="OnMakeRootBeer">Root Beer</Button>
+        <Button Grid.Column=" 0" Grid.Row=" 2" Margin="47,9.2,50.2,24.6" Name="BtnAddVanilla" Click="OnMakeVanilla">Vanilla</Button>
+        <TextBlock Text=" Flavor" Margin="59.8,26,44.2,99.2" Grid.Column="1" HorizontalAlignment="Center" Width="168" TextAlignment="Center"/>
 
     </Grid>
 </Page>

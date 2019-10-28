@@ -24,7 +24,7 @@
             <RowDefinition Height="56*"/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Column="0" Grid.Row="0" Margin="22,23,102.2,0">
+        <Button Grid.Column="0" Grid.Row="0" Margin="10,23,114.2,0" Name ="BtnAddSodasaurus" Click="AddSodasaurus">
             <Button.Background>
                 <ImageBrush ImageSource="Assests/DinoDiner-14.png"></ImageBrush>
             </Button.Background>
@@ -33,7 +33,7 @@
                 <TextBlock DockPanel.Dock="Top" RenderTransformOrigin="0.44,0.499">Sodasarus</TextBlock>
             </DockPanel>
         </Button>
-        <Button Grid.Column="0" Grid.Row="1" Margin="22,10,102.2,3.6">
+        <Button Grid.Column="0" Grid.Row="1" Margin="10,10,114.2,3.6" Name ="BtnAddTyrannoTea" Click="AddTyrannoTea">
             <Button.Background>
                 <ImageBrush ImageSource="Assests/DinoDiner-12.png"></ImageBrush>
             </Button.Background>
@@ -42,16 +42,16 @@
                 <TextBlock DockPanel.Dock="Top">Tyrannotea</TextBlock>
             </DockPanel>
         </Button>
-        <Button Grid.Column="0" Grid.Row="2" Margin="22,10,102.2,0">
+        <Button Grid.Column="0" Grid.Row="2" Margin="10,1.4,114.2,8.6" Name ="BtnJurassicJava" Click="AddJurassicJava">
             <Button.Background>
                 <ImageBrush ImageSource ="Assests/DinoDiner-13.png"></ImageBrush>
             </Button.Background>
 
             <DockPanel Height=" 200">
-                <TextBlock DockPanel.Dock ="Top">Jurrasic Java</TextBlock>
+                <TextBlock DockPanel.Dock ="Top">Jurassic Java</TextBlock>
             </DockPanel>
         </Button>
-        <Button Grid.Column="0" Grid.Row="3" Margin="22,15.4,102.2,9.6">
+        <Button Grid.Column="0" Grid.Row="3" Margin="10,15.4,114.2,9.6" Name ="BtnAddWater" Click="AddWater">
             <Button.Background >
                 <ImageBrush  ImageSource ="Assests/DinoDiner-15.png"></ImageBrush>
             </Button.Background>
@@ -60,15 +60,16 @@
                 <TextBlock DockPanel.Dock ="Top">Water</TextBlock>
             </DockPanel>
         </Button>
-        <Button Content="Small" Grid.Row="1" Margin="43.8,22,52.6,9.6" Grid.Column="1"/>
-        <Button Content="Medium" Grid.Row="2" Margin="43.8,10.4,52.6,9.6" Grid.Column="1"/>
-        <Button Content="Large" Grid.Row="3" Margin="43.8,10.4,52.6,9.6" Grid.Column="1"/>
-        <Button Click ="SelectFlavor" Content="Sweet/Decaf/ Flavor" Grid.Column="2" Grid.Row="1" Margin="42.4,22,70,9.6"/>
-        <Button Content="Add Lemon" Grid.Column="2" Grid.Row="2" Margin="42.4,10.4,70,9.6"/>
-        <Button Content="Hold Ice" Grid.Column="2" Grid.Row="3" Margin="42.4,10.4,70,9.6"/>
-        <TextBlock Text="Add To Order" Grid.Column="1" Margin="99.8,0,94.6,95" HorizontalAlignment="Center" Width="72"></TextBlock>
-        <TextBlock Text=" Size" Grid.Column="1" Margin="114.8,0,127.6,10" RenderTransformOrigin="0.845,0.512" HorizontalAlignment="Center" Width="24" VerticalAlignment="Bottom"></TextBlock>
-        <TextBlock Text="Drinks" Margin="75,0,158.2,87" HorizontalAlignment="Center" Width="34"></TextBlock>
-        <TextBlock Text=" Special" Grid.Column="2" Margin="103.4,0,122,10" HorizontalAlignment="Center" Width="41" VerticalAlignment="Bottom"></TextBlock>
+        <Button Content="Small" Name ="BtnAddSmall" Click="OnMakeSmall" Grid.Row="1" Margin="36.8,22,59.6,9.6" Grid.Column="1"/>
+        <Button Content="Medium" Name ="BtnAddMedium" Click="OnMakeMedium" Grid.Row="2" Margin="36.8,10.4,59.6,9.6" Grid.Column="1"/>
+        <Button Content="Large" Grid.Row="3" Name ="BtnAddLarge" Click="OnMakeSmall" Margin="36.8,10.4,59.6,9.6" Grid.Column="1"/>
+        <Button Click ="SelectFlavor" Content="Sweet/Decaf/ Flavor" Grid.Column="2" Grid.Row="1" Margin="34.4,22,28,9.6"/>
+        <Button Content="Add Lemon" Grid.Column="2" Grid.Row="2" Margin="34.4,10.4,28,9.6"/>
+        <Button Content="Hold Ice" Grid.Column="2" Grid.Row="3" Margin="34.4,10.4,28,9.6"/>
+        <TextBlock Text="Add To Order" Margin="244,0,246,81" HorizontalAlignment="Center" Width="310" Grid.ColumnSpan="3" TextAlignment="Center"/>
+        <TextBlock Text=" Size" Margin="244,0,32.6,0" RenderTransformOrigin="0.845,0.512" HorizontalAlignment="Center" Width="257" VerticalAlignment="Bottom" Height="26" TextAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Drinks" Margin="-38,0,38.2,81" HorizontalAlignment="Center" Width="267" TextAlignment="Center"></TextBlock>
+        <TextBlock Text=" Special" Grid.Column="2" Margin="10.4,0,-10,0" HorizontalAlignment="Center" Width="266" VerticalAlignment="Bottom" TextAlignment="Center" Height="26"/>
+        <Button Content="Done" Name ="BtnDoneClick" Click="ClickDone" Grid.Column="2" Margin="88.4,-3,28,26" RenderTransformOrigin="0.74,0.469" ></Button>
     </Grid>
 </Page>

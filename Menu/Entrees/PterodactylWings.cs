@@ -21,6 +21,15 @@ namespace DinoDiner.Menu
             this.Price = 7.21;
             this.Calories = 318;
         }
+
+        /// <summary>
+        /// Gets and sets the description
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
         /// <summary>
         /// Gets a list of ingedients of a Pterodactyl object.
         /// </summary>

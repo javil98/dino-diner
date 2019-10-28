@@ -22,6 +22,9 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+        /// <summary>
+        /// Sets and gets a NavigatonService
+        /// </summary>
         public NavigationService NavigationService { get; set; }
 
         public OrderControl()
@@ -29,6 +32,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Takes the user to the side selection if they click a side in the order control.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             if (OrderItems.SelectedItem is Side)
@@ -37,14 +45,11 @@ namespace PointOfSale
             }
         }
 
-        private void MountItemListener()
-        {
-            if(DataContext is Order order)
-            {
-                //OrderItems.CollectionChanged += OnCollectionChnaged;
-            }
-        }
-
+        /// <summary>
+        /// Removes an item if its a element, and in the element if its an item.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnRemoveItem(object sender, RoutedEventArgs args)
         {
             if(DataContext is Order order)
