@@ -57,6 +57,11 @@ namespace PointOfSale
             content.DataContext = OrderUI.DataContext;
         }
 
+        /// <summary>
+        /// When the event is done it notifies the user.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnDone(object sender, RoutedEventArgs args)
         {
             if (OrderUI.NavigationService.CanGoBack)
