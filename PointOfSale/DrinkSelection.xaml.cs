@@ -31,15 +31,7 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Sends the user to the page when the flavor button is clicked.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public void SelectFlavor(object sender, RoutedEventArgs args)
-        {
-            NavigationService.Navigate(new FlavorSelection()) ;
-        }
+        
 
         /// <summary>
         /// Constructs a new Initialize componenet and sets the drink to the parameter of the contstructer.
@@ -60,7 +52,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Items.Add(drink);
+                order.Add(drink);
                 this.Drink = drink;
             }
         }
@@ -73,7 +65,25 @@ namespace PointOfSale
         public void AddSodasaurus(object sender, RoutedEventArgs args)
         {
             SelectDrink(new Sodasaurus());
+            BtnAddSodasaurus.IsEnabled = true;
+            BtnAddTyrannoTea.IsEnabled = false;
+            BtnAddWater.IsEnabled = false;
+            BtnJurassicJava.IsEnabled = false;
+            BtnAddSmall.IsEnabled = true;
+            BtnAddMedium.IsEnabled = true;
+            BtnAddLarge.IsEnabled = true;
 
+            Button flavor = new Button { Height = 60, Width = 165, Content = "Flavor" };
+            Grid.SetRow(flavor, 1);
+            Grid.SetColumn(flavor, 2);
+            DrinkGrid.Children.Add(flavor);
+            flavor.Click += new RoutedEventHandler(SelectFlavor);
+
+            Button ice = new Button { Height = 60, Width = 165, Content = "Hold Ice" };
+            Grid.SetRow(ice, 2);
+            Grid.SetColumn(ice, 2);
+            DrinkGrid.Children.Add(ice);
+            ice.Click += new RoutedEventHandler(SelectHoldIce);
         }
 
         /// <summary>
@@ -85,8 +95,35 @@ namespace PointOfSale
         {
 
             SelectDrink(new TyrannoTea());
+            BtnAddSodasaurus.IsEnabled = false;
+            BtnAddTyrannoTea.IsEnabled = true;
+            BtnAddWater.IsEnabled = false;
+            BtnJurassicJava.IsEnabled = false;
+            BtnAddSmall.IsEnabled = true;
+            BtnAddMedium.IsEnabled = true;
+            BtnAddLarge.IsEnabled = true;
+
+            Button lemon = new Button { Height = 60, Width = 165, Content = "Add Lemon" };
+            Grid.SetRow(lemon, 1);
+            Grid.SetColumn(lemon, 2);
+            DrinkGrid.Children.Add(lemon);
+            lemon.Click += new RoutedEventHandler(SelectLemon);
+
+            Button sweet = new Button { Height = 45, Width = 165, Content = "Make Sweet" };
+            Grid.SetRow(sweet, 2);
+            Grid.SetColumn(sweet, 2);
+            DrinkGrid.Children.Add(sweet);
+            sweet.Click += new RoutedEventHandler(SelectSweet);
+
+            Button ice = new Button { Height = 60, Width = 165, Content = "Hold Ice" };
+            Grid.SetRow(ice, 3);
+            Grid.SetColumn(ice, 2);
+            DrinkGrid.Children.Add(ice);
+            ice.Click += new RoutedEventHandler(SelectHoldIce);
 
         }
+
+
 
         /// <summary>
         /// Adds a JurassicJava to the ordercontrol and order. 
@@ -96,6 +133,31 @@ namespace PointOfSale
         public void AddJurassicJava(object sender, RoutedEventArgs args)
         {
             SelectDrink(new JurassicJava());
+            BtnAddSodasaurus.IsEnabled = false;
+            BtnAddTyrannoTea.IsEnabled = false;
+            BtnAddWater.IsEnabled = false;
+            BtnJurassicJava.IsEnabled = true;
+            BtnAddSmall.IsEnabled = true;
+            BtnAddMedium.IsEnabled = true;
+            BtnAddLarge.IsEnabled = true;
+
+            Button cream = new Button { Height = 60, Width = 165, Content = "Room For Cream" };
+            Grid.SetRow(cream, 1);
+            Grid.SetColumn(cream, 2);
+            DrinkGrid.Children.Add(cream);
+            cream.Click += new RoutedEventHandler(SelectCream);
+
+            Button decaf = new Button { Height = 45, Width = 165, Content = "Make Decaf" };
+            Grid.SetRow(decaf, 2);
+            Grid.SetColumn(decaf, 2);
+            DrinkGrid.Children.Add(decaf);
+            decaf.Click += new RoutedEventHandler(SelectDecaf);
+
+            Button ice = new Button { Height = 60, Width = 165, Content = "Add Ice" };
+            Grid.SetRow(ice, 3);
+            Grid.SetColumn(ice, 2);
+            DrinkGrid.Children.Add(ice);
+            ice.Click += new RoutedEventHandler(SelectAddIce);
 
         }
 
@@ -107,6 +169,26 @@ namespace PointOfSale
         public void AddWater(object sender, RoutedEventArgs args)
         {
             SelectDrink(new Water());
+            BtnAddSodasaurus.IsEnabled = false;
+            BtnAddTyrannoTea.IsEnabled = false;
+            BtnAddWater.IsEnabled = true;
+            BtnJurassicJava.IsEnabled = false;
+            BtnAddSmall.IsEnabled = true;
+            BtnAddMedium.IsEnabled = true;
+            BtnAddLarge.IsEnabled = true;
+
+            Button lemon = new Button { Height = 60, Width = 165, Content = "Add Lemon" };
+            Grid.SetRow(lemon, 1);
+            Grid.SetColumn(lemon, 2);
+            DrinkGrid.Children.Add(lemon);
+            lemon.Click += new RoutedEventHandler(SelectLemon);
+
+            Button ice = new Button { Height = 45, Width = 165, Content = "Hold Ice" };
+            Grid.SetRow(ice, 2);
+            Grid.SetColumn(ice, 2);
+            DrinkGrid.Children.Add(ice);
+            ice.Click += new RoutedEventHandler(SelectHoldIce);
+
 
         }
 
@@ -124,7 +206,7 @@ namespace PointOfSale
         protected void OnMakeSmall(object sender, RoutedEventArgs args)
         {
             SelectSize(DinoDiner.Menu.Size.Small);
-            NavigationService.Navigate(new MenuCategorySelection());
+            
         }
 
         /// <summary>
@@ -135,7 +217,7 @@ namespace PointOfSale
         protected void OnMakeMedium(object sender, RoutedEventArgs args)
         {
             SelectSize(DinoDiner.Menu.Size.Medium);
-            NavigationService.Navigate(new MenuCategorySelection());
+            
         }
 
         /// <summary>
@@ -146,7 +228,7 @@ namespace PointOfSale
         protected void OnMakeLarge(object sender, RoutedEventArgs args)
         {
             SelectSize(DinoDiner.Menu.Size.Large);
-            NavigationService.Navigate(new MenuCategorySelection());
+            
         }
 
         /// <summary>
@@ -158,6 +240,65 @@ namespace PointOfSale
         {
             NavigationService.Navigate(new MenuCategorySelection());
         }
+
+        protected void SelectFlavor(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new FlavorSelection(Drink));
+        }
+
+        protected void SelectHoldIce(object sender, RoutedEventArgs args)
+        {
+            this.Drink.HoldIce();
+        }
+
+        protected void SelectLemon(object sender, RoutedEventArgs args)
+        {
+            if(Drink is TyrannoTea tea)
+            {
+                tea.AddLemon();
+            }
+
+            if(Drink is Water water)
+            {
+                water.AddLemon();
+            }
+        }
+
+        protected void SelectSweet(object sender, RoutedEventArgs args)
+        {
+            if(Drink is TyrannoTea tea)
+            {
+                tea.Sweet = true;
+            }
+        }
+
+        protected void SelectCream(object sender, RoutedEventArgs args)
+        {
+            if (Drink is JurassicJava coffee)
+            {
+                coffee.LeaveRoomForCream();
+            }
+        }
+
+        protected void SelectDecaf(object sender, RoutedEventArgs args)
+        {
+            if (Drink is JurassicJava coffee)
+            {
+                coffee.Decaf = true;
+            }
+        }
+
+        protected void SelectAddIce(object sender, RoutedEventArgs args)
+        {
+            if (Drink is JurassicJava coffee)
+            {
+                coffee.AddIce();
+            }
+        }
+
+
+
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

@@ -27,7 +27,7 @@ namespace MenuTest
             orderList.Add(new DinoNuggets());
             orderList.Add(new Water());
 
-            order.Items = orderList;
+            //order.items = orderList;
 
             Assert.Equal(5.34, order.SubTotalCost, 2);
         }
@@ -41,7 +41,7 @@ namespace MenuTest
             orderList.Add(new MeteorMacAndCheese());
             orderList.Add(new Sodasaurus());
 
-            order.Items = orderList;
+            //order.Items = orderList;
 
             Assert.Equal(9.01, order.SubTotalCost, 2);
 
@@ -57,7 +57,7 @@ namespace MenuTest
             orderList.Add(new MeteorMacAndCheese());
             orderList.Add(new Sodasaurus());
 
-            order.Items = orderList;
+            //order.Items = orderList;
 
             Assert.Equal(10.94, order.SubTotalCost, 2);
         }
@@ -83,7 +83,7 @@ namespace MenuTest
             orderList.Add(new MeteorMacAndCheese());
             orderList.Add(new Sodasaurus());
 
-            order.Items = orderList;
+            //order.Items = orderList;
 
             Assert.Equal(1.094, order.SalesTaxCost, 2);
         }
@@ -97,7 +97,7 @@ namespace MenuTest
             orderList.Add(new MeteorMacAndCheese());
             orderList.Add(new Sodasaurus());
 
-            order.Items = orderList;
+            //order.Items = orderList;
 
             Assert.Equal(0.90 , order.SalesTaxCost, 2);
         }
@@ -111,7 +111,7 @@ namespace MenuTest
             orderList.Add(new DinoNuggets());
             orderList.Add(new Water());
 
-            order.Items = orderList;
+            //order.Items = orderList;
 
             Assert.Equal(.53, order.SalesTaxCost, 2);
         }
@@ -125,7 +125,7 @@ namespace MenuTest
             orderList.Add(new MeteorMacAndCheese());
             orderList.Add(new Sodasaurus());
 
-            order.Items = orderList;
+            //order.Items = orderList;
 
             Assert.Equal(12.03, order.TotalCost, 2);
         }
@@ -139,7 +139,7 @@ namespace MenuTest
             orderList.Add(new DinoNuggets());
             orderList.Add(new Water());
 
-            order.Items = orderList;
+            //order.Items = orderList;
 
             Assert.Equal(5.87, order.TotalCost, 2);
         }

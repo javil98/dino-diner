@@ -13,10 +13,22 @@ namespace DinoDiner.Menu
     /// </summary>
     public class JurassicJava : Drink, INotifyPropertyChanged
     {
+
+        private bool decaf = false;
         /// <summary>
         /// Gets and sets Decaf
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf
+        {
+
+            get { return decaf; }
+
+            set
+            {
+                decaf = value;
+                NotifyOfPropertyChange("Special");
+            }
+        }
 
         /// <summary>
         /// Gets and sets RoomForCream
@@ -132,11 +144,14 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
+            NotifyOfPropertyChange("Special");
         }
 
         public void AddIce()
         {
             Ice = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ice");
         }
 
 

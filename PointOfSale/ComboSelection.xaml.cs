@@ -26,7 +26,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// When any of the combo buttons are clicked, it will send the user to the CustomizeCombo page.
+        /// When any of the combo buttons are clicked, it will send the user to the CustomizeCombo page.p
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>

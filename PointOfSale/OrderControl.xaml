@@ -13,8 +13,12 @@
             <RowDefinition Height="55"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <TextBox Text="Order" Grid.Row=" 0"/>
-        <ListBox Name ="OrderItems" Grid.Row="1" SelectionChanged="OnSelectionChanged" ItemsSource="{Binding Path = Items, UpdateSourceTrigger =PropertyChanged}" IsSynchronizedWithCurrentItem="True">
+        <ListBox Name ="OrderItems" Grid.ColumnSpan="2" Grid.Row="1" SelectionChanged="OnSelectionChanged" ItemsSource="{Binding Path = Items, UpdateSourceTrigger =PropertyChanged}" IsSynchronizedWithCurrentItem="True">
             
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -25,6 +29,11 @@
                                 <ColumnDefinition Width="15"/>
                             </Grid.ColumnDefinitions>
 
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
                             <TextBlock Text="{Binding Path = Description}"/>
                             <Button Click="OnRemoveItem" Background ="Red" Foreground="White" Grid.Column="1" >X</Button>
                         </Grid>
@@ -33,11 +42,17 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-            
+        <Border Grid.Row ="2" Grid.Column="1">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="{Binding Path = SubTotalCost}"/>
+                <TextBlock Text="{Binding Path = SalesTaxCost}"/>
+                <TextBlock Text="{Binding Path = TotalCost}"/>
+            </StackPanel>
+        </Border>
         <Border Grid.Row="2">
+
             <StackPanel Orientation="Vertical">
                 <TextBox Text ="Subtotal: $ "/>
-               
                 <TextBox Text="Sales Tax Cost: $"/>
                 <TextBox Text="Total Cost: $"/>
             </StackPanel>

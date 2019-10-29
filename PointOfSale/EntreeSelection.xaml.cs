@@ -38,7 +38,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Items.Add(entree);
+                order.Add(entree);
                 this.Entree = entree;
             }
         }
@@ -82,8 +82,11 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void AddPrehistoricPBJ(object sender, RoutedEventArgs args)
         {
-            SelectEntree(new PrehistoricPBJ());
-            NavigationService.Navigate(new MenuCategorySelection());
+            if (DataContext is Order order)
+            {
+                SelectEntree(new PrehistoricPBJ());
+                NavigationService.Navigate(new CustomizePrehistoricPBJ());
+            }
         }
 
         /// <summary>

@@ -48,7 +48,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Items.Add(side);
+                order.Add(side);
                 this.Side = side;
             }
         }
@@ -127,6 +127,7 @@ namespace PointOfSale
         protected void OnMakeMedium(object sender, RoutedEventArgs args)
         {
             SelectSize(DinoDiner.Menu.Size.Medium);
+            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -137,6 +138,7 @@ namespace PointOfSale
         protected void OnMakeLarge(object sender, RoutedEventArgs args)
         { 
             SelectSize(DinoDiner.Menu.Size.Large);
+            NavigationService.Navigate(new MenuCategorySelection());
         }
 
 

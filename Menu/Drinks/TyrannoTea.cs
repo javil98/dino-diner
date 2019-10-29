@@ -14,10 +14,21 @@ namespace DinoDiner.Menu
     /// </summary>
     public class TyrannoTea : Drink, INotifyPropertyChanged
     {
+        private bool sweet = false;
         /// <summary>
         /// Gets and sets Sweet
         /// </summary>
-        public bool Sweet { get; set; } = false;
+        public bool Sweet
+        {
+            get { return sweet; }
+
+            set
+            {
+                sweet = value;
+                NotifyOfPropertyChange(Description);
+            }
+        }
+            
 
         /// <summary>
         /// Gets and sets Lemon
@@ -145,6 +156,8 @@ namespace DinoDiner.Menu
             Sweet = true;
             Calories = Calories * 2;
             NotifyOfPropertyChange("Calories");
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Description");
            
         }
         /// <summary>

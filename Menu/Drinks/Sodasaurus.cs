@@ -76,6 +76,7 @@ namespace DinoDiner.Menu
                         NotifyOfPropertyChange("Calories");
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Flavor");
                         break;
                     case Size.Medium:
                         Price = 2.00;
@@ -84,6 +85,7 @@ namespace DinoDiner.Menu
                         NotifyOfPropertyChange("Calories");
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Flavor");
                         break;
 
                     case Size.Small:
@@ -93,6 +95,7 @@ namespace DinoDiner.Menu
                         NotifyOfPropertyChange("Calories");
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Flavor");
                         break;
                 }
                 
@@ -130,6 +133,12 @@ namespace DinoDiner.Menu
             sb.Append(Flavor + " ");
             sb.Append("Sodasaurus");
             return sb.ToString();
+        }
+
+        public void FlavorChange(SodasaurusFlavor flavor)
+        {
+            this.Flavor = flavor;
+            NotifyOfPropertyChange("Description");
         }
 
     }

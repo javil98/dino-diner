@@ -7,28 +7,30 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class Order:INotifyPropertyChanged
+    public class Order: INotifyPropertyChanged
     {
-       /// <summary>
-       /// Gets and sets the Items of the order.
-       /// </summary>
-        public ObservableCollection<IOrderItem> Items { get; set; } = new ObservableCollection<IOrderItem>();
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        //Backing variables
+        double salesTaxRate = 0;
+
+        List<IOrderItem> items = new List<IOrderItem>();
+
         public Order()
         {
-            Items = new ObservableCollection<IOrderItem>();
-            Items.CollectionChanged += OnCollectionChanged;
-
+            items = new List<IOrderItem>();
         }
 
-        private void OnCollectionChanged(object sender, EventArgs args)
+        public IOrderItem[] Items
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
+            get
+            {
+                return items.ToArray();
+            }
         }
+
         /// <summary>
         /// Gets the subtotal of the order.
         /// </summary>
@@ -37,11 +39,11 @@ namespace DinoDiner.Menu
             get
             {
                 double subTotalCost = 0;
-                foreach (IOrderItem x in Items)
+                foreach (IOrderItem x in items)
                 {
                     subTotalCost += x.Price;
                 }
-                if (subTotalCost > 0) return subTotalCost;
+                if (subTotalCost > 0) return Math.Truncate(subTotalCost *100) /100;
                 else return 0;
             }
         }
@@ -58,7 +60,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return SalesTaxRate * SubTotalCost;
+                return Math.Truncate((SalesTaxRate * SubTotalCost)* 100) /100;
             }
             
         }
@@ -70,14 +72,44 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return  SubTotalCost + SalesTaxCost;
+                return  Math.Truncate((SubTotalCost + SalesTaxCost) *100) /100;
             }
         }
 
+        /// <summary>
+        /// Adds a new item to our order
+        /// </summary>
+        /// <param name="item"></param>
         public void Add(IOrderItem item)
         {
-            item.PropertyChanged += OnCollectionChanged;
-            Items.Add(item);
+            items.Add(item);
+            item.PropertyChanged += OnPropertyChanged;
+            NotifyAllPropertyChanged();
+
+        }
+
+        public bool Remove(IOrderItem item)
+        {
+            bool removed = items.Remove(item);
+            if (removed)
+            {
+                NotifyAllPropertyChanged();
+            }
+            return removed;
+        }
+
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs args)
+        {
+            NotifyAllPropertyChanged();
+            
+        }
+
+        void NotifyAllPropertyChanged()
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubTotalCost"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
         }
 
 

@@ -21,7 +21,7 @@ namespace PointOfSale
     /// </summary>
     public partial class FlavorSelection : Page
     {
-        Sodasaurus Soda { get; set; }
+        public Drink Drink { get; set; }
         public FlavorSelection()
         {
             InitializeComponent();
@@ -31,21 +31,12 @@ namespace PointOfSale
         /// An overload constructor that sets the Soda property to the soda parameter.
         /// </summary>
         /// <param name="soda"></param>
-        public FlavorSelection(Sodasaurus soda)
+        public FlavorSelection(Drink drink)
         {
             InitializeComponent();
-            Soda = soda;
+            Drink = drink;
         }
 
-        /// <summary>
-        /// Sets the flavor of the soda to the flavor parameter.
-        /// </summary>
-        /// <param name="flavor"></param>
-        public void SelectFlavor(DinoDiner.Menu.SodasaurusFlavor flavor)
-        {
-            if (Soda != null)
-                this.Soda.Flavor = flavor;
-        }
 
         /// <summary>
         /// Sets the flavor of the sodasaurus to Cola.
@@ -54,8 +45,11 @@ namespace PointOfSale
         /// <param name="args"></param>
         protected void OnMakeCola(object sender, RoutedEventArgs args)
         {
-            SelectFlavor(DinoDiner.Menu.SodasaurusFlavor.Cola);
-            NavigationService.Navigate(new MenuCategorySelection());
+            if(Drink is Sodasaurus soda)
+            {
+                soda.FlavorChange(SodasaurusFlavor.Cola);
+            }
+            NavigationService.GoBack();
         }
 
         /// <summary>
@@ -65,8 +59,11 @@ namespace PointOfSale
         /// <param name="args"></param>
         protected void OnMakeCherry(object sender, RoutedEventArgs args)
         {
-            SelectFlavor(DinoDiner.Menu.SodasaurusFlavor.Cherry);
-            NavigationService.Navigate(new MenuCategorySelection());
+            if (Drink is Sodasaurus soda)
+            {
+                soda.FlavorChange(SodasaurusFlavor.Cherry);
+            }
+            NavigationService.GoBack();
         }
 
         /// <summary>
@@ -76,8 +73,11 @@ namespace PointOfSale
         /// <param name="args"></param>
         protected void OnMakeVanilla(object sender, RoutedEventArgs args)
         {
-            SelectFlavor(DinoDiner.Menu.SodasaurusFlavor.Vanilla);
-            NavigationService.Navigate(new MenuCategorySelection());
+            if (Drink is Sodasaurus soda)
+            {
+                soda.FlavorChange(SodasaurusFlavor.Vanilla);
+            }
+            NavigationService.GoBack();
         }
 
         /// <summary>
@@ -87,8 +87,11 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void OnMakeChocolate(object sender, RoutedEventArgs args)
         {
-            SelectFlavor(DinoDiner.Menu.SodasaurusFlavor.Chocolate);
-            NavigationService.Navigate(new MenuCategorySelection());
+            if (Drink is Sodasaurus soda)
+            {
+                soda.FlavorChange(SodasaurusFlavor.Chocolate);
+            }
+            NavigationService.GoBack();
         }
 
         /// <summary>
@@ -98,8 +101,11 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void OnMakeLime(object sender, RoutedEventArgs args)
         {
-            SelectFlavor(DinoDiner.Menu.SodasaurusFlavor.Lime);
-            NavigationService.Navigate(new MenuCategorySelection());
+            if (Drink is Sodasaurus soda)
+            {
+                soda.FlavorChange(SodasaurusFlavor.Lime);
+            }
+            NavigationService.GoBack();
         }
 
         /// <summary>
@@ -109,8 +115,11 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void OnMakeOrange(object sender, RoutedEventArgs args)
         {
-            SelectFlavor(DinoDiner.Menu.SodasaurusFlavor.Orange);
-            NavigationService.Navigate(new MenuCategorySelection());
+            if (Drink is Sodasaurus soda)
+            {
+                soda.FlavorChange(SodasaurusFlavor.Orange);
+            }
+            NavigationService.GoBack();
         }
 
         /// <summary>
@@ -120,8 +129,11 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void OnMakeRootBeer(object sender, RoutedEventArgs args)
         {
-            SelectFlavor(DinoDiner.Menu.SodasaurusFlavor.RootBeer);
-            NavigationService.Navigate(new MenuCategorySelection());
+            if (Drink is Sodasaurus soda)
+            {
+                soda.FlavorChange(SodasaurusFlavor.RootBeer);
+            }
+            NavigationService.GoBack();
         }
     }
 }

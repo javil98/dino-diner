@@ -29,7 +29,18 @@ namespace DinoDiner.Menu
             set
             {
                 size = value;
-                NotifyOfPropertyChange("Size");
+                switch (size)
+                {
+                    case Size.Small:
+                        NotifyOfPropertyChange("Description");
+                        break;
+                    case Size.Medium:
+                        NotifyOfPropertyChange("Description");
+                        break;
+                    case Size.Large:
+                        NotifyOfPropertyChange("Description");
+                        break;
+                }
             }
         }
 
