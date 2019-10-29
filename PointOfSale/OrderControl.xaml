@@ -44,9 +44,9 @@
         </ListBox>
         <Border Grid.Row ="2" Grid.Column="1">
             <StackPanel Orientation="Vertical">
-                <TextBlock Text="{Binding Path = SubTotalCost}"/>
-                <TextBlock Text="{Binding Path = SalesTaxCost}"/>
-                <TextBlock Text="{Binding Path = TotalCost}"/>
+                <TextBlock Background ="White" Text="{Binding Path = SubTotalCost}"/>
+                <TextBlock Background ="White" Text="{Binding Path = SalesTaxCost}"/>
+                <TextBlock Background ="White" Text="{Binding Path = TotalCost}"/>
             </StackPanel>
         </Border>
         <Border Grid.Row="2">
