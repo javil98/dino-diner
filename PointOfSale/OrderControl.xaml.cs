@@ -39,9 +39,9 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
-            if (OrderItems.SelectedItem is Side)
+            if (OrderItems.SelectedItem is Side side)
             {
-                NavigationService?.Navigate(new SideSelection());
+                NavigationService?.Navigate(new SideSelection(side));
             }
         }
 
@@ -55,8 +55,8 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 if(sender is FrameworkElement element)
-                if (element.DataContext is IOrderItem item)
-                    order.Remove(item);
+                    if (element.DataContext is IOrderItem item)
+                        order.Remove(item);
             }
         }
 

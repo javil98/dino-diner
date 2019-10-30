@@ -60,8 +60,9 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void AddBrontowurst(object sender, RoutedEventArgs args)
         {
-            SelectEntree(new Brontowurst());
-            NavigationService.Navigate(new MenuCategorySelection());
+            Brontowurst bw = new Brontowurst();
+            SelectEntree(bw);
+            NavigationService.Navigate(new CustomizeBrontowurst(bw));
         }
 
         /// <summary>
@@ -71,8 +72,9 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void AddDinoNuggets(object sender, RoutedEventArgs args)
         {
-            SelectEntree(new DinoNuggets());
-            NavigationService.Navigate(new MenuCategorySelection());
+            DinoNuggets nuggets = new DinoNuggets();
+            SelectEntree(nuggets);
+            NavigationService.Navigate(new CustomizeDinoNuggets(nuggets));
         }
 
         /// <summary>
@@ -82,11 +84,10 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void AddPrehistoricPBJ(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
-            {
-                SelectEntree(new PrehistoricPBJ());
-                NavigationService.Navigate(new CustomizePrehistoricPBJ());
-            }
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            SelectEntree(pbj);
+            NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
+            
         }
 
         /// <summary>
@@ -107,8 +108,9 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void AddSteakosaurusBurger(object sender, RoutedEventArgs args)
         {
-            SelectEntree(new SteakosaurusBurger());
-            NavigationService.Navigate(new MenuCategorySelection());
+            SteakosaurusBurger burger = new SteakosaurusBurger();
+            SelectEntree(burger);
+            NavigationService.Navigate(new CustomizeSteakosaurusBurger(burger));
         }
 
         /// <summary>
@@ -118,8 +120,9 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void AddTRexKingBurger(object sender, RoutedEventArgs args)
         {
-            SelectEntree(new TRexKingBurger());
-            NavigationService.Navigate(new MenuCategorySelection());
+            TRexKingBurger burger = new TRexKingBurger();
+            SelectEntree(burger);
+            NavigationService.Navigate(new CustomizeTRexKingBurger(burger));
         }
 
         /// <summary>
@@ -129,8 +132,9 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void AddVelociWrap(object sender, RoutedEventArgs args)
         {
-            SelectEntree(new VelociWrap());
-            NavigationService.Navigate(new MenuCategorySelection());
+            VelociWrap wrap = new VelociWrap();
+            SelectEntree(wrap);
+            NavigationService.Navigate(new CustomizeVelociWrap(wrap));
         }
 
     }

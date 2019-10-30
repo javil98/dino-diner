@@ -74,6 +74,7 @@ namespace DinoDiner.Menu
             NuggetCount++;
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Description");
         }
 
         /// <summary>

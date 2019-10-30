@@ -24,7 +24,7 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            OrderControl.NavigationService = OrderUI.NavigationService; 
+            OrderControl.NavigationService = OrderUI.NavigationService;
         }
 
         /// <summary>

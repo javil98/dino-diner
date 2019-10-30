@@ -21,7 +21,7 @@
             <RowDefinition Height="58*"/>
             <RowDefinition Height="55*"/>
         </Grid.RowDefinitions>
-        <Button Name ="BtnAddFryceritops" Grid.Column="1" Grid.Row="0" Margin="69.8,39,47.2,9.6" Click="AddFryceritops">
+        <Button Name ="BtnAddFryceritops" Grid.Column="1" Grid.Row="0" Height ="80" Width="120" Click="AddFryceritops">
             <Button.Background>
                 <ImageBrush ImageSource="Assests/DinoDiner-08.png"></ImageBrush>
             </Button.Background>

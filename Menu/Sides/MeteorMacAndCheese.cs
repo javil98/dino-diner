@@ -48,7 +48,7 @@ namespace DinoDiner.Menu
             set
             {
                 size = value;
-                switch (size)
+                /*switch (size)
                 {
                     case Size.Small:
                         this.Price = 0.99;
@@ -75,8 +75,11 @@ namespace DinoDiner.Menu
                         NotifyOfPropertyChange("Description");
                         break;
 
-                }
-                
+                }*/
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Calories");
+                NotifyOfPropertyChange("Size");
+                NotifyOfPropertyChange("Description");
             }
             get
             {
