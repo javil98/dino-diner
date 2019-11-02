@@ -33,12 +33,18 @@ namespace DinoDiner.Menu
                 {
                     case Size.Small:
                         NotifyOfPropertyChange("Description");
+                        NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Price");
                         break;
                     case Size.Medium:
                         NotifyOfPropertyChange("Description");
+                        NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Price");
                         break;
                     case Size.Large:
                         NotifyOfPropertyChange("Description");
+                        NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Price");
                         break;
                 }
             }

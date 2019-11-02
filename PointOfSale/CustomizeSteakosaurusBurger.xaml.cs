@@ -21,44 +21,93 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeSteakosaurusBurger : Page
     {
-        SteakosaurusBurger burger { get; set; }
+        private SteakosaurusBurger Burger { get; set; }
 
+        private bool IsCombo { get; set; } = false;
+        
+        private CretaceousCombo Combo { get; set; }
+
+        /// <summary>
+        /// Creates a new page of CustomizeSteakosaurusBurger page
+        /// </summary>
         public CustomizeSteakosaurusBurger()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Creates a new page of CustomizeSteakosaurusBurger page, and stores the burger into the field.
+        /// </summary>
+        /// <param name="burger">A steakosaurusburger</param>
         public CustomizeSteakosaurusBurger(SteakosaurusBurger burger)
         {
             InitializeComponent();
-            this.burger = burger;
+            this.Burger = burger;
         }
 
+        /// <summary>
+        /// Creates a new page of CustomizeSteakosaurusBurger page, and stores the paremeters into the property fields.
+        /// </summary>
+        /// <param name="combo">The combo choosen by the user.</param>
+        /// <param name="IsCombo"> A boolean that indicates whether this page was created becuase of coming from the Combo selction page</param>
+        public CustomizeSteakosaurusBurger(CretaceousCombo combo, bool IsCombo)
+        {
+            InitializeComponent();
+            this.Combo = combo;
+            this.IsCombo = IsCombo;
+            this.Burger = (SteakosaurusBurger)combo.Entree;
+        }
 
+        /// <summary>
+        /// Holds the bun when the hold bun button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnHoldBun(object sender, RoutedEventArgs args)
         {
-            burger.HoldBun();
+            Burger.HoldBun();
         }
 
+        /// <summary>
+        /// Holds the Ketchup when the hold Ketchup button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnHoldKetchup(object sender, RoutedEventArgs args)
         {
-            burger.HoldKetchup();
+            Burger.HoldKetchup();
         }
 
+        /// <summary>
+        /// Holds the Mustard when the hold Mustard button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnHoldMustard(object sender, RoutedEventArgs args)
         {
-            burger.HoldMustard();
-        }
-        private void OnHoldPickle(object sender, RoutedEventArgs args)
-        {
-            burger.HoldPickle();
+            Burger.HoldMustard();
         }
 
+        /// <summary>
+        /// Holds the Pickle when the hold Pickle button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnHoldPickle(object sender, RoutedEventArgs args)
+        {
+            Burger.HoldPickle();
+        }
+
+        /// <summary>
+        /// Will navigate to the Customize page if IsCombo is true. If false, it will go to Menu Catergory.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnDone(object sender, RoutedEventArgs args)
         {
-            if (NavigationService.CanGoBack)
+            if (IsCombo)
             {
-                NavigationService.GoBack();
+                NavigationService.Navigate(new CustomizeCombo(Combo));
             }
             else
             {

@@ -26,10 +26,23 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Sodasaurus : Drink, INotifyPropertyChanged
     {
+        private SodasaurusFlavor flavor;
         /// <summary>
         /// A property that gets and set the flavor of a Soda.
         /// </summary>
-        public SodasaurusFlavor Flavor { get; set; } = SodasaurusFlavor.Cola;
+        public SodasaurusFlavor Flavor
+        {
+            get
+            {
+                return flavor;
+            }
+
+            set
+            {
+                flavor = value;
+                NotifyOfPropertyChange("Description");
+            }
+        }
 
         /// <summary>
         /// Gets and set the description.

@@ -241,16 +241,31 @@ namespace PointOfSale
             NavigationService.Navigate(new MenuCategorySelection());
         }
 
+        /// <summary>
+        /// When the flavor button is clicked, it takes the user to the FlavorSelection page. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         protected void SelectFlavor(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new FlavorSelection(Drink));
         }
 
+        /// <summary>
+        /// When the HoldIce button is clicked, it holds the ice from the drink.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         protected void SelectHoldIce(object sender, RoutedEventArgs args)
         {
             this.Drink.HoldIce();
         }
 
+        /// <summary>
+        /// When the Lemon button is clicked, it adds lemon to the drink.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         protected void SelectLemon(object sender, RoutedEventArgs args)
         {
             if(Drink is TyrannoTea tea)
@@ -264,6 +279,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// When the sweet button is clicked, it will add sweet to Tyrannotea.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         protected void SelectSweet(object sender, RoutedEventArgs args)
         {
             if(Drink is TyrannoTea tea)
@@ -272,6 +292,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// When the cream button is clicked, it will leave cream for Jurrassic Java.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         protected void SelectCream(object sender, RoutedEventArgs args)
         {
             if (Drink is JurassicJava coffee)
@@ -280,6 +305,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// When the decaf is click, it will make the jurrassic java to decaf.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         protected void SelectDecaf(object sender, RoutedEventArgs args)
         {
             if (Drink is JurassicJava coffee)
@@ -288,6 +318,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// When the Select Ice is added, it will add ice to the java.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         protected void SelectAddIce(object sender, RoutedEventArgs args)
         {
             if (Drink is JurassicJava coffee)

@@ -27,9 +27,9 @@
 
         <Button Click ="SelectSide" Content="Fryceritops" Grid.Column="0" Grid.Row="1" Margin="27,7.2,22.2,21.8"/>
         <Button Click ="SelectDrink" Content=" Sodasaurus" Margin="23.4,7.2,30,21.8" Grid.Row="1" Grid.Column="2"/>
-        <Button Content=" Small" Grid.Column=" 0" Grid.Row="2" RenderTransformOrigin="0.657,-0.371" Margin="27,10.2,22.2,18.6"/>
-        <Button Content=" Medium" Grid.Row="2" RenderTransformOrigin="0.502,-0.33" Margin="22.8,10.2,9.6,18.6" Grid.Column="1"/>
-        <Button Content=" Large" Grid.Column="2" Grid.Row="2" Margin="23.4,10.2,30,18.6" />
+        <Button Content=" Small" Click="SelectSmall" Grid.Column=" 0" Grid.Row="2" RenderTransformOrigin="0.657,-0.371" Margin="27,10.2,22.2,18.6"/>
+        <Button Content=" Medium" Click="SelectMedium" Grid.Row="2" RenderTransformOrigin="0.502,-0.33" Margin="22.8,10.2,9.6,18.6" Grid.Column="1"/>
+        <Button Content=" Large" Click="SelectLarge" Grid.Column="2" Grid.Row="2" Margin="23.4,10.2,30,18.6" />
         <TextBlock Text=" Add to Order" Margin="267,10,266,51.8" Grid.ColumnSpan="3" TextAlignment="Center" />
         <TextBlock Text=" Customize Combo " Grid.Column="1" Margin="9.8,46,9.6,12.8" HorizontalAlignment="Center" Width="247" TextAlignment="Center"></TextBlock>
         <TextBlock Text=" Drink " Grid.Column="2" Margin="0.4,0,10,9.8" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="26" Width="256" TextAlignment="Center"/>

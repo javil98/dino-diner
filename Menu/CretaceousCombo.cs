@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// A class that represents a CretaceousCombo that uses the IMenuItem interface.
     /// </summary>
-    public class CretaceousCombo :IMenuItem, INotifyPropertyChanged
+    public class CretaceousCombo :IMenuItem, INotifyPropertyChanged, IOrderItem
     {
 
         /// <summary>
@@ -58,6 +58,9 @@ namespace DinoDiner.Menu
                 this.Drink.Size = value;
                 this.Side.Size = value;
                 NotifyOfPropertyChange("Size");
+                NotifyOfPropertyChange("Description");
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Special");
             }
         }
         
@@ -102,7 +105,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Default constructor for the combo.
         /// </summary>
-        private CretaceousCombo() { }
+        public CretaceousCombo() { }
 
         /// <summary>
         /// Combo for the Cretaceous combo that creates a new instance of a Cretaceous Combo.
@@ -141,6 +144,7 @@ namespace DinoDiner.Menu
                 ingredients.AddRange(Side.Special);
                 ingredients.Add(Drink.ToString());
                 ingredients.AddRange(Drink.Special);
+               
                 return ingredients.ToArray();
                 
             }

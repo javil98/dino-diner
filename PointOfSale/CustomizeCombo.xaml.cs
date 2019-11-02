@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -20,10 +21,26 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeCombo : Page
     {
+       private CretaceousCombo combo { get; set; }
+
+        /// <summary>
+        /// Creates a new page of CustomizeCombo.
+        /// </summary>
         public CustomizeCombo()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Creates a new page of CustomizeCombo and stores the parameter in to the field property.
+        /// </summary>
+        /// <param name="combo"></param>
+        public CustomizeCombo(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+        }
+
 
         /// <summary>
         /// When the user clicks the Side button, it will take the user to the side selection page.
@@ -32,7 +49,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void SelectSide(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new SideSelection());
+            NavigationService.Navigate(new SideSelection(combo.Side));
         }
 
         /// <summary>
@@ -42,7 +59,37 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void SelectDrink(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new DrinkSelection());
+            NavigationService.Navigate(new DrinkSelection(combo.Drink));
+        }
+
+        /// <summary>
+        /// Makes the order a small when button "Small" is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void SelectSmall(object sender, RoutedEventArgs args)
+        {
+            combo.Size = DinoDiner.Menu.Size.Small;
+        }
+
+        /// <summary>
+        /// Makes the order a Medium when button "Medium" is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void SelectMedium(object sender, RoutedEventArgs args)
+        {
+            combo.Size = DinoDiner.Menu.Size.Medium;
+        }
+
+        /// <summary>
+        /// Makes the order a Large when button "Large" is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void SelectLarge(object sender, RoutedEventArgs args)
+        {
+            combo.Size = DinoDiner.Menu.Size.Large;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

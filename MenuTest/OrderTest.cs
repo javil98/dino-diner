@@ -21,11 +21,11 @@ namespace MenuTest
         [Fact]
         public void ShouldHaveCorrectSubTotal1()
         {
-            ObservableCollection<IOrderItem> orderList = new ObservableCollection<IOrderItem>();
+            //ObservableCollection<IOrderItem> orderList = new ObservableCollection<IOrderItem>();
             Order order = new Order();
-            orderList.Add(new Fryceritops());
-            orderList.Add(new DinoNuggets());
-            orderList.Add(new Water());
+            order.Add(new Fryceritops());
+            order.Add(new DinoNuggets());
+            order.Add(new Water());
 
             //order.items = orderList;
 
@@ -35,11 +35,11 @@ namespace MenuTest
         [Fact]
         public void ShouldHaveCorrectSubTotal2()
         {
-            ObservableCollection<IOrderItem> orderList = new ObservableCollection<IOrderItem>();
+
             Order order = new Order();
-            orderList.Add(new PrehistoricPBJ());
-            orderList.Add(new MeteorMacAndCheese());
-            orderList.Add(new Sodasaurus());
+            order.Add(new PrehistoricPBJ());
+            order.Add(new MeteorMacAndCheese());
+            order.Add(new Sodasaurus());
 
             //order.Items = orderList;
 
@@ -51,11 +51,11 @@ namespace MenuTest
         [Fact]
         public void ShouldHaveCorrectSubTotal3()
         {
-            ObservableCollection<IOrderItem> orderList = new ObservableCollection<IOrderItem>();
+            
             Order order = new Order();
-            orderList.Add(new TRexKingBurger());
-            orderList.Add(new MeteorMacAndCheese());
-            orderList.Add(new Sodasaurus());
+            order.Add(new TRexKingBurger());
+            order.Add(new MeteorMacAndCheese());
+            order.Add(new Sodasaurus());
 
             //order.Items = orderList;
 
@@ -77,13 +77,10 @@ namespace MenuTest
         [Fact]
         public void ShouldHaveCorrectSalesTax1()
         {
-            ObservableCollection<IOrderItem> orderList = new ObservableCollection<IOrderItem>();
             Order order = new Order();
-            orderList.Add(new TRexKingBurger());
-            orderList.Add(new MeteorMacAndCheese());
-            orderList.Add(new Sodasaurus());
-
-            //order.Items = orderList;
+            order.Add(new TRexKingBurger());
+            order.Add(new MeteorMacAndCheese());
+            order.Add(new Sodasaurus());
 
             Assert.Equal(1.094, order.SalesTaxCost, 2);
         }
@@ -91,13 +88,11 @@ namespace MenuTest
         [Fact]
         public void ShouldHaveCorrectSalesTax2()
         {
-            ObservableCollection<IOrderItem> orderList = new ObservableCollection<IOrderItem>();
+            
             Order order = new Order();
-            orderList.Add(new PrehistoricPBJ());
-            orderList.Add(new MeteorMacAndCheese());
-            orderList.Add(new Sodasaurus());
-
-            //order.Items = orderList;
+            order.Add(new PrehistoricPBJ());
+            order.Add(new MeteorMacAndCheese());
+            order.Add(new Sodasaurus());
 
             Assert.Equal(0.90 , order.SalesTaxCost, 2);
         }
@@ -107,11 +102,9 @@ namespace MenuTest
         {
             ObservableCollection<IOrderItem> orderList = new ObservableCollection<IOrderItem>();
             Order order = new Order();
-            orderList.Add(new Fryceritops());
-            orderList.Add(new DinoNuggets());
-            orderList.Add(new Water());
-
-            //order.Items = orderList;
+            order.Add(new Fryceritops());
+            order.Add(new DinoNuggets());
+            order.Add(new Water());
 
             Assert.Equal(.53, order.SalesTaxCost, 2);
         }
@@ -119,13 +112,10 @@ namespace MenuTest
         [Fact]
         public void ShouldHaveCorrectTotalCost1()
         {
-            ObservableCollection<IOrderItem> orderList = new ObservableCollection<IOrderItem>();
             Order order = new Order();
-            orderList.Add(new TRexKingBurger());
-            orderList.Add(new MeteorMacAndCheese());
-            orderList.Add(new Sodasaurus());
-
-            //order.Items = orderList;
+            order.Add(new TRexKingBurger());
+            order.Add(new MeteorMacAndCheese());
+            order.Add(new Sodasaurus());
 
             Assert.Equal(12.03, order.TotalCost, 2);
         }
@@ -133,13 +123,11 @@ namespace MenuTest
         [Fact]
         public void ShouldHaveCorrectTotalCost2()
         {
-            ObservableCollection<IOrderItem> orderList = new ObservableCollection<IOrderItem>();
+           
             Order order = new Order();
-            orderList.Add(new Fryceritops());
-            orderList.Add(new DinoNuggets());
-            orderList.Add(new Water());
-
-            //order.Items = orderList;
+            order.Add(new Fryceritops());
+            order.Add(new DinoNuggets());
+            order.Add(new Water());
 
             Assert.Equal(5.87, order.TotalCost, 2);
         }

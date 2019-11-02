@@ -25,6 +25,7 @@ namespace PointOfSale
         /// Gets and sets a Entree.
         /// </summary>
         public Entree Entree { get; set; }
+        
         public EntreeSelection()
         {
             InitializeComponent();

@@ -456,7 +456,7 @@ namespace MenuTest
         [InlineData(Size.Large, "Description")]
         public void TyrannoteaSizeChangeShouldNotifyProperty(Size size, string property)
         {
-            Tyrannotea tea = new Tyrannotea();
+            TyrannoTea tea = new TyrannoTea();
             Assert.PropertyChanged(tea, property, () =>
             {
                 tea.Size = size;
@@ -466,7 +466,7 @@ namespace MenuTest
         [Fact]
         public void TyrannoteaSetSweetShouldNotifyPropertyDescription()
         {
-            Tyrannotea tea = new Tyrannotea();
+            TyrannoTea tea = new TyrannoTea();
             Assert.PropertyChanged(tea, "Description", () =>
             {
                 tea.Sweet = true;
@@ -476,7 +476,7 @@ namespace MenuTest
         [Fact]
         public void TyrannoteaAddLemonShouldNotifyPropertyChanged()
         {
-            Tyrannotea tea = new Tyrannotea();
+            TyrannoTea tea = new TyrannoTea();
             Assert.PropertyChanged(tea, "Special", () =>
             {
                 tea.AddLemon();
@@ -486,7 +486,7 @@ namespace MenuTest
         [Fact]
         public void TyrannoteaHoldIceShouldNotifySpecialPropertyChanged()
         {
-            Tyrannotea tea = new Tyrannotea();
+            TyrannoTea tea = new TyrannoTea();
             Assert.PropertyChanged(tea, "Special", () =>
             {
                 tea.HoldIce();

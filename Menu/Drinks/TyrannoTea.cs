@@ -25,7 +25,7 @@ namespace DinoDiner.Menu
             set
             {
                 sweet = value;
-                NotifyOfPropertyChange(Description);
+                NotifyOfPropertyChange("Description");
             }
         }
             
