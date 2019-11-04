@@ -37,10 +37,13 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// 
+        /// returns the specials for the entree.
         /// </summary>
         public virtual string[] Special { get; }
 
+        /// <summary>
+        /// Returns the description of the entree.
+        /// </summary>
         public virtual string Description { get; }
 
 

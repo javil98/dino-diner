@@ -25,6 +25,11 @@ namespace PointOfSale
         /// Gets and sets a Side
         /// </summary>
         public Side Side { get; set; }
+
+        public CretaceousCombo Combo { get; set; }
+
+        public bool IsCombo { get; set; } = false;
+
         public SideSelection()
         {
             InitializeComponent();
@@ -40,6 +45,14 @@ namespace PointOfSale
             Side = side;
         }
 
+        public SideSelection(CretaceousCombo combo, bool IsCombo)
+        {
+            InitializeComponent();
+            this.Combo = combo;
+            this.IsCombo = IsCombo;
+
+        }
+
         /// <summary>
         /// Adds a side and sets the side to the page so as long the datacontext is an order.
         /// </summary>
@@ -48,8 +61,17 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Add(side);
-                this.Side = side;
+                if (!IsCombo)
+                {
+                    order.Add(side);
+                    this.Side = side;
+                }
+
+                else
+                {
+                    Combo.Side = side;
+
+                }
             }
         }
 

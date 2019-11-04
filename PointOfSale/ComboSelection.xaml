@@ -44,7 +44,7 @@
                     <ImageBrush ImageSource=" Assests/DinoDiner-06.png"></ImageBrush>
                 </Button.Background>
                 <DockPanel Height=" 160">
-                    <TextBlock DockPanel.Dock="Top" Width="170" Height="168">T-Rex Burger Combo</TextBlock>
+                    <TextBlock DockPanel.Dock="Top" Width="170" Height="168" TextAlignment ="Center" Text="T-Rex Burger Combo"/>
                 </DockPanel>
             </Button>
             <Button Click="AddPterodactylWingsCombo" Margin="10">

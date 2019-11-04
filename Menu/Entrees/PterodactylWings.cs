@@ -43,6 +43,16 @@ namespace DinoDiner.Menu
             }
         }
 
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+
+            }
+        }
+
         /// <summary>
         /// Returns a string that contains the name of a the item.
         /// </summary>

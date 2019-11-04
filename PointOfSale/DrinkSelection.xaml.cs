@@ -26,9 +26,20 @@ namespace PointOfSale
         /// </summary>
         public Drink Drink { get; set; }
 
+        private CretaceousCombo Combo { get; set; }
+
+        private bool IsCombo { get; set; } = false;
+
         public DrinkSelection()
         {
             InitializeComponent();
+        }
+
+        public DrinkSelection(CretaceousCombo combo, bool IsCombo)
+        {
+            InitializeComponent();
+            this.IsCombo = IsCombo;
+            this.Combo = combo;
         }
 
         
@@ -52,8 +63,15 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Add(drink);
-                this.Drink = drink;
+                if (!IsCombo)
+                {
+                    order.Add(drink);
+                    this.Drink = drink;
+                }
+                else
+                {
+                    Combo.Drink = drink;
+                }
             }
         }
 

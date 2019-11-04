@@ -24,6 +24,9 @@ namespace DinoDiner.Menu
             get { return this.ToString(); }
         }
 
+        /// <summary>
+        /// Returns the specials for the DinoNuggets.
+        /// </summary>
         public override string[] Special
         {
             get
@@ -58,6 +61,7 @@ namespace DinoDiner.Menu
                 {
                     ingredients.Add("Chicken Nugget");
                 }
+                NotifyOfPropertyChange("Special");
                 return ingredients;
             }
 
@@ -75,6 +79,7 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Ingredients");
             NotifyOfPropertyChange("Description");
+            NotifyOfPropertyChange("Items");
         }
 
         /// <summary>

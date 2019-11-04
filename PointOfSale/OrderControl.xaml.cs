@@ -43,7 +43,45 @@ namespace PointOfSale
             {
                 NavigationService?.Navigate(new SideSelection(side));
             }
+            else if(OrderItems.SelectedItem is Drink drink)
+            {
+                NavigationService?.Navigate(new DrinkSelection(drink));
+            }
+            else if(OrderItems.SelectedItem is Entree entree)
+            {
+                if(entree is DinoNuggets nuggets)
+                {
+                    NavigationService?.Navigate(new CustomizeDinoNuggets(nuggets));
+                }
+                
+                else if (entree is PrehistoricPBJ sandwhich)
+                {
+                    NavigationService?.Navigate(new CustomizePrehistoricPBJ(sandwhich));
+                }
+
+                else if (entree is Brontowurst bw)
+                {
+                    NavigationService?.Navigate(new CustomizeBrontowurst(bw));
+                }
+
+                else if (entree is SteakosaurusBurger burger)
+                {
+                    NavigationService?.Navigate(new CustomizeSteakosaurusBurger(burger));
+                }
+
+                else if (entree is TRexKingBurger burger1)
+                {
+                    NavigationService?.Navigate(new CustomizeTRexKingBurger(burger1));
+                }
+
+                else if (entree is VelociWrap wrap)
+                {
+                    NavigationService?.Navigate(new CustomizeVelociWrap(wrap));
+                }
+            }
         }
+
+       
 
         /// <summary>
         /// Removes an item if its a element, and in the element if its an item.

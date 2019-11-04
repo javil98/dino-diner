@@ -25,6 +25,9 @@ namespace DinoDiner.Menu
             get { return this.ToString(); }
         }
 
+        /// <summary>
+        /// Returns the specials for the entree.
+        /// </summary>
         public override string[] Special
         {
             get

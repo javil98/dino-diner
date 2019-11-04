@@ -31,15 +31,43 @@ namespace DinoDiner.Menu
         /// </summary>
         public Entree Entree { get; set; }
 
+        private Drink drink;
         /// <summary>
         /// Gets and sets the drink that the combo has.
         /// </summary>
-        public Drink Drink { get; set; }
+        public Drink Drink
+        {
+            get
+            {
+                return drink;
+            }
 
+            set
+            {
+                drink = value;
+                NotifyOfPropertyChange("Special");
+                NotifyOfPropertyChange("Drink");
+            }
+        }
+
+        private Side side;
         /// <summary>
         /// Gets and set the Side that the combo has.
         /// </summary>
-        public Side Side { get; set; }
+        public Side Side
+        {
+            get
+            {
+                return side;
+            }
+            set
+            {
+                side = value;
+                NotifyOfPropertyChange("Special");
+                NotifyOfPropertyChange("Side");
+                
+            }
+        }
 
         /// <summary>
         /// Private variable that stores the size of the combo.
