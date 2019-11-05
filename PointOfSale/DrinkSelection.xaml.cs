@@ -40,6 +40,7 @@ namespace PointOfSale
             InitializeComponent();
             this.IsCombo = IsCombo;
             this.Combo = combo;
+            this.Drink = combo.Drink;
         }
 
         
@@ -71,6 +72,7 @@ namespace PointOfSale
                 else
                 {
                     Combo.Drink = drink;
+                    this.Drink = drink;
                 }
             }
         }
