@@ -41,6 +41,7 @@ namespace PointOfSale
             this.IsCombo = IsCombo;
             this.Combo = combo;
             this.Drink = combo.Drink;
+            ButtonSetup();
         }
 
         
@@ -53,6 +54,7 @@ namespace PointOfSale
         {
             InitializeComponent();
             Drink = drink;
+            ButtonSetup();
         }
 
         /// <summary>
@@ -75,6 +77,7 @@ namespace PointOfSale
                     this.Drink = drink;
                 }
             }
+            ButtonSetup();
         }
 
         /// <summary>
@@ -85,25 +88,7 @@ namespace PointOfSale
         public void AddSodasaurus(object sender, RoutedEventArgs args)
         {
             SelectDrink(new Sodasaurus());
-            BtnAddSodasaurus.IsEnabled = true;
-            BtnAddTyrannoTea.IsEnabled = false;
-            BtnAddWater.IsEnabled = false;
-            BtnJurassicJava.IsEnabled = false;
-            BtnAddSmall.IsEnabled = true;
-            BtnAddMedium.IsEnabled = true;
-            BtnAddLarge.IsEnabled = true;
-
-            Button flavor = new Button { Height = 60, Width = 165, Content = "Flavor" };
-            Grid.SetRow(flavor, 1);
-            Grid.SetColumn(flavor, 2);
-            DrinkGrid.Children.Add(flavor);
-            flavor.Click += new RoutedEventHandler(SelectFlavor);
-
-            Button ice = new Button { Height = 60, Width = 165, Content = "Hold Ice" };
-            Grid.SetRow(ice, 2);
-            Grid.SetColumn(ice, 2);
-            DrinkGrid.Children.Add(ice);
-            ice.Click += new RoutedEventHandler(SelectHoldIce);
+            
         }
 
         /// <summary>
@@ -189,14 +174,7 @@ namespace PointOfSale
         public void AddWater(object sender, RoutedEventArgs args)
         {
             SelectDrink(new Water());
-            BtnAddSodasaurus.IsEnabled = false;
-            BtnAddTyrannoTea.IsEnabled = false;
-            BtnAddWater.IsEnabled = true;
-            BtnJurassicJava.IsEnabled = false;
-            BtnAddSmall.IsEnabled = true;
-            BtnAddMedium.IsEnabled = true;
-            BtnAddLarge.IsEnabled = true;
-
+           
             Button lemon = new Button { Height = 60, Width = 165, Content = "Add Lemon" };
             Grid.SetRow(lemon, 1);
             Grid.SetColumn(lemon, 2);
@@ -351,7 +329,47 @@ namespace PointOfSale
             }
         }
 
+        private void ButtonSetup()
+        {
+            if (Drink != null)
+            {
+                BtnAddSodasaurus.IsEnabled = false;
+                BtnAddTyrannoTea.IsEnabled = false;
+                BtnAddWater.IsEnabled = false;
+                BtnJurassicJava.IsEnabled = false;
+                BtnAddSmall.IsEnabled = true;
+                BtnAddMedium.IsEnabled = true;
+                BtnAddLarge.IsEnabled = true;
 
+            }
+            if (Drink is Sodasaurus)
+            {
+                BtnAddSodasaurus.IsEnabled = true;
+                BtnAddTyrannoTea.IsEnabled = false;
+                BtnAddWater.IsEnabled = false;
+                BtnJurassicJava.IsEnabled = false;
+                BtnAddSmall.IsEnabled = true;
+                BtnAddMedium.IsEnabled = true;
+                BtnAddLarge.IsEnabled = true;
+
+                Button flavor = new Button { Height = 60, Width = 165, Content = "Flavor" };
+                Grid.SetRow(flavor, 1);
+                Grid.SetColumn(flavor, 2);
+                DrinkGrid.Children.Add(flavor);
+                flavor.Click += new RoutedEventHandler(SelectFlavor);
+
+                Button ice = new Button { Height = 60, Width = 165, Content = "Hold Ice" };
+                Grid.SetRow(ice, 2);
+                Grid.SetColumn(ice, 2);
+                DrinkGrid.Children.Add(ice);
+                ice.Click += new RoutedEventHandler(SelectHoldIce);
+            }
+            if(Drink is TyrannoTea)
+            {
+                // add tea buttons...
+            }
+
+        }
 
 
 

@@ -30,10 +30,10 @@
         <Button Content=" Small" Click="SelectSmall" Grid.Column=" 0" Grid.Row="2" RenderTransformOrigin="0.657,-0.371" Margin="27,10.2,22.2,18.6"/>
         <Button Content=" Medium" Click="SelectMedium" Grid.Row="2" RenderTransformOrigin="0.502,-0.33" Margin="22.8,10.2,9.6,18.6" Grid.Column="1"/>
         <Button Content=" Large" Click="SelectLarge" Grid.Column="2" Grid.Row="2" Margin="23.4,10.2,30,18.6" />
-        <TextBlock Text=" Add to Order" Margin="267,10,266,51.8" Grid.ColumnSpan="3" TextAlignment="Center" />
-        <TextBlock Text=" Customize Combo " Grid.Column="1" Margin="9.8,46,9.6,12.8" HorizontalAlignment="Center" Width="247" TextAlignment="Center"></TextBlock>
+        <TextBlock Text=" Add to Order" Margin="8.8,15,10.6,46.8" TextAlignment="Center" Grid.Column="1" />
+        <TextBlock Text=" Customize Combo " Grid.Column="1" Margin="9.8,51,9.6,7.8" HorizontalAlignment="Center" Width="247" TextAlignment="Center"></TextBlock>
         <TextBlock Text=" Drink " Grid.Column="2" Margin="0.4,0,10,9.8" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="26" Width="256" TextAlignment="Center"/>
-        <TextBlock Text=" Size " Grid.Column="1" Margin="106.8,0,104.6,10.8" Grid.Row="1" RenderTransformOrigin="0.108,1.335" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="16" Width="55" TextAlignment="Center"/>
+        <TextBlock Text=" Size " Grid.Column="1" Margin="65.8,0,52.6,10.8" Grid.Row="1" RenderTransformOrigin="0.108,1.335" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="16" Width="148" TextAlignment="Center"/>
         <TextBlock Text=" Side " Grid.Column="0" Margin="0,0,10.2,12.8" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="29" Width="257" TextAlignment="Center"/>
     </Grid>
 </Page>

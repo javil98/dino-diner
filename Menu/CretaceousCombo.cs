@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// A class that represents a CretaceousCombo that uses the IMenuItem interface.
     /// </summary>
-    public class CretaceousCombo :IMenuItem, INotifyPropertyChanged, IOrderItem
+    public class CretaceousCombo : IMenuItem, INotifyPropertyChanged, IOrderItem
     {
 
         /// <summary>
@@ -45,6 +45,7 @@ namespace DinoDiner.Menu
             set
             {
                 drink = value;
+                drink.PropertyChanged += OnItemChange;
                 NotifyOfPropertyChange("Special");
                 NotifyOfPropertyChange("Drink");
             }
@@ -63,9 +64,10 @@ namespace DinoDiner.Menu
             set
             {
                 side = value;
+                side.PropertyChanged += OnItemChange;
                 NotifyOfPropertyChange("Special");
                 NotifyOfPropertyChange("Side");
-                
+
             }
         }
 
@@ -91,7 +93,7 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChange("Special");
             }
         }
-        
+
         /// <summary>
         /// Gets the Price of the combo.
         /// </summary>
@@ -125,7 +127,7 @@ namespace DinoDiner.Menu
                 ingredients.AddRange(this.Drink.Ingredients);
                 ingredients.AddRange(this.Side.Ingredients);
                 ingredients.AddRange(this.Entree.Ingredients);
-               string[] ingredient = ingredients.ToArray();
+                string[] ingredient = ingredients.ToArray();
                 List<string> ingredients2 = new List<string>(ingredient);
                 return ingredients2;
             }
@@ -142,6 +144,7 @@ namespace DinoDiner.Menu
         public CretaceousCombo(Entree entree)
         {
             Entree = entree;
+            entree.PropertyChanged += OnItemChange;
             Side = new Fryceritops();
             Drink = new Sodasaurus();
         }
@@ -154,7 +157,7 @@ namespace DinoDiner.Menu
         {
 
             return (Entree + " Combo");
-            
+
         }
 
         public string Description
@@ -172,10 +175,16 @@ namespace DinoDiner.Menu
                 ingredients.AddRange(Side.Special);
                 ingredients.Add(Drink.ToString());
                 ingredients.AddRange(Drink.Special);
-               
+
                 return ingredients.ToArray();
-                
+
             }
+        }
+
+        private void OnItemChange(object sender, PropertyChangedEventArgs args)
+        {
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Price");
         }
     }
 }
