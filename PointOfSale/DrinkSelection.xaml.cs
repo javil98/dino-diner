@@ -88,7 +88,6 @@ namespace PointOfSale
         public void AddSodasaurus(object sender, RoutedEventArgs args)
         {
             SelectDrink(new Sodasaurus());
-            
         }
 
         /// <summary>
@@ -98,34 +97,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void AddTyrannoTea(object sender, RoutedEventArgs args)
         {
-
             SelectDrink(new TyrannoTea());
-            BtnAddSodasaurus.IsEnabled = false;
-            BtnAddTyrannoTea.IsEnabled = true;
-            BtnAddWater.IsEnabled = false;
-            BtnJurassicJava.IsEnabled = false;
-            BtnAddSmall.IsEnabled = true;
-            BtnAddMedium.IsEnabled = true;
-            BtnAddLarge.IsEnabled = true;
-
-            Button lemon = new Button { Height = 60, Width = 165, Content = "Add Lemon" };
-            Grid.SetRow(lemon, 1);
-            Grid.SetColumn(lemon, 2);
-            DrinkGrid.Children.Add(lemon);
-            lemon.Click += new RoutedEventHandler(SelectLemon);
-
-            Button sweet = new Button { Height = 45, Width = 165, Content = "Make Sweet" };
-            Grid.SetRow(sweet, 2);
-            Grid.SetColumn(sweet, 2);
-            DrinkGrid.Children.Add(sweet);
-            sweet.Click += new RoutedEventHandler(SelectSweet);
-
-            Button ice = new Button { Height = 60, Width = 165, Content = "Hold Ice" };
-            Grid.SetRow(ice, 3);
-            Grid.SetColumn(ice, 2);
-            DrinkGrid.Children.Add(ice);
-            ice.Click += new RoutedEventHandler(SelectHoldIce);
-
         }
 
 
@@ -138,32 +110,6 @@ namespace PointOfSale
         public void AddJurassicJava(object sender, RoutedEventArgs args)
         {
             SelectDrink(new JurassicJava());
-            BtnAddSodasaurus.IsEnabled = false;
-            BtnAddTyrannoTea.IsEnabled = false;
-            BtnAddWater.IsEnabled = false;
-            BtnJurassicJava.IsEnabled = true;
-            BtnAddSmall.IsEnabled = true;
-            BtnAddMedium.IsEnabled = true;
-            BtnAddLarge.IsEnabled = true;
-
-            Button cream = new Button { Height = 60, Width = 165, Content = "Room For Cream" };
-            Grid.SetRow(cream, 1);
-            Grid.SetColumn(cream, 2);
-            DrinkGrid.Children.Add(cream);
-            cream.Click += new RoutedEventHandler(SelectCream);
-
-            Button decaf = new Button { Height = 45, Width = 165, Content = "Make Decaf" };
-            Grid.SetRow(decaf, 2);
-            Grid.SetColumn(decaf, 2);
-            DrinkGrid.Children.Add(decaf);
-            decaf.Click += new RoutedEventHandler(SelectDecaf);
-
-            Button ice = new Button { Height = 60, Width = 165, Content = "Add Ice" };
-            Grid.SetRow(ice, 3);
-            Grid.SetColumn(ice, 2);
-            DrinkGrid.Children.Add(ice);
-            ice.Click += new RoutedEventHandler(SelectAddIce);
-
         }
 
         /// <summary>
@@ -175,19 +121,6 @@ namespace PointOfSale
         {
             SelectDrink(new Water());
            
-            Button lemon = new Button { Height = 60, Width = 165, Content = "Add Lemon" };
-            Grid.SetRow(lemon, 1);
-            Grid.SetColumn(lemon, 2);
-            DrinkGrid.Children.Add(lemon);
-            lemon.Click += new RoutedEventHandler(SelectLemon);
-
-            Button ice = new Button { Height = 45, Width = 165, Content = "Hold Ice" };
-            Grid.SetRow(ice, 2);
-            Grid.SetColumn(ice, 2);
-            DrinkGrid.Children.Add(ice);
-            ice.Click += new RoutedEventHandler(SelectHoldIce);
-
-
         }
 
         public void SelectSize(DinoDiner.Menu.Size size)
@@ -236,6 +169,11 @@ namespace PointOfSale
         /// <param name="args"></param>
        public void ClickDone(object sender, RoutedEventArgs args)
         {
+            if (IsCombo)
+            {
+                NavigationService.GoBack();
+            }
+
             NavigationService.Navigate(new MenuCategorySelection());
         }
 
@@ -366,7 +304,75 @@ namespace PointOfSale
             }
             if(Drink is TyrannoTea)
             {
-                // add tea buttons...
+                BtnAddSodasaurus.IsEnabled = false;
+                BtnAddTyrannoTea.IsEnabled = true;
+                BtnAddWater.IsEnabled = false;
+                BtnJurassicJava.IsEnabled = false;
+                BtnAddSmall.IsEnabled = true;
+                BtnAddMedium.IsEnabled = true;
+                BtnAddLarge.IsEnabled = true;
+
+                Button lemon = new Button { Height = 60, Width = 165, Content = "Add Lemon" };
+                Grid.SetRow(lemon, 1);
+                Grid.SetColumn(lemon, 2);
+                DrinkGrid.Children.Add(lemon);
+                lemon.Click += new RoutedEventHandler(SelectLemon);
+
+                Button sweet = new Button { Height = 45, Width = 165, Content = "Make Sweet" };
+                Grid.SetRow(sweet, 2);
+                Grid.SetColumn(sweet, 2);
+                DrinkGrid.Children.Add(sweet);
+                sweet.Click += new RoutedEventHandler(SelectSweet);
+
+                Button ice = new Button { Height = 60, Width = 165, Content = "Hold Ice" };
+                Grid.SetRow(ice, 3);
+                Grid.SetColumn(ice, 2);
+                DrinkGrid.Children.Add(ice);
+                ice.Click += new RoutedEventHandler(SelectHoldIce);
+
+            }
+            if(Drink is JurassicJava)
+            {
+                BtnAddSodasaurus.IsEnabled = false;
+                BtnAddTyrannoTea.IsEnabled = false;
+                BtnAddWater.IsEnabled = false;
+                BtnJurassicJava.IsEnabled = true;
+                BtnAddSmall.IsEnabled = true;
+                BtnAddMedium.IsEnabled = true;
+                BtnAddLarge.IsEnabled = true;
+
+                Button cream = new Button { Height = 60, Width = 165, Content = "Room For Cream" };
+                Grid.SetRow(cream, 1);
+                Grid.SetColumn(cream, 2);
+                DrinkGrid.Children.Add(cream);
+                cream.Click += new RoutedEventHandler(SelectCream);
+
+                Button decaf = new Button { Height = 45, Width = 165, Content = "Make Decaf" };
+                Grid.SetRow(decaf, 2);
+                Grid.SetColumn(decaf, 2);
+                DrinkGrid.Children.Add(decaf);
+                decaf.Click += new RoutedEventHandler(SelectDecaf);
+
+                Button ice = new Button { Height = 60, Width = 165, Content = "Add Ice" };
+                Grid.SetRow(ice, 3);
+                Grid.SetColumn(ice, 2);
+                DrinkGrid.Children.Add(ice);
+                ice.Click += new RoutedEventHandler(SelectAddIce);
+            }
+
+            if(Drink is Water)
+            {
+                Button lemon = new Button { Height = 60, Width = 165, Content = "Add Lemon" };
+                Grid.SetRow(lemon, 1);
+                Grid.SetColumn(lemon, 2);
+                DrinkGrid.Children.Add(lemon);
+                lemon.Click += new RoutedEventHandler(SelectLemon);
+
+                Button ice = new Button { Height = 45, Width = 165, Content = "Hold Ice" };
+                Grid.SetRow(ice, 2);
+                Grid.SetColumn(ice, 2);
+                DrinkGrid.Children.Add(ice);
+                ice.Click += new RoutedEventHandler(SelectHoldIce);
             }
 
         }
