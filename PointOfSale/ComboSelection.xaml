@@ -22,7 +22,7 @@
         </Grid.RowDefinitions>
         <Button Grid.Column="0" Grid.Row="0" Height="120" Width="190" Margin="0,10,0,0" Name = "BtnAddBrontowurst" Click="AddBrontowurstCombo">
             <Button.Background>
-                <ImageBrush ImageSource ="Assests/DinoDiner-01.png"></ImageBrush>
+                <ImageBrush ImageSource ="Assests/Combo Pictures/DinoDiner-16.png"></ImageBrush>
             </Button.Background>
             <DockPanel Height=" 150">
                 <TextBlock DockPanel.Dock="Top"> Brontowurst Combo </TextBlock>
@@ -30,7 +30,7 @@
         </Button>
         <Button Grid.Column="1" Grid.Row="0" Height="120" Width="190" Margin="0,10,0,0" Name = "BtnAddDinoNuggets" Click="AddDinoNuggetsCombo">
             <Button.Background>
-                <ImageBrush ImageSource="Assests/DinoDiner-02.png"></ImageBrush>
+                <ImageBrush ImageSource="Assests/Combo Pictures/DinoDiner-17.png"></ImageBrush>
             </Button.Background>
             <DockPanel Height="160">
                 <TextBlock DockPanel.Dock="Top">Dino-Nuggets Combo</TextBlock>
@@ -38,23 +38,23 @@
         </Button>
         <Button Grid.Column="0" Height="120" Width="190" Margin="0,10,0,0" Grid.Row="1" Name = "BtnAddPterodactylWings" Click="AddPterodactylWingsCombo">
             <Button.Background>
-                <ImageBrush ImageSource="Assests/DinoDiner-04.png"></ImageBrush>
+                <ImageBrush ImageSource="Assests/Combo Pictures/DinoDiner-19.png"></ImageBrush>
             </Button.Background>
             <DockPanel Height="139">
                 <TextBlock Width="143" TextAlignment="Center" Margin="0,0,0,27.2">Pterodactyl Wings Combo</TextBlock>
             </DockPanel>
         </Button>
-        <Button Grid.Column="2" Grid.Row="0" Height="120" Width="190" Margin="0,10,0,0" Name = "BtnAddPrehistoricPBJ" Click="AddPrehistoricPBJCombo">
+        <Button Grid.Column="2" Grid.Row="0" Height="120" Width="190" Margin="0,0,0,0" Name = "BtnAddPrehistoricPBJ" Click="AddPrehistoricPBJCombo">
             <Button.Background>
-                <ImageBrush ImageSource="Assests/DinoDiner-03.png"></ImageBrush>
+                <ImageBrush ImageSource="Assests/Combo Pictures/DinoDiner-18.png"></ImageBrush>
             </Button.Background>
             <DockPanel Height="223">
-                <TextBlock DockPanel.Dock="Top" TextAlignment="Center" Height="250" Width="148" RenderTransformOrigin="0.489,0.502">Prehistoric PB&amp;J Combo</TextBlock>
+                <TextBlock DockPanel.Dock="Top" TextAlignment="Center" Height="250" Width="148" RenderTransformOrigin="0.489,0.502" Margin="0,0,0,0">Prehistoric PB&amp;J Combo</TextBlock>
             </DockPanel>
         </Button>
         <Button Height="120" Width="190" Margin="0,10,0,0" Grid.Column="1" Grid.Row="1" Name = "BtnAddSteakosaurusBurger" Click="AddSteakosaurusBurgerCombo">
             <Button.Background>
-                <ImageBrush ImageSource=" Assests/DinoDiner-05.png"></ImageBrush>
+                <ImageBrush ImageSource=" Assests/Combo Pictures/DinoDiner-20.png"></ImageBrush>
             </Button.Background>
             <DockPanel Height=" 150">
                 <TextBlock VerticalAlignment="Bottom" Margin="0,0,0,134.4">Steakosaurus Burger Combo</TextBlock>
@@ -62,7 +62,7 @@
         </Button>
         <Button Grid.Column="2" Height="120" Width="190" Margin="0,10,0,0" Grid.Row="1" Name = "BtnAddTRexBurger" Click="AddTRexKingBurgerCombo">
             <Button.Background>
-                <ImageBrush ImageSource=" Assests/DinoDiner-06.png"></ImageBrush>
+                <ImageBrush ImageSource="Assests/Combo Pictures/DinoDiner-21.png"></ImageBrush>
             </Button.Background>
             <DockPanel Height=" 160">
                 <TextBlock DockPanel.Dock="Top">T-Rex Burger Combo</TextBlock>
@@ -70,10 +70,10 @@
         </Button>
         <Button Grid.Column="0" Grid.Row="2" Height="120" Width="190" Margin="0,10,0,0" Name = "BtnAddVelociWrap" Click="AddVelociWrapCombo">
             <Button.Background>
-                <ImageBrush ImageSource="Assests/DinoDiner-07.png"/>
+                <ImageBrush ImageSource="Assests/Combo Pictures/DinoDiner-22.png"/>
             </Button.Background>
             <DockPanel Height=" 170">
-                <TextBlock DockPanel.Dock="Top" Width="125" TextAlignment="Center" Height="156"><Run Text="Veloci-Wrap Combo"/></TextBlock>
+                <TextBlock DockPanel.Dock="Top" Width="125" TextAlignment="Center" Height="156" Margin="0,0,0,25"><Run Text="Veloci-Wrap Combo"/></TextBlock>
             </DockPanel>
         </Button>
         

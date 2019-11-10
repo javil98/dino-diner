@@ -214,5 +214,15 @@
       <Name>Menu</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assests\Combo Pictures\DinoDiner-16.png" />
+    <Resource Include="Assests\Combo Pictures\DinoDiner-17.png" />
+    <Resource Include="Assests\Combo Pictures\DinoDiner-18.png" />
+    <Resource Include="Assests\Combo Pictures\DinoDiner-19.png" />
+    <Resource Include="Assests\Combo Pictures\DinoDiner-20.png" />
+    <Resource Include="Assests\Combo Pictures\DinoDiner-21.png" />
+    <Resource Include="Assests\Combo Pictures\DinoDiner-22.png" />
+    <Resource Include="Assests\Combo Pictures\DinoDiner-23.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
