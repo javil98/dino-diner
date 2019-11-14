@@ -166,15 +166,19 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-       public void ClickDone(object sender, RoutedEventArgs args)
+        public void ClickDone(object sender, RoutedEventArgs args)
         {
             if (IsCombo)
             {
                 NavigationService.GoBack();
             }
+            else
+            {
 
-            NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
         }
+   
 
         /// <summary>
         /// When the flavor button is clicked, it takes the user to the FlavorSelection page. 
