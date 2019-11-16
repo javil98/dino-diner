@@ -73,17 +73,17 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets a list of available combos.
         /// </summary>
-        public List<Side> AvailableCombos
+        public List<CretaceousCombo> AvailableCombos
         {
             get
             {
                 List<CretaceousCombo> AvailableCombos = new List<CretaceousCombo> { new CretaceousCombo(new Brontowurst()), new CretaceousCombo(new DinoNuggets()), new CretaceousCombo(new PrehistoricPBJ()), new CretaceousCombo(new PterodactylWings()), new CretaceousCombo(new SteakosaurusBurger()), new CretaceousCombo(new TRexKingBurger()), new CretaceousCombo(new VelociWrap()) };
-                return AvailableSides;
+                return AvailableCombos;
             }
         }
 
         /// <summary>
-        /// Returns a string that contains all of the menus available in the menu.
+        /// Returns a string that contains all of the items available in the menu.
         /// </summary>
         /// <returns> A string that contains all of the menu items.</returns>
         public override string ToString()
