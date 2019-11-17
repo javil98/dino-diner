@@ -10,7 +10,10 @@
 @foreach (var item in Model.Menu.AvailableCombos)
 {
     <div class="menu-item">
-        <p>@item.ToString()</p>
+        <p>@item.ToString():</p>
+        <ul>@item.Entree.ToString()</ul>
+        <ul>@item.Side.ToString()</ul>
+        <ul>@item.Drink.ToString()</ul>
         <p>Price: $@item.Price</p>
         <p>Calories: @item.Calories</p>
         <p>Ingredients:</p>
