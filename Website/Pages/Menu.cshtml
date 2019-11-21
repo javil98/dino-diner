@@ -6,64 +6,114 @@
 
 
 <h1>Menu</h1>
-<h2>Combos</h2>
-@foreach (var item in Model.Menu.AvailableCombos)
-{
-    <div class="menu-item">
-        <p>@item.ToString():</p>
-        <ul>@item.Entree.ToString()</ul>
-        <ul>@item.Side.ToString()</ul>
-        <ul>@item.Drink.ToString()</ul>
-        <p>Price: $@item.Price</p>
-        <p>Calories: @item.Calories</p>
-        <p>Ingredients:</p>
-        @foreach(var ingredients in item.Ingredients)
+<div id="container">
+    <div>
+        <h2>Combos</h2>
+        @foreach (var item in Model.Menu.AvailableCombos)
         {
-            <ul> @ingredients</ul>
+            <div class="menu-item">
+                <p>@item.ToString():</p>
+                <ul>*@item.Entree.ToString()</ul>
+                <ul>*@item.Side.ToString()</ul>
+                <ul>*@item.Drink.ToString()</ul>
+                <p>Price: $@item.Price</p>
+                <p>Calories: @item.Calories</p>
+                <p>Ingredients:</p>
+                @foreach (var ingredients in item.Ingredients)
+                {
+                    <ul> *@ingredients</ul>
+                }
+
+            </div>
         }
+        <h2>Entrees</h2>
+        @foreach (var item in Model.Menu.AvailableEntrees)
+        {
+            <div class="menu-item">
+                <p>@item.ToString()</p>
+                <p>Price: $@item.Price</p>
+                <p>Calories: @item.Calories</p>
+                <p>Ingredients:</p>
+                @foreach (var ingredients in item.Ingredients)
+                {
+                    <ul> *@ingredients</ul>
+                }
+            </div>
+        }
+        <h2>Sides</h2>
+        @foreach (var item in Model.Menu.AvailableSides)
+        {
+            <div class="menu-item">
+                <p>@item.ToString()</p>
+                <p>Price: $@item.Price</p>
+                <p>Calories: @item.Calories</p>
+                <p>Ingredients:</p>
+                @foreach (var ingredients in item.Ingredients)
+                {
+                    <ul> @ingredients</ul>
+                }
+            </div>
+        }
+        <h2>Drinks</h2>
+        @foreach (var item in Model.Menu.AvailableDrinks)
+        {
+            <div class="menu-item">
+                <p>@item.ToString()</p>
+                <p>Price: $@item.Price</p>
+                <p>Calories: @item.Calories</p>
+                <p>Ingredients:</p>
+                @foreach (var ingredients in item.Ingredients)
+                {
+                    <ul> @ingredients</ul>
+                }
+            </div>
 
+        }
     </div>
-}
-<h2>Entrees</h2>
-@foreach (var item in Model.Menu.AvailableEntrees)
-{
-<div class="menu-item">
-    <p>@item.ToString()</p>
-    <p>Price: $@item.Price</p>
-    <p>Calories: @item.Calories</p>
-    <p>Ingredients:</p>
-    @foreach (var ingredients in item.Ingredients)
-    {
-        <ul> @ingredients</ul>
-    }
-</div>
-}
-<h2>Sides</h2>
-@foreach (var item in Model.Menu.AvailableSides)
-{
-<div class="menu-item">
-    <p>@item.ToString()</p>
-    <p>Price: $@item.Price</p>
-    <p>Calories: @item.Calories</p>
-    <p>Ingredients:</p>
-    @foreach (var ingredients in item.Ingredients)
-    {
-        <ul> @ingredients</ul>
-    }
-</div>
-}
-<h2>Drinks</h2>
-@foreach (var item in Model.Menu.AvailableDrinks)
-{
-<div class="menu-item">
-    <p>@item.ToString()</p>
-    <p>Price: $@item.Price</p>
-    <p>Calories: @item.Calories</p>
-    <p>Ingredients:</p>
-    @foreach (var ingredients in item.Ingredients)
-    {
-        <ul> @ingredients</ul>
-    }
-</div>
-}
+    <form method="post">
+        <input type="text" name="search" id="search" />
 
+        <input type="submit" value="Search" />
+
+        <input type="submit" name="filter" id="filter" value="Apply Filter"/>
+        <div class="menu-category">
+            <h4>Menu Category</h4>
+
+            <label>
+                <input type="checkbox" name="menuCategory" value="Combo" />
+                Combo
+            </label>
+
+            <label>
+                <input type="checkbox" name="menuCategory" value="Entree" />
+                Entree
+            </label>
+
+            <label>
+                <input type="checkbox" name="menuCategory" value="Side" />
+                Side
+            </label>
+
+            <label>
+                <input type="checkbox" name="menuCategory" value="Drink" />
+                Drink
+            </label>
+
+            <br />
+            <label>
+                Minimum Price:
+                <input type="number" min="0" max="10" step="0.1" name="minIMBD" />
+            </label>
+
+            <br />
+            <label>
+                Maximum Price:
+                <input type="number" min="0" max="10" step="0.1" name="maxIMDB" />
+            </label>
+
+        </div>
+
+    </form>
+
+    
+</div>
