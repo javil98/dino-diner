@@ -35,3 +35,8 @@ form {
     flex-direction: column;
 }
 
+.exclude-ingredient{
+    display: flex;
+    flex-direction: column;
+}
+

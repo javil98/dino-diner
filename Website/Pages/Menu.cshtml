@@ -3,79 +3,90 @@
 @{
     ViewData["Title"] = "Menu";
 }
+@using DinoDiner.Menu;
 
 
 <h1>Menu</h1>
 <div id="container">
     <div>
         <h2>Combos</h2>
-        @foreach (var item in Model.Menu.AvailableCombos)
+        @foreach (var item in Model.menuResults)
         {
-            <div class="menu-item">
-                <p>@item.ToString():</p>
-                <ul>*@item.Entree.ToString()</ul>
-                <ul>*@item.Side.ToString()</ul>
-                <ul>*@item.Drink.ToString()</ul>
+            if(item is CretaceousCombo combo) 
+            { 
+                <div class="menu-item">
+                <p>@combo.ToString():</p>
+                <ul>*@combo.Entree.ToString()</ul>
+                <ul>*@combo.Side.ToString()</ul>
+                <ul>*@combo.Drink.ToString()</ul>
                 <p>Price: $@item.Price</p>
                 <p>Calories: @item.Calories</p>
                 <p>Ingredients:</p>
-                @foreach (var ingredients in item.Ingredients)
+                @foreach (var ingredients in combo.Ingredients)
                 {
                     <ul> *@ingredients</ul>
                 }
-
             </div>
+            }
+
+            
         }
         <h2>Entrees</h2>
-        @foreach (var item in Model.Menu.AvailableEntrees)
+        @foreach (var item1 in Model.menuResults)
         {
+            if (item1 is Entree entrees)
+            {
             <div class="menu-item">
-                <p>@item.ToString()</p>
-                <p>Price: $@item.Price</p>
-                <p>Calories: @item.Calories</p>
+                <p>@entrees.ToString()</p>
+                <p>Price: $@entrees.Price</p>
+                <p>Calories: @entrees.Calories</p>
                 <p>Ingredients:</p>
-                @foreach (var ingredients in item.Ingredients)
+                @foreach (var ingredients in entrees.Ingredients)
                 {
                     <ul> *@ingredients</ul>
                 }
             </div>
+            }
         }
         <h2>Sides</h2>
-        @foreach (var item in Model.Menu.AvailableSides)
+        @foreach (var item2 in Model.menuResults)
         {
+            if (item2 is Side side)
+            {
             <div class="menu-item">
-                <p>@item.ToString()</p>
-                <p>Price: $@item.Price</p>
-                <p>Calories: @item.Calories</p>
+                <p>@side.ToString()</p>
+                <p>Price: $@side.Price</p>
+                <p>Calories: @side.Calories</p>
                 <p>Ingredients:</p>
-                @foreach (var ingredients in item.Ingredients)
+                @foreach (var ingredients in side.Ingredients)
                 {
-                    <ul> @ingredients</ul>
+                    <ul> *@ingredients</ul>
                 }
             </div>
+            }
         }
         <h2>Drinks</h2>
-        @foreach (var item in Model.Menu.AvailableDrinks)
+        @foreach (var item3 in Model.menuResults)
         {
+            if(item3 is Drink drink) 
+            { 
             <div class="menu-item">
-                <p>@item.ToString()</p>
-                <p>Price: $@item.Price</p>
-                <p>Calories: @item.Calories</p>
+                <p>@drink.ToString()</p>
+                <p>Price: $@drink.Price</p>
+                <p>Calories: @drink.Calories</p>
                 <p>Ingredients:</p>
-                @foreach (var ingredients in item.Ingredients)
+                @foreach (var ingredients in drink.Ingredients)
                 {
-                    <ul> @ingredients</ul>
+                    <ul> *@ingredients</ul>
                 }
             </div>
-
+            }
         }
     </div>
     <form method="post">
         <input type="text" name="search" id="search" />
-
-        <input type="submit" value="Search" />
-
-        <input type="submit" name="filter" id="filter" value="Apply Filter"/>
+        
+        <input type ="submit" value="Search" />
         <div class="menu-category">
             <h4>Menu Category</h4>
 
@@ -102,15 +113,25 @@
             <br />
             <label>
                 Minimum Price:
-                <input type="number" min="0" max="10" step="0.1" name="minIMBD" />
+                <input type="number" min="0" max="12" step="0.1" name="minPrice" />
             </label>
 
             <br />
             <label>
                 Maximum Price:
-                <input type="number" min="0" max="10" step="0.1" name="maxIMDB" />
+                <input type="number" min="0" max="12" step="0.1" name="maxPrice" />
             </label>
 
+        </div>
+        <br />
+        <div class="exclude-ingredient">
+            @foreach(string ingredient in Model.AvailableIngredients)
+            {
+            <label>
+                <input type="checkbox" name="ingredients" value="@ingredient" />
+                @ingredient
+            </label>
+            }
         </div>
 
     </form>

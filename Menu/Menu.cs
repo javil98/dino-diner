@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using DinoDiner.Menu;
 
 namespace DinoDiner.Menu
@@ -19,17 +20,25 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets a list of available menu items.
         /// </summary>
-        public List<Object> AvailableMenuItems
+        public List<IMenuItem> AvailableMenuItems
         {
             get
             {
-                List<Object> MenuItemsList = new List<Object>();
+                List<IMenuItem> MenuItemsList = new List<IMenuItem>();
                 MenuItemsList.AddRange(AvailableEntrees);
                 MenuItemsList.AddRange(AvailableDrinks);
                 MenuItemsList.AddRange(AvailableSides);
                 MenuItemsList.AddRange(AvailableCombos);
 
                 return MenuItemsList;
+            }
+        }
+
+        public List<string> AvailableIngredients
+        {
+            get
+            {
+                return AllIngredients();
             }
         }
 
@@ -94,6 +103,117 @@ namespace DinoDiner.Menu
                 sb.Append(x.ToString() + "\n");
             }
             return sb.ToString();
+        }
+
+        public List<string> AllIngredients()
+        {
+            HashSet<string> ingredientList = new HashSet<string>();
+
+            foreach(Entree entree in AvailableEntrees)
+            {
+                foreach(string ingredient in entree.Ingredients)
+                {
+                    ingredientList.Add(ingredient);
+                }
+            }
+
+            foreach (Drink drink in AvailableDrinks)
+            {
+                foreach (string ingredient in drink.Ingredients)
+                {
+                    ingredientList.Add(ingredient);
+                }
+            }
+
+            foreach (Side side in AvailableSides)
+            {
+                foreach (string ingredient in side.Ingredients)
+                {
+                    ingredientList.Add(ingredient);
+                }
+            }
+
+            return ingredientList.ToList();
+
+        }
+        public List<IMenuItem> SearchMinPrice(List<IMenuItem> items, double minPrice)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+
+            foreach(IMenuItem item in items)
+            {
+                if(item.Price > minPrice)
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
+
+        public List<IMenuItem> SearchMaxPrice(List<IMenuItem> items, double maxPrice)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+
+            foreach (IMenuItem item in items)
+            {
+                if (item.Price < maxPrice)
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
+
+
+        public List<IMenuItem> SearchIngredients(List<IMenuItem> items, List<string> category)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+
+            foreach(IMenuItem item in items)
+            {
+                foreach(string ingredient in item.Ingredients)
+                {
+                    if (category.Contains(ingredient))
+                    {
+                        results.Add(item);
+                    }
+                }
+                
+            }
+
+            return results;
+        }
+
+        public List<IMenuItem> SearchCategory(List<IMenuItem> items, List<string> category)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+
+            foreach(IMenuItem item in items)
+            {
+                if(item is Entree && category.Contains("Entree"))
+                {
+                    results.Add(item);
+                }
+
+                if(item is CretaceousCombo && category.Contains("Combo"))
+                {
+                    results.Add(item);
+                }
+
+                if (item is Drink && category.Contains("Drink"))
+                {
+                    results.Add(item);
+                }
+
+                if (item is Side && category.Contains("Side"))
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
         }
     }
 
