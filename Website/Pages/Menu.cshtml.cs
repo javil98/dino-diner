@@ -51,7 +51,10 @@ namespace Website.Pages
         public void OnPost()
         {
             menuResults = menuL.AvailableMenuItems;
-
+            if(search.Length != 0)
+            {
+                menuResults = menuL.SearchName(menuResults, search);
+            }
             if(menuCategory.Count != 0)
             {
                 menuResults = menuL.SearchCategory(menuResults, menuCategory);

@@ -34,6 +34,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Property that returns all of the available ingredients in the menu list.
+        /// </summary>
         public List<string> AvailableIngredients
         {
             get
@@ -105,6 +108,10 @@ namespace DinoDiner.Menu
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Stores all of the ingredients that are available in the menu.
+        /// </summary>
+        /// <returns>A HashSet of all of the ingredients availble in the menu.</returns>
         public List<string> AllIngredients()
         {
             HashSet<string> ingredientList = new HashSet<string>();
@@ -136,6 +143,13 @@ namespace DinoDiner.Menu
             return ingredientList.ToList();
 
         }
+        
+        /// <summary>
+        /// Filters the menuitems in the list of menuitems by the minprice. 
+        /// </summary>
+        /// <param name="items">The list that contains the menuitems</param>
+        /// <param name="minPrice">The price that it is filtering by</param>
+        /// <returns></returns>
         public List<IMenuItem> SearchMinPrice(List<IMenuItem> items, double minPrice)
         {
             List<IMenuItem> results = new List<IMenuItem>();
@@ -151,6 +165,12 @@ namespace DinoDiner.Menu
             return results;
         }
 
+        /// <summary>
+        /// Filters the menuItems by the MaxPrice.
+        /// </summary>
+        /// <param name="items">The list of the menuitems.</param>
+        /// <param name="maxPrice">The price that is filtering by.</param>
+        /// <returns></returns>
         public List<IMenuItem> SearchMaxPrice(List<IMenuItem> items, double maxPrice)
         {
             List<IMenuItem> results = new List<IMenuItem>();
@@ -166,26 +186,37 @@ namespace DinoDiner.Menu
             return results;
         }
 
-
+        /// <summary>
+        /// Filters the menuItems by the ingredients.
+        /// </summary>
+        /// <param name="items">The list of menuItems.</param>
+        /// <param name="category">The ingredeints that the filter is filtering by.</param>
+        /// <returns></returns>
         public List<IMenuItem> SearchIngredients(List<IMenuItem> items, List<string> category)
         {
             List<IMenuItem> results = new List<IMenuItem>();
 
-            foreach(IMenuItem item in items)
+            foreach (IMenuItem item in items)
             {
-                foreach(string ingredient in item.Ingredients)
+                foreach (string ingredient in item.Ingredients)
                 {
                     if (category.Contains(ingredient))
                     {
                         results.Add(item);
                     }
                 }
-                
+
             }
 
             return results;
         }
 
+        /// <summary>
+        /// The 
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="category"></param>
+        /// <returns></returns>
         public List<IMenuItem> SearchCategory(List<IMenuItem> items, List<string> category)
         {
             List<IMenuItem> results = new List<IMenuItem>();
@@ -208,6 +239,21 @@ namespace DinoDiner.Menu
                 }
 
                 if (item is Side && category.Contains("Side"))
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
+
+        public List<IMenuItem> SearchName(List<IMenuItem> items, string search)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+
+            foreach (IMenuItem item in items)
+            {
+                if (item.ToString().Contains(search))
                 {
                     results.Add(item);
                 }
