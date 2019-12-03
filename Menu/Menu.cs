@@ -212,10 +212,10 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// The 
+        /// This method filters the menuItems by item type.
         /// </summary>
-        /// <param name="items"></param>
-        /// <param name="category"></param>
+        /// <param name="items">The menuItems being sorted</param>
+        /// <param name="category">The categories from which the list is being sorted by.</param>
         /// <returns></returns>
         public List<IMenuItem> SearchCategory(List<IMenuItem> items, List<string> category)
         {
@@ -247,6 +247,12 @@ namespace DinoDiner.Menu
             return results;
         }
 
+        /// <summary>
+        /// This method filters the menuItems by the thing that the user searches by..
+        /// </summary>
+        /// <param name="items">The menuitems that the method is filtering from.</param>
+        /// <param name="search">The search string that the method is searching for.</param>
+        /// <returns></returns>
         public List<IMenuItem> SearchName(List<IMenuItem> items, string search)
         {
             List<IMenuItem> results = new List<IMenuItem>();

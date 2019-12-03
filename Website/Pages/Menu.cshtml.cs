@@ -10,28 +10,50 @@ namespace Website.Pages
 {
     public class MenuModel : PageModel
     {
+        /// <summary>
+        /// A property that stores what the user wants to search for. 
+        /// </summary>
         [BindProperty]
         public string search { get; set; }
 
+        /// <summary>
+        /// A property that stores the categories that the user wants to search for. 
+        /// </summary>
         [BindProperty]
         public List<string> menuCategory { get; set; } = new List<string>();
 
+        /// <summary>
+        /// A property that stores the ingredients that the user wants to search for. 
+        /// </summary>
         [BindProperty]
         public List<string> ingredients { get; set; } = new List<string>();
 
+        /// <summary>
+        /// A property that stores the min price that the user wants to search for. 
+        /// </summary>
         [BindProperty]
         public double? minPrice { get; set; }
         
+        /// <summary>
+        /// A property that stores the max price that the user wants to search for.  
+        /// </summary>
         [BindProperty]
         public double? maxPrice { get; set; }
 
-
+        /// <summary>
+        /// A menu that allows us to acces the methods from the menu class.
+        /// </summary>
         public Menu menuL = new Menu();
 
+        /// <summary>
+        /// A list that stores the results of the searches.
+        /// </summary>
         public List<IMenuItem> menuResults;
 
    
-
+        /// <summary>
+        /// A property that returns the availble ingredients of the menu.
+        /// </summary>
         public List<string> AvailableIngredients
         { 
      
