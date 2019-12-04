@@ -48,7 +48,7 @@ namespace Website.Pages
         /// <summary>
         /// A list that stores the results of the searches.
         /// </summary>
-        public List<IMenuItem> menuResults;
+        public IEnumerable<IMenuItem> menuResults;
 
    
         /// <summary>
@@ -75,27 +75,37 @@ namespace Website.Pages
             menuResults = menuL.AvailableMenuItems;
             if(search.Length != 0)
             {
-                menuResults = menuL.SearchName(menuResults, search);
-            }
-            if(menuCategory.Count != 0)
-            {
-                menuResults = menuL.SearchCategory(menuResults, menuCategory);
-            }
-
-            if(ingredients.Count != 0)
-            {
-                menuResults = menuL.SearchIngredients(menuResults, ingredients);
+                menuResults = menuResults.Where(item => item.ToString().Contains(search));
+                //menuResults = menuL.SearchName(menuResults, search);
             }
 
             if(minPrice != null)
             {
-                menuResults = menuL.SearchMinPrice(menuResults, (double)minPrice);
+                menuResults = menuResults.Where(item => item.Price >= minPrice);
+                //menuResults = menuL.SearchMinPrice(menuResults, (double)minPrice);
             }
 
             if(maxPrice != null)
             {
-                menuResults = menuL.SearchMaxPrice(menuResults, (double)maxPrice);
+                menuResults = menuResults.Where(item => item.Price <= maxPrice);
             }
+
+            if (ingredients.Count != 0)
+            {
+                menuResults = menuResults.Where(item => ingredients.Contains(item));
+                //menuResults = menuL.SearchIngredients(menuResults, ingredients);
+            }
+
+            if (menuCategory.Count != 0)
+            {
+
+                menuResults = menuL.SearchCategory(menuResults, menuCategory);
+            }
+
+            
+
+
+
         }
     }
 }
