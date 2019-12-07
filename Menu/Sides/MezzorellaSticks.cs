@@ -95,6 +95,7 @@ namespace DinoDiner.Menu
         {
             this.Price = 0.99;
             this.Calories = 540;
+            CaloriesBySize = (540, 610, 720);
             
         }
 

@@ -117,6 +117,16 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Gets and returns a tuple that stores the price for the entrees by the size.
+        /// </summary>
+        public (double, double, double) PriceBySize { get; set; }
+
+        /// <summary>
+        /// Gets and sets a tuple that stores the calories of a entrees by the size.
+        /// </summary>
+        public (uint, uint, uint) CaloriesBySize { get; set; }
+
+        /// <summary>
         /// Gets the list of Ingredients that the combo contains.
         /// </summary>
         public List<string> Ingredients
@@ -147,6 +157,8 @@ namespace DinoDiner.Menu
             entree.PropertyChanged += OnItemChange;
             Side = new Fryceritops();
             Drink = new Sodasaurus();
+            PriceBySize = (Price, Price + 1.05, Price + 1.96);
+            CaloriesBySize = (Calories, Calories + 187, Calories + 354);
         }
 
         /// <summary>

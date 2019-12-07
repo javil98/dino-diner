@@ -6,36 +6,54 @@
 @using DinoDiner.Menu;
 
 
+
 <h1>Menu</h1>
 <div id="container">
     <div>
         <h2>Combos</h2>
-        @foreach (var item in Model.menuResults)
+        @foreach (CretaceousCombo combo in Model.CombosResults)
         {
-            if(item is CretaceousCombo combo) 
-            { 
+             
                 <div class="menu-item">
                 <p>@combo.ToString():</p>
                 <ul>*@combo.Entree.ToString()</ul>
                 <ul>*@combo.Side.ToString()</ul>
                 <ul>*@combo.Drink.ToString()</ul>
-                <p>Price: $@item.Price</p>
-                <p>Calories: @item.Calories</p>
+                <table>
+                    <tr>
+                        <th>Size</th>
+                        <th>Price</th>
+                        <th>Calories</th>
+                    </tr>
+                    <tr>
+                        <th>Small</th>
+                        <th>@combo.PriceBySize.Item1</th>
+                        <th>@combo.CaloriesBySize.Item1</th>
+                    </tr>
+                    <tr>
+                        <th>Medium</th>
+                        <th>@combo.PriceBySize.Item2</th>
+                        <th>@combo.CaloriesBySize.Item2</th>
+                    </tr>
+                    <tr>
+                        <th>Large</th>
+                        <th>@combo.PriceBySize.Item3</th>
+                        <th>@combo.CaloriesBySize.Item3</th>
+                    </tr>
+                </table>
                 <p>Ingredients:</p>
                 @foreach (var ingredients in combo.Ingredients)
                 {
                     <ul> *@ingredients</ul>
                 }
             </div>
-            }
 
             
         }
         <h2>Entrees</h2>
-        @foreach (var item1 in Model.menuResults)
+        @foreach (Entree entrees in Model.EntreeResults)
         {
-            if (item1 is Entree entrees)
-            {
+            
             <div class="menu-item">
                 <p>@entrees.ToString()</p>
                 <p>Price: $@entrees.Price</p>
@@ -46,41 +64,75 @@
                     <ul> *@ingredients</ul>
                 }
             </div>
-            }
         }
         <h2>Sides</h2>
-        @foreach (var item2 in Model.menuResults)
+        @foreach (Side side in Model.SideResults)
         {
-            if (item2 is Side side)
-            {
+            
             <div class="menu-item">
-                <p>@side.ToString()</p>
-                <p>Price: $@side.Price</p>
-                <p>Calories: @side.Calories</p>
+                <p> @side.ToString().Substring(5)</p>
+                <table>
+                    <tr>
+                        <th>Size</th>
+                        <th>Price</th>
+                        <th>Calories</th>
+                    </tr>
+                    <tr>
+                        <th>Small</th>
+                        <th>@side.PriceBySize.Item1</th>
+                        <th>@side.CaloriesBySize.Item1</th>
+                    </tr>
+                    <tr>
+                        <th>Medium</th>
+                        <th>@side.PriceBySize.Item2</th>
+                        <th>@side.CaloriesBySize.Item2</th>
+                    </tr>
+                    <tr>
+                        <th>Large</th>
+                        <th>@side.PriceBySize.Item3</th>
+                        <th>@side.CaloriesBySize.Item3</th>
+                    </tr>
+                </table>
                 <p>Ingredients:</p>
                 @foreach (var ingredients in side.Ingredients)
                 {
                     <ul> *@ingredients</ul>
                 }
             </div>
-            }
         }
         <h2>Drinks</h2>
-        @foreach (var item3 in Model.menuResults)
+        @foreach (Drink drink in Model.DrinkResults)
         {
-            if(item3 is Drink drink) 
-            { 
             <div class="menu-item">
-                <p>@drink.ToString()</p>
-                <p>Price: $@drink.Price</p>
-                <p>Calories: @drink.Calories</p>
+                <p> @drink.ToString().Substring(5)</p>
+                <table>
+                    <tr>
+                        <th>Size</th>
+                        <th>Price</th>
+                        <th>Calories</th>
+                    </tr>
+                    <tr>
+                        <th>Small</th>
+                        <th>@drink.PriceBySize.Item1</th>
+                        <th>@drink.CaloriesBySize.Item1</th>
+                    </tr>
+                    <tr>
+                        <th>Medium</th>
+                        <th>@drink.PriceBySize.Item2</th>
+                        <th>@drink.CaloriesBySize.Item2</th>
+                    </tr>
+                    <tr>
+                        <th>Large</th>
+                        <th>@drink.PriceBySize.Item3</th>
+                        <th>@drink.CaloriesBySize.Item3</th>
+                    </tr>
+                </table>
                 <p>Ingredients:</p>
                 @foreach (var ingredients in drink.Ingredients)
                 {
                     <ul> *@ingredients</ul>
                 }
             </div>
-            }
         }
     </div>
     <form method="post">
@@ -99,7 +151,9 @@
                 <input type="checkbox" name="menuCategory" value="Entree" />
                 Entree
             </label>
+            <table >
 
+            </table>
             <label>
                 <input type="checkbox" name="menuCategory" value="Side" />
                 Side

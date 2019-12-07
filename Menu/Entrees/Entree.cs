@@ -24,6 +24,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public virtual List<string> Ingredients { get; set; }
 
+
         /// <summary>
         /// The PropertyChanged event handler; notifies
         /// of changes to the Price, Description, and 

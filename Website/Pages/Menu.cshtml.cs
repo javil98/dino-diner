@@ -50,7 +50,39 @@ namespace Website.Pages
         /// </summary>
         public IEnumerable<IMenuItem> menuResults;
 
-   
+        public IEnumerable<IMenuItem> CombosResults
+        {
+            get
+            {
+                return menuResults.OfType<CretaceousCombo>();
+            }
+        }
+
+        public IEnumerable<IMenuItem> EntreeResults
+        {
+            get
+            {
+                return menuResults.OfType<Entree>();
+            }
+        }
+
+        public IEnumerable<IMenuItem> DrinkResults
+        {
+            get
+            {
+                return menuResults.OfType<Drink>();
+            }
+        }
+
+        public IEnumerable<IMenuItem> SideResults
+        {
+            get
+            {
+                return menuResults.OfType<Side>();
+            }
+        }
+
+
         /// <summary>
         /// A property that returns the availble ingredients of the menu.
         /// </summary>
@@ -62,9 +94,8 @@ namespace Website.Pages
                 return menuL.AvailableIngredients;
             }
             
-        }
-     
-       
+        } 
+
         public void OnGet()
         {
             menuResults = menuL.AvailableMenuItems;
@@ -73,7 +104,7 @@ namespace Website.Pages
         public void OnPost()
         {
             menuResults = menuL.AvailableMenuItems;
-            if(search.Length != 0)
+            if(search != null)
             {
                 menuResults = menuResults.Where(item => item.ToString().Contains(search));
                 //menuResults = menuL.SearchName(menuResults, search);
@@ -81,24 +112,39 @@ namespace Website.Pages
 
             if(minPrice != null)
             {
-                menuResults = menuResults.Where(item => item.Price >= minPrice);
+                menuResults = menuResults.Where(item => item.PriceBySize.Item1 >= minPrice);
                 //menuResults = menuL.SearchMinPrice(menuResults, (double)minPrice);
             }
 
             if(maxPrice != null)
             {
-                menuResults = menuResults.Where(item => item.Price <= maxPrice);
+                menuResults = menuResults.Where(item => item.PriceBySize.Item3 <= maxPrice);
             }
 
             if (ingredients.Count != 0)
             {
-                menuResults = menuResults.Where(item => ingredients.Contains(item));
+                menuResults = menuResults.Where(item =>
+                {
+                    foreach (string thing in ingredients)
+                    {
+                        
+                            if (item.Ingredients.Contains(thing))
+                            {
+                                return false;
+                            }
+                            else
+                            {
+                                return true;
+                            }
+                    }
+                    return false;
+       
+                });
                 //menuResults = menuL.SearchIngredients(menuResults, ingredients);
             }
 
             if (menuCategory.Count != 0)
             {
-
                 menuResults = menuL.SearchCategory(menuResults, menuCategory);
             }
 

@@ -97,6 +97,7 @@ namespace DinoDiner.Menu
         {
             this.Price = 0.99;
             this.Calories = 222;
+            CaloriesBySize = (222, 365, 480);
         }
 
         public override string ToString()

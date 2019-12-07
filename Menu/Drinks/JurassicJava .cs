@@ -30,6 +30,7 @@ namespace DinoDiner.Menu
             }
         }
 
+
         /// <summary>
         /// Gets and sets RoomForCream
         /// </summary>
@@ -123,8 +124,11 @@ namespace DinoDiner.Menu
         public JurassicJava()
         {
             Price = 0.59;
+            PriceBySize = (0.59, 0.99, 1.49);
+            CaloriesBySize = (2, 4, 8);
             Calories = 2;
             Ice = false;
+
         }
 
         /// <summary>

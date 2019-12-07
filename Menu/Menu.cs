@@ -217,7 +217,7 @@ namespace DinoDiner.Menu
         /// <param name="items">The menuItems being sorted</param>
         /// <param name="category">The categories from which the list is being sorted by.</param>
         /// <returns></returns>
-        public List<IMenuItem> SearchCategory(List<IMenuItem> items, List<string> category)
+        public IEnumerable<IMenuItem> SearchCategory(IEnumerable<IMenuItem> items, List<string> category)
         {
             List<IMenuItem> results = new List<IMenuItem>();
 

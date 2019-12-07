@@ -140,6 +140,8 @@ namespace DinoDiner.Menu
             Price = 0.99;
             Size = Size.Small;
             Calories = 8;
+            PriceBySize = (0.99, 1.49, 2.00);
+            CaloriesBySize = (8, 16, 32);
         }
         /// <summary>
         /// Sets Lemon to true.
