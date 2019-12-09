@@ -48,6 +48,9 @@ namespace DinoDiner.Menu
         {
             this.Price = 5.36;
             this.Calories = 498;
+            PriceBySize = (5.36, 5.36, 5.36);
+              
+
         }
         /// <summary>
         /// Gets a list of ingredients for a Brontowurst.

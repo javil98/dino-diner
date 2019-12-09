@@ -48,6 +48,7 @@ namespace DinoDiner.Menu
             this.Calories = 6 * 59;
             NotifyOfPropertyChange("Calories");
             NotifyOfPropertyChange("Price");
+            PriceBySize = (Price, Price, Price);
         }
         /// <summary>
         /// Gets the list of ingredients of a DinoNuggets object.

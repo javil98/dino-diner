@@ -20,6 +20,7 @@ namespace DinoDiner.Menu
         {
             this.Price = 7.21;
             this.Calories = 318;
+            PriceBySize = (7.21, 7.21, 7.21);
         }
 
         /// <summary>

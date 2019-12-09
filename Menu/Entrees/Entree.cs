@@ -24,6 +24,16 @@ namespace DinoDiner.Menu
         /// </summary>
         public virtual List<string> Ingredients { get; set; }
 
+        /// <summary>
+        /// Gets and returns a tuple that stores the price for the entrees by the size.
+        /// </summary>
+        public (double, double, double) PriceBySize { get; set; }
+
+        /// <summary>
+        /// Gets and sets a tuple that stores the calories of a entrees by the size.
+        /// </summary>
+        public (uint, uint, uint) CaloriesBySize { get; set; }
+
 
         /// <summary>
         /// The PropertyChanged event handler; notifies

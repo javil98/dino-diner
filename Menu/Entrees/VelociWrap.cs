@@ -46,6 +46,7 @@ namespace DinoDiner.Menu
         {
             this.Price = 6.86;
             this.Calories = 356;
+            PriceBySize = (6.86, 6.86, 6.86);
         }
         /// <summary>
         /// Gets a list of ingredients for an instance of VelociWrap.

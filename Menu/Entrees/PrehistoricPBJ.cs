@@ -57,6 +57,7 @@ namespace DinoDiner.Menu
         {
             this.Price = 6.52;
             this.Calories = 483;
+            PriceBySize = (6.52, 6.52, 6.52);
         }
         /// <summary>
         /// Sets the value of peanutButter to false.

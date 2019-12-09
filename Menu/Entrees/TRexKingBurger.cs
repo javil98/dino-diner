@@ -55,6 +55,7 @@ namespace DinoDiner.Menu
         {
             this.Price = 8.45;
             this.Calories = 728;
+            PriceBySize = (8.45, 8.45, 8.45);
         }
         /// <summary>
         /// Gets a list of ingredients of an instance of TRexKingBurger.
